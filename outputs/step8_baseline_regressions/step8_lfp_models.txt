@@ -1,0 +1,35 @@
+                                models$pooled             models$female
+                                       Pooled                     Women
+Dependent Var.:     labor_force_participation labor_force_participation
+                                                                       
+exposure_per_100             -0.0006 (0.0006)           0.0004 (0.0007)
+female                    -0.6055*** (0.0186)                          
+urban                       -0.0206* (0.0082)           0.0135 (0.0127)
+Fixed-Effects:      ------------------------- -------------------------
+historical_province                       Yes                       Yes
+birth_year                                Yes                       Yes
+year                                      Yes                       Yes
+___________________ _________________________ _________________________
+S.E.: Clustered             by: hist. & birt.         by: hist. & birt.
+Observations                        4,028,635                 2,048,538
+R2                                    0.40476                   0.01282
+Within R2                             0.38122                   0.00020
+
+                                  models$male
+                                          Men
+Dependent Var.:     labor_force_participation
+                                             
+exposure_per_100             -0.0012 (0.0014)
+female                                       
+urban                     -0.0562*** (0.0099)
+Fixed-Effects:      -------------------------
+historical_province                       Yes
+birth_year                                Yes
+year                                      Yes
+___________________ _________________________
+S.E.: Clustered             by: hist. & birt.
+Observations                        1,980,097
+R2                                    0.18536
+Within R2                             0.00413
+---
+Signif. codes: 0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1

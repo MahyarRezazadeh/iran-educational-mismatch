@@ -1,0 +1,373 @@
+% !TeX root = draft_finalized.tex
+% Appendix for the identification revision. Formatting matches body.tex
+% (booktabs + threeparttable + L{} columns, elsarticle-harv citations).
+
+\appendix
+\renewcommand{\thesection}{\Alph{section}}
+\renewcommand{\thetable}{A\arabic{table}}
+\renewcommand{\thefigure}{A\arabic{figure}}
+\setcounter{table}{0}
+\setcounter{figure}{0}
+
+\section{Supplementary tables}
+\label{app:robust}
+
+This appendix reports the sample composition, treatment distribution, and the additional
+identification and inference checks summarized in Section~\ref{sec:results}. Unless noted,
+all specifications use the baseline design: survey-weighted linear probability models with
+historical-province, birth-cohort, and survey-year fixed effects, controls for gender (pooled)
+and urban residence, and standard errors two-way clustered by historical province and birth
+cohort. Vertical and joint outcomes use the unrestricted full-period occupational education
+benchmark; as Table~\ref{tab:robdef} shows, the preferred-benchmark point estimates differ by
+less than 0.01 percentage points.
+
+\begin{table}[htbp]
+  \centering
+  \caption{Analytical samples and outcome means}
+  \label{tab:appsamples}
+  \begin{threeparttable}
+  \begin{tabular}{L{6.4cm}rr}
+    \toprule
+    Outcome / sample & Observations & Weighted mean \\
+    \midrule
+    Broad analysis sample (exposure, cohort, geography) & 4{,}086{,}861 & --- \\
+    \addlinespace
+    Labor-force participation      & 4{,}086{,}861 & 0.496 \\
+    Employment                     & 4{,}086{,}861 & 0.421 \\
+    Unemployment (participants)     & 1{,}996{,}995 & 0.151 \\
+    \addlinespace
+    Overeducation                  & 1{,}633{,}647 & 0.361 \\
+    Undereducation                 & 1{,}633{,}647 & 0.238 \\
+    Any vertical mismatch          & 1{,}633{,}647 & 0.599 \\
+    \addlinespace
+    Horizontal mismatch (broad)    & 400{,}726 & 0.510 \\
+    Double mismatch                & 400{,}726 & 0.366 \\
+    Fully matched employment       & 400{,}726 & 0.235 \\
+    \bottomrule
+  \end{tabular}
+  \begin{tablenotes}[flushleft]
+    \footnotesize
+    \item Observation counts are for the pooled sample. Weighted means use LFS survey weights.
+    The vertical-mismatch sample requires employment and a valid occupation code; the horizontal
+    and joint samples additionally require tertiary education, a valid field of study, and a
+    harmonized two-digit ISCO code.
+  \end{tablenotes}
+  \end{threeparttable}
+\end{table}
+
+\begin{table}[htbp]
+  \centering
+  \caption{University-exposure distribution and variance decomposition}
+  \label{tab:appexposure}
+  \begin{threeparttable}
+  \begin{tabular}{L{7.4cm}r}
+    \toprule
+    \multicolumn{2}{l}{\textit{Panel A. Exposure per 100{,}000 population (ages 18--20 average)}} \\
+    \addlinespace
+    Weighted mean & 739.7 \\
+    Weighted standard deviation & 535.7 \\
+    10th / 25th / 50th / 75th / 90th percentile & 194 / 292 / 582 / 1197 / 1490 \\
+    Minimum / maximum & 107 / 4702 \\
+    \addlinespace
+    \multicolumn{2}{l}{\textit{Panel B. Log exposure (identifying variable)}} \\
+    \addlinespace
+    Raw weighted standard deviation & 0.76 \\
+    Raw weighted interquartile range & 1.32 \\
+    Residualized standard deviation (after prov.\ $+$ cohort $+$ year FE) & 0.14 \\
+    Residualized interquartile range & 0.19 \\
+    \addlinespace
+    \multicolumn{2}{l}{\textit{Panel C. Variance decomposition of log exposure}} \\
+    \addlinespace
+    Province--cohort cells & 804 \\
+    Share absorbed by province $+$ cohort $+$ survey-year fixed effects & 0.96 \\
+    Residual (identifying) share & 0.04 \\
+    \bottomrule
+  \end{tabular}
+  \begin{tablenotes}[flushleft]
+    \footnotesize
+    \item Panel A describes the individual-level exposure measure on the broad analysis sample.
+    Panels B and C describe the natural logarithm of exposure, which enters the regressions.
+    The residualized moments in Panel B are computed from the residuals of a survey-weighted
+    regression of log exposure on the identifying fixed effects on the joint-mismatch sample, and
+    give the scale of the variation that actually identifies the coefficient. Panel C reports the
+    share of the weighted variance of log exposure absorbed by those fixed effects.
+  \end{tablenotes}
+  \end{threeparttable}
+\end{table}
+
+\begin{table}[htbp]
+  \centering
+  \caption{University exposure and educational attainment}
+  \label{tab:appfirststage}
+  \begin{threeparttable}
+  \begin{tabular}{L{7.6cm}cc}
+    \toprule
+    Specification & Effect (pp) & $p$-value \\
+    \midrule
+    Tertiary education, province FE only                 & $0.79^{***}$ $(0.07)$ & $<0.001$ \\
+    Tertiary education, $+$ birth-cohort FE              & $-0.15$ $(0.17)$ & 0.36 \\
+    Tertiary education, baseline FE (prov $+$ cohort $+$ year) & $-0.15$ $(0.17)$ & 0.36 \\
+    Tertiary education, $+$ province $\times$ year FE     & $-0.16$ $(0.17)$ & 0.33 \\
+    Tertiary education, $+$ province-specific cohort trend & $-0.03$ $(0.19)$ & 0.87 \\
+    \addlinespace
+    Tertiary education, ages $\geq 25$                    & $-0.05$ $(0.14)$ & 0.71 \\
+    Tertiary education, ages $\geq 30$                    & $-0.03$ $(0.13)$ & 0.78 \\
+    Tertiary education, women, ages $\geq 25$             & $-0.10$ $(0.14)$ & 0.45 \\
+    Tertiary education, men, ages $\geq 25$               & $-0.00$ $(0.16)$ & 0.99 \\
+    \addlinespace
+    Education attainment rank (1--8), ages $\geq 25$      & $0.006$ $(0.005)$ & 0.24 \\
+    Literacy, ages $\geq 25$                              & $0.014$ $(0.015)$ & 0.34 \\
+    \bottomrule
+  \end{tabular}
+  \begin{tablenotes}[flushleft]
+    \footnotesize
+    \item Each row is a separate regression of the indicated educational outcome on log exposure.
+    Effects are percentage-point changes associated with a 10 percent increase in exposure
+    (attainment-rank effect is in rank points). The province-FE-only row identifies the
+    coefficient from cross-province variation and is reported only to show that the cross-sectional
+    association vanishes once cohort variation is isolated. Residualized-exposure quartiles of the
+    ages-$\geq 25$ sample have tertiary shares of 0.31, 0.26, 0.27, and 0.29 from lowest to highest.
+    \textsuperscript{***}$p<0.01$.
+  \end{tablenotes}
+  \end{threeparttable}
+\end{table}
+
+\begin{table}[htbp]
+  \centering
+  \caption{Population-level (unconditional) mismatch incidence}
+  \label{tab:appuncond}
+  \begin{threeparttable}
+  \begin{tabular}{L{6.8cm}ccc}
+    \toprule
+    Outcome (share of broad population) & Baseline FE & \makecell{$+$ Province $\times$\\year FE} & Mean \\
+    \midrule
+    Tertiary-educated and employed                    & $0.015$ $(0.050)$ & $0.012$ $(0.048)$ & 0.117 \\
+    Tertiary-educated, employed, horizontally mismatched & $0.044^{*}$ $(0.026)$ & $0.039$ $(0.026)$ & 0.059 \\
+    Tertiary-educated, employed, doubly mismatched     & $0.041$ $(0.028)$ & $0.038$ $(0.026)$ & 0.043 \\
+    Tertiary-educated, employed, fully matched         & $-0.011$ $(0.018)$ & $-0.011$ $(0.018)$ & 0.027 \\
+    \bottomrule
+  \end{tabular}
+  \begin{tablenotes}[flushleft]
+    \footnotesize
+    \item The outcome is an indicator defined over the entire broad analysis sample (not
+    conditional on tertiary education or employment), equal to one for individuals observed in
+    the indicated tertiary-educated employed state and zero otherwise. Effects are percentage-point
+    changes for a 10 percent increase in exposure. These estimates bound the population-level
+    contribution of exposure to graduate mismatch and are smaller than the conditional estimates
+    in Table~\ref{tab:mismatch}, consistent with the null first stage in
+    Table~\ref{tab:appfirststage}. \textsuperscript{*}$p<0.10$.
+  \end{tablenotes}
+  \end{threeparttable}
+\end{table}
+
+\begin{table}[htbp]
+  \centering
+  \caption{Frozen occupational education benchmark}
+  \label{tab:appfrozen}
+  \begin{threeparttable}
+  \begin{tabular}{L{7.0cm}cc}
+    \toprule
+    Outcome & Effect (pp) & Observations \\
+    \midrule
+    Overeducation (frozen benchmark)                       & $0.366^{***}$ $(0.120)$ & 1{,}523{,}305 \\
+    Undereducation (frozen benchmark)                      & $-0.077$ $(0.051)$ & 1{,}523{,}305 \\
+    Double mismatch (frozen vertical $+$ broad horizontal) & $0.705^{***}$ $(0.145)$ & 343{,}371 \\
+    Fully matched employment (frozen benchmark)            & $-0.298^{**}$ $(0.110)$ & 343{,}371 \\
+    \bottomrule
+  \end{tabular}
+  \begin{tablenotes}[flushleft]
+    \footnotesize
+    \item The frozen benchmark is the survey-weighted modal education rank within each two-digit
+    ISCO occupation computed using only the earliest six survey years (1386--1391) and applied to
+    all observations; occupations with fewer than 200 weighted observations in the benchmark
+    window are dropped. This benchmark cannot be mechanically influenced by university expansion
+    in later years. Effects are percentage-point changes for a 10 percent increase in exposure.
+    \textsuperscript{***}$p<0.01$, \textsuperscript{**}$p<0.05$.
+  \end{tablenotes}
+  \end{threeparttable}
+\end{table}
+
+\begin{table}[htbp]
+  \centering
+  \caption{Inference with a limited number of clusters}
+  \label{tab:appcluster}
+  \begin{threeparttable}
+  \begin{tabular}{L{4.6cm}cccc}
+    \toprule
+    Outcome (pooled) & \makecell{Two-way\\cluster $p$} & \makecell{Province\\cluster $p$} & \makecell{Cohort\\cluster $p$} & \makecell{Leave-one-province-out\\effect range (pp)} \\
+    \midrule
+    Horizontal mismatch      & $<0.001$ & $<0.001$ & $<0.001$ & $0.52$ to $0.66$ \\
+    Double mismatch          & $<0.001$ & $<0.001$ & $<0.001$ & $0.62$ to $0.73$ \\
+    Fully matched employment & 0.003 & 0.002 & $<0.001$ & $-0.40$ to $-0.28$ \\
+    Overeducation            & 0.003 & 0.007 & 0.008 & --- \\
+    \bottomrule
+  \end{tabular}
+  \begin{tablenotes}[flushleft]
+    \footnotesize
+    \item Columns 2--4 report $p$-values for the coefficient on log exposure under two-way
+    clustering (baseline) and one-way clustering by historical province (28 clusters) and by
+    birth cohort (29 clusters); source \texttt{step16\_main\_inference\_results.csv}. Column 5
+    reports the range of the estimated effect across the 28 samples that each omit one historical
+    province; in every leave-one-out sample the horizontal- and double-mismatch coefficients
+    retain their sign and remain significant at the 5 percent level, and the fully-matched
+    coefficient is significant at 5 percent in 27 of 28 samples (source
+    \texttt{step16\_leave\_one\_province\_out\_summary.csv}). A restricted wild cluster bootstrap
+    (Rademacher weights, imposed null) was also implemented but did not converge within available
+    computing resources on the full samples; the one-way and leave-one-out results above serve as
+    the few-cluster check.
+  \end{tablenotes}
+  \end{threeparttable}
+\end{table}
+
+\begin{table}[htbp]
+  \centering
+  \caption{Formal tests of gender differences}
+  \label{tab:appgender}
+  \begin{threeparttable}
+  \begin{tabular}{L{4.6cm}cccc}
+    \toprule
+    Outcome & \makecell{Male\\effect (pp)} & \makecell{Female\\effect (pp)} & \makecell{Female $-$ male\\difference (pp)} & \makecell{$p$-value\\(difference)} \\
+    \midrule
+    Overeducation            & $0.300$   & $0.479$  & $0.179$ $(0.213)$  & 0.41 \\
+    Undereducation           & $-0.157$  & $-0.181$ & $-0.024$ $(0.144)$ & 0.87 \\
+    Any vertical mismatch    & $0.142$   & $0.297$  & $0.155$ $(0.192)$  & 0.43 \\
+    Horizontal mismatch      & $0.840$   & $0.073$  & $-0.767$ $(0.213)$ & $0.001$ \\
+    Double mismatch          & $0.784$   & $0.367$  & $-0.417$ $(0.236)$ & 0.089 \\
+    Fully matched employment & $-0.519$  & $0.094$  & $0.613$ $(0.245)$  & 0.019 \\
+    Employment               & $-0.052$  & $-0.167$ & $-0.115$ $(0.268)$ & 0.67 \\
+    Labor-force participation & $0.078$  & $-0.161$ & $-0.239$ $(0.255)$ & 0.36 \\
+    \bottomrule
+  \end{tabular}
+  \begin{tablenotes}[flushleft]
+    \footnotesize
+    \item Each row is a single pooled regression of the outcome on log exposure, a female
+    indicator, their interaction, urban residence, and urban $\times$ female, with
+    \emph{gender-interacted} historical-province, birth-cohort, and survey-year fixed effects
+    ($\text{province}\times\text{female}$, $\text{cohort}\times\text{female}$,
+    $\text{year}\times\text{female}$) and standard errors two-way clustered by province and cohort.
+    This specification reproduces the separate-sex regressions exactly, so the coefficient on
+    log exposure $\times$ female is a clean test of whether the male and female exposure
+    coefficients differ. Effects are percentage-point changes for a 10 percent increase in
+    exposure. Under this test the male--female difference is statistically significant for
+    horizontal mismatch and fully matched employment, significant only at the 10 percent level for
+    double mismatch, and not significant for the vertical-mismatch or employment outcomes.
+  \end{tablenotes}
+  \end{threeparttable}
+\end{table}
+
+\begin{table}[htbp]
+  \centering
+  \caption{Province-by-cohort-by-year cell-level estimates}
+  \label{tab:appcell}
+  \begin{threeparttable}
+  \begin{tabular}{L{5.6cm}cc}
+    \toprule
+    Outcome & Cell-level effect (pp) & Individual-level (Table~\ref{tab:mismatch}) \\
+    \midrule
+    Labor-force participation & $-0.019$ $(0.061)$ & $-0.035$ $(0.057)$ \\
+    Employment                & $-0.081$ $(0.086)$ & $-0.103$ $(0.085)$ \\
+    Unemployment              & $0.242$ $(0.144)$  & $0.228$ $(0.147)$ \\
+    Overeducation             & $0.339^{***}$ $(0.101)$ & $0.330^{***}$ $(0.101)$ \\
+    Undereducation            & $-0.169^{*}$ $(0.086)$  & $-0.159^{*}$ $(0.093)$ \\
+    Horizontal mismatch       & $0.590^{***}$ $(0.116)$ & $0.614^{***}$ $(0.126)$ \\
+    Double mismatch           & $0.639^{***}$ $(0.136)$ & $0.688^{***}$ $(0.140)$ \\
+    Fully matched employment  & $-0.315^{***}$ $(0.098)$ & $-0.346^{***}$ $(0.102)$ \\
+    \bottomrule
+  \end{tabular}
+  \begin{tablenotes}[flushleft]
+    \footnotesize
+    \item The left column collapses each outcome to survey-weighted means within
+    province $\times$ birth-cohort $\times$ survey-year cells (about 11{,}000 cells) and estimates
+    the baseline specification by weighted least squares with cell population weights and the same
+    fixed effects and clustering. The similarity to the individual-level estimates indicates that
+    precision is not an artefact of the number of individual observations.
+    \textsuperscript{***}$p<0.01$, \textsuperscript{*}$p<0.10$.
+  \end{tablenotes}
+  \end{threeparttable}
+\end{table}
+
+\begin{table}[htbp]
+  \centering
+  \caption{Field-of-study heterogeneity: sample sizes, adjusted $p$-values, and differences from education}
+  \label{tab:appfield}
+  \begin{threeparttable}
+  \begin{tabular}{L{4.6cm}rccc}
+    \toprule
+    Field of study & \makecell{$N$\\(horizontal)} & \makecell{FDR $p$\\horizontal} & \makecell{FDR $p$\\double} & \makecell{Difference from\\education (horiz.\,/\,double)} \\
+    \midrule
+    Education                                  & 22{,}738  & 0.60 & 0.56 & --- \\
+    Arts and humanities                        & 38{,}599  & 0.60 & 0.24 & $1.31$ / $0.95$ \\
+    Social sciences and journalism             & 24{,}033  & 0.37 & 0.24 & $1.02$ / $0.94$ \\
+    Business, administration, and law          & 102{,}258 & $0.009^{***}$ & $0.008^{***}$ & $1.31^{***}$ / $1.47^{***}$ \\
+    Natural sciences and mathematics           & 26{,}316  & 0.37 & 0.39 & $1.01^{*}$ / $0.58$ \\
+    Information and communication technologies  & 17{,}281  & $0.10^{*}$ & 0.24 & $1.52^{**}$ / $1.02^{**}$ \\
+    Engineering, manufacturing, construction   & 113{,}344 & 0.37 & 0.24 & $0.75$ / $0.80$ \\
+    Agriculture and veterinary studies         & 15{,}833  & 0.37 & 0.24 & $0.82^{**}$ / $1.08^{**}$ \\
+    Health and welfare                         & 26{,}457  & 0.68 & 0.96 & $0.51$ / $0.31$ \\
+    Services                                   & 13{,}145  & 0.37 & 0.39 & $0.70$ / $0.94$ \\
+    \bottomrule
+  \end{tabular}
+  \begin{tablenotes}[flushleft]
+    \footnotesize
+    \item Point estimates and unadjusted significance are in Table~\ref{tab:field}. FDR $p$-values
+    are Benjamini--Hochberg adjustments within outcome across the ten primary pooled field tests.
+    ``Difference from education'' is the field-specific effect minus the effect for education
+    graduates (percentage points, 10 percent exposure increase), with significance from the
+    corresponding interaction test. Only business, administration, and law differs significantly
+    from education after adjustment on both horizontal and double mismatch. Source:
+    \texttt{step15B\_main\_pooled\_primary\_results.csv},
+    \texttt{step15B\_formal\_differences\_from\_education.csv}. ICT is observed over seven survey
+    years. \textsuperscript{***}$p<0.01$, \textsuperscript{**}$p<0.05$, \textsuperscript{*}$p<0.10$.
+  \end{tablenotes}
+  \end{threeparttable}
+\end{table}
+
+\begin{table}[htbp]
+  \centering
+  \caption{Robustness to age restrictions (post-treatment samples)}
+  \label{tab:appage}
+  \begin{threeparttable}
+  \begin{tabular}{L{4.8cm}cccc}
+    \toprule
+    Outcome & Baseline & Age $\geq 21$ & Age $\geq 25$ & Age $\geq 30$ \\
+    \midrule
+    P(tertiary education)     & $-0.154$ $(0.165)$ & $-0.090$ $(0.156)$ & $-0.051$ $(0.137)$ & $-0.034$ $(0.120)$ \\
+    Labor-force participation & $-0.035$ $(0.057)$ & $-0.022$ $(0.053)$ & $-0.047$ $(0.060)$ & $-0.007$ $(0.075)$ \\
+    Employment                & $-0.103$ $(0.085)$ & $-0.111$ $(0.084)$ & $-0.147$ $(0.088)$ & $-0.090$ $(0.089)$ \\
+    Unemployment              & $0.228$ $(0.147)$  & $0.231$ $(0.149)$  & $0.229$ $(0.141)$  & $0.159^{*}$ $(0.090)$ \\
+    Overeducation             & $0.330^{***}$ $(0.101)$ & $0.309^{***}$ $(0.094)$ & $0.249^{**}$ $(0.091)$ & $0.220^{**}$ $(0.088)$ \\
+    Undereducation            & $-0.159^{*}$ $(0.093)$ & $-0.119$ $(0.104)$ & $-0.081$ $(0.110)$ & $-0.046$ $(0.122)$ \\
+    Horizontal mismatch       & $0.614^{***}$ $(0.126)$ & $0.605^{***}$ $(0.130)$ & $0.621^{***}$ $(0.135)$ & $0.590^{***}$ $(0.117)$ \\
+    Double mismatch           & $0.688^{***}$ $(0.140)$ & $0.680^{***}$ $(0.145)$ & $0.679^{***}$ $(0.149)$ & $0.684^{***}$ $(0.164)$ \\
+    Fully matched employment  & $-0.346^{***}$ $(0.102)$ & $-0.345^{***}$ $(0.103)$ & $-0.331^{***}$ $(0.105)$ & $-0.346^{***}$ $(0.113)$ \\
+    \bottomrule
+  \end{tabular}
+  \begin{tablenotes}[flushleft]
+    \footnotesize
+    \item Each cell is a separate baseline regression restricted to workers at least the indicated
+    age at the time of the survey. Effects are percentage-point changes for a 10 percent increase
+    in exposure, with two-way clustered standard errors in parentheses. Because exposure is
+    measured at ages 18--20, the age-restricted samples ensure that outcomes are observed after
+    the treatment window. The horizontal-mismatch, double-mismatch, and fully-matched-employment
+    estimates are essentially unchanged; overeducation attenuates but remains significant.
+    \textsuperscript{***}$p<0.01$, \textsuperscript{**}$p<0.05$, \textsuperscript{*}$p<0.10$.
+  \end{tablenotes}
+  \end{threeparttable}
+\end{table}
+
+\subsection*{Reproducibility statement}
+
+The individual-level analysis file is built from the Iranian Labor Force Survey public-use
+microdata (Persian calendar years 1386--1403) with a set of construction scripts that harmonize
+provinces to 28 historical units, harmonize education to eight ordered ranks, harmonize occupations
+to two-digit ISCO and fields of study to broad ISCED groups, merge the province-year
+university-enrollment and population panel, and build the vertical, horizontal, and joint mismatch
+measures. All regressions are survey-weighted linear probability models estimated in \texttt{R}
+(\texttt{data.table}, \texttt{fixest}); the manuscript's headline estimates were independently
+reproduced from the analysis file. Every table and figure is generated by code. The field-to-occupation
+crosswalks are author-constructed (mapping broad ISCED fields to two-digit ISCO groups) and are
+released with the replication materials. The construction scripts, regression scripts, crosswalks,
+and the province-year exposure panel are available from the corresponding author; the underlying
+Labor Force Survey microdata are restricted and must be obtained from the Statistical Center of Iran.
+
+\clearpage

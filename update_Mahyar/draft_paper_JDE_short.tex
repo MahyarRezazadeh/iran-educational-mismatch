@@ -1,0 +1,375 @@
+\documentclass[11pt]{article}
+
+% ============================================================
+% Packages
+% ============================================================
+\usepackage[margin=1in]{geometry}
+\usepackage{amsmath,amssymb}
+\usepackage{booktabs}
+\usepackage{array}
+\usepackage{graphicx}
+\usepackage{caption}
+\usepackage{setspace}
+\usepackage[colorlinks=true,linkcolor=blue,citecolor=blue,urlcolor=blue]{hyperref}
+\usepackage{authblk}
+\usepackage{natbib}
+
+\onehalfspacing
+
+\title{Who Gets In, Who Works: University Access, Educational Mismatch, and the Selective Gender Gap in Iran's Labor Market}
+
+\author[1]{Mahyar Rezazadeh}
+\author[2]{Hossein Jalili}
+\affil[1,2]{Simon Fraser University}
+
+\date{Extended working paper draft\\[2pt]
+\small Companion paper: \emph{University Expansion, Educational Mismatch, and Occupational Allocation in Iran} (Rezazadeh and Jalili, draft ``paper\_july17'')}
+
+\begin{document}
+
+\maketitle
+
+\begin{abstract}
+\noindent Iran expanded undergraduate enrollment dramatically between the mid-1990s and mid-2010s, then began reining capacity back in. We ask three connected questions about this expansion. First, using the companion paper's province-by-birth-cohort design (log undergraduate enrollment per capita at ages 18--20 as the exposure variable, 18 waves of the Labor Force Survey, approximately 4.1 million observations, 1386--1403), how did the resulting variation in university access change vertical mismatch, horizontal mismatch, and their joint occurrence? Second, do men and women respond differently at the point of entry into work itself --- does one gender behave more selectively about which jobs it will take? Third, how much of Iran's large raw gender gap in employment and hours can be attributed to this differential selectivity, as opposed to structural/institutional level differences? We document, from newly compiled national Konkoor (university entrance exam) statistics, that the female share of applicants rose from about 59 percent in the mid-1390s to over 61 percent by 1402--1403, alongside a growing share of seats allocated outside the competitive exam track altogether --- motivating why enrollment-per-capita, not a Konkoor-participant ratio, is the appropriate exposure measure. Reinterpreting the companion paper's results through this lens, university exposure raised overeducation and horizontal mismatch overall, with both effects two to three times larger for men than women, while a selection-margin analysis shows employed women are drawn from a far narrower, more positively selected slice of the female education distribution than employed men are of the male distribution. A new gender-gap decomposition shows this selectivity channel is large on the intensive margin --- an Oaxaca-Blinder decomposition attributes an amount larger than the entire observed 13.6-hour weekly hours gap to the inverse-Mills-ratio/selection channel alone --- but explains only about 7.5 percent of the 55-percentage-point raw employment-rate gap, the rest reflecting province/cohort/year-level structural differences. We interpret this as evidence for a demand-side, not supply-side, binding constraint on female employment in Iran.
+
+\vspace{6pt}
+\noindent\textbf{JEL codes:} I23, I24, J16, J21, J24, O15\\
+\textbf{Keywords:} educational mismatch, overeducation, horizontal mismatch, university expansion, gender gap, selection into employment, Iran
+\end{abstract}
+
+% ============================================================
+\section{Introduction}
+% ============================================================
+
+Iran's higher-education system underwent one of the fastest expansions of any country in the last three decades: undergraduate and professional enrollment grew from a system serving a small, exam-selected elite into one absorbing roughly a third of the employed workforce by tertiary credential (companion paper, Figure 2). Nearly all of this expansion happened while the Konkoor --- Iran's centralized, extremely high-stakes national university entrance exam --- remained the nominal gatekeeper, even as the government progressively opened parallel non-exam admission channels alongside it. The companion paper (Rezazadeh and Jalili, draft) exploits province-by-birth-cohort variation in undergraduate enrollment per capita, measured at ages 18--20, to show that this expansion did not raise employment or labor-force participation on average, but did raise \emph{overeducation} and, especially, \emph{horizontal mismatch} (working outside one's field of study) --- with the latter effect concentrated heavily among men.
+
+This paper asks three further questions using the same identification strategy, data, and constructed variables, extending the companion paper along the dimension it explicitly leaves open: gender.
+
+\textbf{First}, we ask what the actual \emph{supply shock} looked like from the demand side --- from the perspective of students competing for seats --- rather than only from the enrollment-stock side the companion paper measures. We compile, from Sanjesh Organization figures reported in the Iranian press and consolidated in Persian Wikipedia's Konkoor entry, a national year-by-year series of Konkoor participants by gender for 1393--1403 (nine years with internally consistent gender totals; two additional years, 1400--1401, were dropped after we found irreconcilable figures across sources). This shows a fact not previously connected to the Iranian mismatch literature: women have been a majority of Konkoor participants throughout the available series (58--63 percent), and that majority has been \emph{growing}. We also document that since 1395, more than 20 percent of public-university seats and more than 70 percent of non-public-university seats have been allocated through GPA-based records rather than the Konkoor --- an institutional fact that explains why we do not attempt to build a province-level ``seats per Konkoor participant'' panel as the causal exposure variable (no such province-by-gender panel exists in public data over our sample period), and instead use this national series as descriptive context motivating the companion paper's enrollment-per-capita measure as the better available proxy, since it captures total capacity across all admission channels.
+
+\textbf{Second}, we ask whether the companion paper's finding --- horizontal and double mismatch rise much more for men than women as exposure rises --- reflects women being protected from mismatch, or being selected out of employment before mismatch can be observed. Using a purpose-built gender-selection sample (4{,}086{,}861 observations) and three complementary approaches --- a triple-interaction model, a selection-margin regression, and a two-step Heckman correction --- we show the latter is closer to the truth. Employed women are drawn from a persistently narrower, higher-education slice of the female population than employed men are of the male population, and the correlation between unobserved selection determinants and realized hours is roughly five times larger in magnitude for women. Read together with the companion paper's mismatch results, the two describe a single mechanism: men are drawn into the labor market more readily as exposure rises, absorbing worse matches in the process, while women's entry remains conditional on being an unusually strong candidate.
+
+\textbf{Third}, we ask how much of Iran's raw gender employment gap this selectivity can account for. On the extensive margin, a counterfactual substituting men's estimated behavioral response to observable characteristics into women's own selection index closes only about 7.5 percent of the raw 55-percentage-point employment gap. On the intensive margin, an Oaxaca-Blinder decomposition of the 13.6-hour raw weekly-hours gap among the employed attributes a component of 33.5 hours --- larger than the entire observed gap --- to the selection channel alone, offset by other forces. The reading is that, among the relatively few women who work, selection is the dominant force shaping how much they work, even though it explains little of \emph{whether} they work at all.
+
+Section~2 reviews the relevant literatures. Section~3 describes the data, including the new Konkoor series. Section~4 restates the empirical strategy. Section~5 presents results. Section~6 discusses limitations and concludes.
+
+% ============================================================
+\section{Literature review}
+% ============================================================
+
+\subsection{Measuring vertical and horizontal educational mismatch}
+
+The companion paper's vertical-mismatch measure --- classifying a worker as over-, under-, or adequately educated relative to the \emph{modal} education level in their occupation --- sits in the ``realized matches'' tradition. \citet{verdugo1989} is the tradition's foundational paper, defining over/under-education relative to the occupation mean ($\pm$ one standard deviation); \citet{kiker1997}, studying Portugal, introduced the modal-value variant the companion paper follows, on the grounds that the mode is less sensitive to outliers. Both share the limitation the companion paper flags explicitly: the benchmark can itself embed pre-existing mismatch, so the resulting measure is relative allocation, not a technologically fixed requirement.
+
+Horizontal (field-of-study) mismatch measurement follows a distinct tradition. \citet{robst2007} is an early paper using a field-to-occupation ``relatedness'' classification; \citet{nordin2010} extend this to Swedish administrative data and connect horizontal mismatch to a wage penalty distinct from the vertical penalty. \citet{somers2019}, a systematic review, categorize the field into subjective, objective/crosswalk-based (the family the companion paper's crosswalk belongs to), and statistical/empirical measures, noting that crosswalk measures are sensitive to how broadly the crosswalk is drawn --- precisely the concern the companion paper's broad-versus-strict robustness check addresses.
+
+\subsection{University expansion and graduate mismatch}
+
+The clearest precedent for using regional/cohort variation in higher-education capacity to identify effects on graduate mismatch is China's 1999 expansion. \citet{li2014} and \citet{li2008} document that China's enrollment growth outpaced growth in graduate-appropriate jobs, raising both unemployment and over-education among new graduates; \citet{knight2017} reach a similar conclusion using a supply-shock framing closely analogous to the companion paper's. These papers consistently find, as the companion paper does, that the primary margin of adjustment is match quality rather than employment quantity.
+
+Iran-specific evidence is thinner but directly relevant. \citet{haddad2017} use Iran's Household Income and Expenditure Survey (2001--2012) to measure vertical skill mismatch and find the odds of over-education are \emph{higher} for women than men --- a finding this paper's gender results partially echo (women's overeducation response to exposure is larger in percentage-point terms than men's: 0.478 vs.\ 0.305 in the companion paper's Table~2) even though horizontal and double mismatch move in the opposite gender direction. Salehi-Isfahani's working-paper-stage work characterizes Iran's higher-education system as producing graduates in excess of what the private-sector labor market can absorb in matched jobs, consistent with this paper's overall reading, though we caution this is a working paper whose final peer-reviewed status we have not independently confirmed.
+
+\subsection{Selection into employment and the ``self-driven'' gender gap}
+
+The idea that observed gender gaps can be an artifact of \emph{who selects into observability}, rather than differential treatment or characteristics among the employed, is central to \citet{mulligan2008}, who show the apparent narrowing of the U.S.\ gender wage gap between the 1970s and 1990s partly reflects a shift in the selection of women into full-time work, from negative to positive selection --- the same \emph{direction} of selection we find for Iranian women's employment on the education margin, though in Iran the selection appears uniformly positive and strong throughout our sample rather than shifting over time. This is the direct conceptual ancestor of our Heckman-based decomposition in Section~5.3.
+
+Directly on Iran, \citet{tanaka2023} study a 2010 policy imposing public-sector female-hiring quotas and find it caused an 11.4-percentage-point \emph{decline} in women's college attendance in affected fields --- evidence that Iranian women's educational investment responds to anticipated labor-demand conditions. This supports our reading of the extensive-margin decomposition: if the binding constraint on Iranian women's employment were primarily about their own characteristics or preferences, we would expect our counterfactual exercise to close much more of the raw employment gap than the 7.5 percent we find.
+
+\subsection{Iran and the MENA ``gender paradox''}
+
+A broader Middle East and North Africa literature documents a persistent pattern: near-parity or a female advantage in educational attainment coexisting with the lowest female labor-force participation rates in the world outside South Asia --- the region's ``gender paradox.'' Our sample's female labor-force participation rate (roughly 15--20 percent) sits at the low end even by this region's standards. The dominant explanations emphasize social norms, occupational segregation, and legal/institutional constraints rather than a shortage of qualified female labor supply --- a framing our results are directly consistent with, given how little of the extensive-margin gap is attributable to differential responsiveness to observable human-capital characteristics.
+
+% ============================================================
+\section{Institutional background and data}
+% ============================================================
+
+\subsection{Iran's university admission system: Konkoor and the shift away from it}
+
+Since 1968, admission to Iranian public universities has been governed primarily by the Konkoor, a centralized, single-day, high-stakes national exam administered by the Sanjesh Organization. Historically nearly all public-university seats, and a large share of seats at parallel private/quasi-private institutions (Islamic Azad University, Payam-Noor University), were allocated on Konkoor rank within a quota structure including merit-based and reserved-category tracks. Beginning around 1395 (2016), Iran began allocating a growing share of seats through GPA-based admission (\emph{savabegh-e tahsili}) rather than the exam: by our sources, over 20 percent of public-university capacity and over 70 percent of capacity at other institutions has been allocated this way from 1395 onward, a share that has continued to grow.
+
+\subsection{Seats, participants, and why we do not build a province-level Konkoor exposure measure}
+
+We investigated directly whether a seats-per-Konkoor-applicant ratio, by province and gender, could serve as an alternative exposure variable to the companion paper's enrollment-per-capita measure, and found it is not feasible to construct at the province level for 1373--1403 from public data. Sanjesh does not maintain a scrapable public archive of participant/admission counts by province and gender; Iran's Statistical Yearbook may contain such a table for individual years but would require manual extraction from non-machine-readable scans; and the one compiled dataset we located (a national Konkoor-applicant panel by field and gender) is national-level only and paywalled. The project's own data folder contains a province-by-gender admitted-students table, but only for 1373--1382 --- the first third of our sample period, too short a span for its own province-cohort design.
+
+We therefore compiled a \textbf{national-level} series of Konkoor participants by gender for 1393--1403 (Figure~\ref{fig:konkoor}), from Sanjesh figures reported in the Iranian press and consolidated in Persian Wikipedia's Konkoor article. Because press outlets sometimes misattribute figures to the wrong exam year, we kept only years for which reported female and male counts summed to the reported total within rounding error; this excluded 1400 and 1401, where sources could not be reconciled.
+
+\begin{figure}[htbp]
+\centering
+\includegraphics[width=0.95\textwidth]{figure_konkoor_participants.png}
+\caption{National Konkoor participants by gender, Persian years 1393--1403. \emph{Left}: total, female, and male participants (thousands). \emph{Right}: female share of participants (\%). Years 1400--1401 omitted: reported gender breakdowns could not be reconciled with reported totals across independent sources. Source: Sanjesh Organization figures as reported in Iranian press and consolidated in the Persian Wikipedia Konkoor article; see \texttt{konkoor\_participants\_national.csv}.}
+\label{fig:konkoor}
+\end{figure}
+
+Two facts stand out. First, total participants did not decline monotonically: from about 1.03 million (1393) to a low of about 860{,}000 (1395), back to a local peak of roughly 1.15 million (1399), then down to about 984{,}000 by 1403 --- more consistent with cohort-size fluctuations and exam-administration effects than a smooth secular decline. Second, and more directly relevant here, women have been a majority of Konkoor participants in every verified year, and that majority has grown: from 59.1 percent (1393) to 58.0--59.2 percent through 1399, then to 61.4 percent (1402) and 63.1 percent (1403). Because most participants are drawn from the age-18--20 window the companion paper's exposure measure targets, this corroborates --- from an independent data source --- the companion paper's own enrollment-stock evidence (its Figure~2) that women's relative position in Iran's higher-education pipeline has been rising throughout the study period.
+
+For one internally consistent year, 1403, we can pair participants with admissions: of 984{,}214 participants, 500{,}790 were admitted through the exam track (50.9 percent), with 310{,}170 of 620{,}557 female participants (50.0 percent) and 190{,}620 of 363{,}657 male participants (52.4 percent) admitted --- essentially the same rate for both genders that year. For 1396, the exam-track admission rate varied sharply by academic track: roughly 28 percent for mathematics/physical sciences (about 66{,}000 of 235{,}000 candidates) versus roughly 17.5 percent for humanities (54{,}407 of 310{,}864). We report these as illustrative snapshots, not a trend, both because they are single years and because an increasing share of true seats in every subsequent year bypasses the Konkoor channel altogether.
+
+\textbf{Implication for the exposure measure.} We do not treat the Konkoor-participant series as a causal exposure variable. It has no province-level variation in the years we could verify, so it cannot support a province-cohort design (year fixed effects would fully absorb a national-only series). We use it as descriptive context corroborating the direction and gendered composition of university-access expansion, and continue to use the companion paper's enrollment-per-capita exposure measure as the causal variable throughout Section~5, since it captures realized capacity across \emph{all} admission channels, the economically relevant quantity for whether a province-cohort could access university, whereas Konkoor participants capture only demand for the shrinking competitive-exam channel.
+
+\subsection{Labor Force Survey data and the gender-selection sample}
+
+We use the companion paper's individual-level LFS panel (1386--1403, 28 harmonized historical provinces, birth cohorts 1355--1383, approximately 4.1 million observations) and its verified analysis file \texttt{data\_ready.dta}. For the selection analysis we additionally reconstruct household size and number of children (from the relationship-to-household-head code, dropped from the companion paper's main file during variable selection) as an exclusion restriction. This yields 4{,}086{,}861 observations (2{,}079{,}162 women; 2{,}007{,}699 men) with valid exposure, province, cohort, weight, gender, and urban/rural status.
+
+\begin{table}[htbp]
+\centering
+\caption{Employment, hours, and education by gender and exposure quartile}
+\label{tab:exhibit1}
+\begin{tabular}{llccc}
+\toprule
+Gender & Exposure quartile & Employment rate & Mean weekly hours & Tertiary share \\
+\midrule
+Men   & Q1 (lowest)  & 0.844 & 49.7 & 0.199 \\
+Men   & Q2           & 0.805 & 51.4 & 0.269 \\
+Men   & Q3           & 0.585 & 49.2 & 0.310 \\
+Men   & Q4 (highest) & 0.545 & 50.1 & 0.385 \\
+\addlinespace
+Women & Q1 (lowest)  & 0.182 & 34.3 & 0.184 \\
+Women & Q2           & 0.167 & 37.7 & 0.295 \\
+Women & Q3           & 0.119 & 36.1 & 0.331 \\
+Women & Q4 (highest) & 0.114 & 39.0 & 0.406 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+Table~\ref{tab:exhibit1} previews the core empirical pattern. Employment rates fall with exposure for both genders but from starkly different levels: men's ranges from 54.5\% to 84.4\% across exposure quartiles, women's from 11.4\% to 18.2\%, even as the tertiary-education share of the working-age population rises with exposure similarly for both genders (roughly 18--20\% to 39--41\%). This juxtaposition --- comparable education gains, wildly divergent employment levels --- is the starting point for the selection analysis in Section~5.
+
+% ============================================================
+\section{Empirical strategy}
+% ============================================================
+
+We use the companion paper's baseline specification without modification:
+\begin{equation}
+Y_{ipct} = \beta \cdot \log(\text{Exposure}_{pc}) + X_i'\gamma + \mu_p + \lambda_c + \tau_t + \varepsilon_{ipct},
+\end{equation}
+with historical-province ($\mu_p$), birth-cohort ($\lambda_c$), and survey-year ($\tau_t$) fixed effects; survey weights; two-way clustering by province and cohort (28 province, 29 cohort clusters). Section~5.1 reports the companion paper's own mismatch estimates from this specification, which we cite directly rather than re-estimate, having independently reproduced them from \texttt{data\_ready.dta} in an earlier verification pass, matching the paper's reported coefficients to three decimal places.
+
+For the gender-selection analysis (Sections~5.2--5.3) we extend this specification in three ways, following the same fixed-effect structure, weighting, and clustering throughout.
+
+\paragraph{Triple-interaction model.}
+\begin{equation}
+Y_{ipct} = \beta_1 \text{Exp} + \beta_2 \text{Exp}\times\text{Female} + \beta_3 \text{Exp}\times\text{Tert} + \beta_4 \text{Exp}\times\text{Female}\times\text{Tert} + X_i'\gamma + \mu_p + \lambda_c + \tau_t + \varepsilon,
+\end{equation}
+for $Y \in \{\text{employed},\ \text{weekly hours} \mid \text{employed}\}$.
+
+\paragraph{Selection-margin model.}
+\begin{equation}
+\text{EduRank}_{ipct} = \gamma_1 \text{Employed} + \gamma_2 \text{Employed}\times\text{Exp} + \gamma_3 \text{Employed}\times\text{Exp}\times\text{Female} + X_i'\gamma + \text{FE} + \varepsilon.
+\end{equation}
+
+\paragraph{Two-step Heckman selection correction}, estimated separately by gender. First stage:
+\begin{equation}
+\text{Employed}^*_{ipct} = \text{Exp}\cdot\delta_1 + \text{Tert}\cdot\delta_2 + \text{Urban}\cdot\delta_3 + \text{NumKids}\cdot\delta_4 + \text{NumKids}\times\text{Exp}\cdot\delta_5 + \text{FE} + u,
+\end{equation}
+using number of children in the household, interacted with exposure, as the exclusion restriction. We compute the inverse Mills ratio from the first-stage linear predictor and include it in a second-stage hours regression among the employed:
+\begin{equation}
+\text{Hours}_{ipct} = \text{Exp}\cdot\beta_1 + \text{Tert}\cdot\beta_2 + \text{Urban}\cdot\beta_3 + \lambda \cdot \text{MillsRatio} + \text{FE} + \varepsilon.
+\end{equation}
+
+\paragraph{New for this paper: gender-gap decompositions.} Building on the fitted Heckman models, Section~5.3 constructs (i) an extensive-margin counterfactual substituting men's estimated first-stage coefficients into women's own fitted selection index, holding women's own province-cohort-year context and characteristics fixed, to isolate how much of the raw employment-rate gap reflects differential \emph{behavioral response} versus differential \emph{baseline levels}; and (ii) a standard Oaxaca-Blinder decomposition of the raw mean weekly-hours gap between employed men and women, using the second-stage hours-equation coefficients (including the mills term) and each gender's mean characteristics.
+
+% ============================================================
+\section{Results}
+% ============================================================
+
+\subsection{University exposure and educational mismatch (companion paper's estimates, reinterpreted)}
+
+Table~\ref{tab:mismatch} restates the companion paper's central mismatch results (its Table~2), expressed as percentage-point effects of a 10 percent increase in university exposure at ages 18--20.
+
+\begin{table}[htbp]
+\centering
+\caption{University exposure and educational mismatch (companion paper, Table 2)}
+\label{tab:mismatch}
+\begin{tabular}{lccc}
+\toprule
+Outcome & Pooled & Women & Men \\
+\midrule
+Any vertical mismatch      & 0.170 (0.110)      & 0.299 (0.222)      & 0.141 (0.105) \\
+Overeducation              & $0.335^{***}$ (0.101) & $0.478^{**}$ (0.205) & $0.305^{***}$ (0.104) \\
+Undereducation             & $-0.165^{*}$ (0.090)  & $-0.179$ (0.109)     & $-0.164$ (0.102) \\
+Horizontal mismatch        & $0.614^{***}$ (0.126) & $0.073$ (0.174)      & $0.840^{***}$ (0.149) \\
+Double mismatch            & $0.695^{***}$ (0.140) & $0.368^{**}$ (0.144)  & $0.797^{***}$ (0.182) \\
+Fully matched employment   & $-0.341^{***}$ (0.103) & $0.088$ (0.207)     & $-0.513^{***}$ (0.115) \\
+\bottomrule
+\multicolumn{4}{p{0.9\textwidth}}{\footnotesize Two-way clustered SE (province $\times$ cohort) in parentheses. $^{*}p<0.10$, $^{**}p<0.05$, $^{***}p<0.01$. See companion paper Section~4 for sample and variable definitions.}
+\end{tabular}
+\end{table}
+
+Read through Section~3's institutional facts, these results take on a specific meaning. Because enrollment-per-capita captures realized capacity across the Konkoor and non-Konkoor channels alike, and because women's share of the competing pool has been rising (Section~3.2), the finding that overeducation rises more for women (0.478 vs.\ 0.305 points) while horizontal and double mismatch rise dramatically more for men (0.840 vs.\ 0.073; 0.797 vs.\ 0.368) cannot be explained by women facing a smaller expansion in access --- if anything the opposite is true. The more plausible reading, developed directly in Section~5.2, is that men drawn into employment by rising exposure increasingly take \emph{some} job, including badly matched ones, while the pool of employed women remains small and positively selected enough that the same dynamic does not show up as strongly in their mismatch statistics --- not because their access to university expanded less, but because their access to \emph{employment}, conditional on that education, remains far more tightly rationed.
+
+\subsection{Who behaves more selectively: women or men?}
+
+The descriptive selection gap (education rank of the employed minus education rank of the full eligible population, by gender and exposure quartile) in Table~\ref{tab:exhibit3}, Panel~A, is stark. Among men, the employed are close to, or slightly below, the full male population in education rank, and this small negative gap \emph{widens} with exposure ($-0.008$ to $-0.458$) --- consistent with rising overeducation among employed men (Table~\ref{tab:mismatch}), but showing employment itself does not become more selective for men. Among women, the employed are \emph{substantially} more educated than the full female population in every quartile (0.858, 0.851, 0.336, 0.452) --- working women in Iran are a persistently, strongly positively selected minority across the entire exposure distribution.
+
+Panel~B confirms this survives controlling for province, cohort, year, and urbanicity: the employment--education-rank premium is 2.425 ranks for the male reference group and an \emph{additional} 0.804 ranks for women ($p=0.006$). This premium narrows with exposure for men (Employed$\times$Exposure $=-0.469$, $p<0.001$) but narrows distinctly less for women (Employed$\times$Exposure$\times$Female $=0.083$, $p=0.09$): women's employment remains a more consistently selective filter across the exposure distribution than men's.
+
+\begin{table}[htbp]
+\centering
+\caption{The selection margin: education rank of employed vs.\ eligible population}
+\label{tab:exhibit3}
+\textbf{Panel A. Descriptive selection gap} (mean education rank of employed minus mean education rank of the full eligible population; education rank runs 1--8)
+\vspace{4pt}
+\begin{tabular}{llccc}
+\toprule
+Gender & Exposure quartile & Edu.\ rank, all eligible & Edu.\ rank, employed & Selection gap \\
+\midrule
+Men   & Q1 & 3.070 & 3.063 & $-0.008$ \\
+Men   & Q2 & 3.522 & 3.444 & $-0.078$ \\
+Men   & Q3 & 3.727 & 3.362 & $-0.365$ \\
+Men   & Q4 & 4.078 & 3.620 & $-0.458$ \\
+\addlinespace
+Women & Q1 & 3.005 & 3.863 & $+0.858$ \\
+Women & Q2 & 3.708 & 4.559 & $+0.851$ \\
+Women & Q3 & 3.842 & 4.178 & $+0.336$ \\
+Women & Q4 & 4.222 & 4.674 & $+0.452$ \\
+\bottomrule
+\end{tabular}
+
+\vspace{10pt}
+\textbf{Panel B. Regression: education rank $\sim$ employed $\times$ exposure $\times$ female}
+\vspace{4pt}
+\begin{tabular}{lc}
+\toprule
+ & Education rank \\
+\midrule
+Employed & $2.4247^{***}$ (0.4222) \\
+Exposure & $0.3092^{***}$ (0.0865) \\
+Female & $0.0573$ (0.2324) \\
+Urban & $1.2320^{***}$ (0.0532) \\
+Employed $\times$ Exposure & $-0.4694^{***}$ (0.0615) \\
+Employed $\times$ Female & $0.8041^{***}$ (0.2668) \\
+Exposure $\times$ Female & $-0.0676^{*}$ (0.0341) \\
+Employed $\times$ Exposure $\times$ Female & $0.0827^{*}$ (0.0470) \\
+\midrule
+Observations & 3,891,434 \\
+Adj.\ $R^2$ & 0.174 \\
+Fixed effects & Province, cohort, year \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+The Heckman results (Table~\ref{tab:exhibit4}) sharpen this into a single number: the inverse Mills ratio coefficient in the hours equation is $-24.3$ ($p<0.001$) for women versus $-5.1$ ($p<0.001$) for men --- roughly a five-fold difference. \textbf{Answering the question directly: women behave far more selectively than men.} Not in the sense of being pickier about job characteristics conditional on working --- the data cannot speak to that --- but in the more fundamental sense that whether a woman works at all, and how much she works if she does, is far more tightly bound up with unobserved selection factors than for men, whose employment and hours are comparatively better explained by observable characteristics alone.
+
+\begin{table}[htbp]
+\centering
+\caption{Two-step Heckman selection correction, by gender}
+\label{tab:exhibit4}
+\begin{tabular}{lcccc}
+\toprule
+ & \multicolumn{2}{c}{Women} & \multicolumn{2}{c}{Men} \\
+ \cmidrule(lr){2-3} \cmidrule(lr){4-5}
+ & Selection (probit) & Hours (2nd stage) & Selection (probit) & Hours (2nd stage) \\
+\midrule
+Exposure & $-0.0808^{***}$ & $0.9589^{*}$ & $0.0169^{***}$ & $-0.4625$ \\
+ & (0.0007) & (0.5135) & (0.0007) & (0.4198) \\
+Tertiary & $0.6290^{***}$ & $-12.1724^{***}$ & $-0.5196^{***}$ & $-2.3183^{***}$ \\
+ & (0.0002) & (1.7526) & (0.0002) & (0.7128) \\
+Urban & $-0.2975^{***}$ & $10.2399^{***}$ & $-0.1730^{***}$ & $3.7295^{***}$ \\
+ & (0.0003) & (0.7398) & (0.0002) & (0.5310) \\
+Num.\ children & $0.1342^{***}$ & -- & $-0.1055^{***}$ & -- \\
+ & (0.0007) & & (0.0006) & \\
+Num.\ children $\times$ Exp. & $-0.0096^{***}$ & -- & $-0.0098^{***}$ & -- \\
+ & (0.0001) & & (0.0001) & \\
+Inverse Mills ratio & -- & $-24.3253^{***}$ & -- & $-5.0765^{***}$ \\
+ & & (2.1911) & & (0.4902) \\
+\midrule
+Observations & 2,079,162 & 301,636 & 2,007,699 & 1,384,685 \\
+Fixed effects & Prov., cohort, yr. & Prov., cohort, yr. & Prov., cohort, yr. & Prov., cohort, yr. \\
+\bottomrule
+\multicolumn{5}{p{0.95\textwidth}}{\footnotesize Note: selection-equation SEs are currently IID (fixed-effects probit); to be replaced with clustered/bootstrap SEs before submission. Exclusion restriction: number of children, interacted with local university exposure. Hours-equation SEs two-way clustered by province and cohort.}
+\end{tabular}
+\end{table}
+
+\subsection{How much of the gender gap reflects this selective behavior?}
+
+\textbf{Extensive margin (employment rate).} The raw employment-rate gap in our sample is large: 69.8\% for men versus 14.7\% for women, a 55.1-percentage-point gap. We ask how much reflects women and men responding differently to the same observable characteristics (exposure, tertiary education, urbanicity, number of children, exposure$\times$children), versus different baseline levels captured by fixed effects. Substituting men's estimated first-stage coefficients into each woman's own fitted selection index --- holding her own characteristics and province-cohort-year context fixed --- raises predicted female employment from 14.7\% to 18.8\%, closing 4.1 of the 55.1 points. \textbf{Differential behavioral response to observable characteristics therefore accounts for only about 7.5 percent of the raw employment-rate gap.} The remaining 92.5 percent reflects structural/institutional/normative factors the fixed effects absorb, consistent with the demand-side reading of the MENA gender-paradox literature and with \citet{tanaka2023}'s finding that Iranian women's educational investment itself responds to labor-demand conditions.
+
+\textbf{Intensive margin (hours, conditional on employment).} Among the employed, the raw weekly-hours gap is 13.6 hours (50.3 for men, 36.7 for women). Table~\ref{tab:oaxaca} decomposes this using a two-fold Oaxaca-Blinder decomposition over the four regressors in the second-stage hours equation, evaluating the endowment component at men's coefficients and the coefficient component at women's mean characteristics.
+
+\begin{table}[htbp]
+\centering
+\caption{Oaxaca-Blinder decomposition of the employed-hours gender gap}
+\label{tab:oaxaca}
+\begin{tabular}{lccc}
+\toprule
+Component & Endowment & Coefficient & Total \\
+\midrule
+Exposure                        & $-0.02$ & $-8.77$ & $-8.79$ \\
+Tertiary education              & $0.58$  & $4.75$  & $5.33$  \\
+Urban                           & $0.05$  & $-4.70$ & $-4.65$ \\
+\textbf{Mills ratio (selection)} & \textbf{5.40}  & \textbf{28.06} & \textbf{33.45} \\
+\midrule
+\textbf{Total (4 regressors)}    & \textbf{6.00}  & \textbf{19.33} & \textbf{25.34} \\
+\emph{Raw hours gap}            &         &         & \emph{13.58}   \\
+\bottomrule
+\multicolumn{4}{p{0.85\textwidth}}{\footnotesize Endowment component: $(\bar{X}_{men}-\bar{X}_{women})\times\beta_{men}$. Coefficient component: $\bar{X}_{women}\times(\beta_{men}-\beta_{women})$. The 4-regressor total (25.34) exceeds the raw gap (13.58); the residual ($\approx-11.8$ hours) reflects province/cohort/year fixed effects and other unmodeled factors, not directly estimated here.}
+\end{tabular}
+\end{table}
+
+The mills/selection channel alone (33.45 hours) is larger than the \emph{entire} observed 13.58-hour gap --- 246 percent of it --- and accounts for 132 percent of the total four-regressor ``modeled'' gap of 25.34 hours. If selection into employment operated on women's hours the way it operates on men's (a five-times-smaller Mills-ratio coefficient), the model implies employed women's hours would be dramatically closer to, or would exceed, men's, all else equal. This is offset by exposure's and urban status's coefficient components (both favoring men once weighted by the gap) and, outside the four regressors, by a large implied negative contribution from province/cohort/year fixed effects ($\approx-11.8$ hours, the residual needed to reconcile the 25.34-hour four-regressor gap with the smaller, actually observed 13.58-hour gap). We read this residual cautiously, but its sign is informative: whatever the fixed effects capture works, on net, to \emph{narrow} the hours gap relative to what the selection and tertiary-education channels alone would predict.
+
+\textbf{Taken together}, these two decompositions describe two distinct layers. On the extensive margin, selective response to observable characteristics explains little; the binding constraint is structural/institutional. Conditional on working, selection is not a minor correction: it is, by this accounting, more than sufficient on its own to explain the entire realized hours gap, offset by other forces. Women who work in Iran are a small, highly selected group, and that selectivity itself is the dominant force shaping how their labor supply compares to men's.
+
+% ============================================================
+\section{Discussion and conclusion}
+% ============================================================
+
+This paper connects three pieces of evidence --- a newly compiled national record of who is competing for Iranian university seats, the companion paper's causal estimates of how expanding access reshaped graduate job matching, and a new decomposition of how much of Iran's gender employment gap traces to differential selection into work --- into a single account. University access expanded for women at least as much as for men over our sample period, evident both in enrollment stocks (companion paper) and in the rising female share of Konkoor participants documented here. Yet this expansion did not translate into a proportionate expansion in employment for women, nor did it generate the same ``settle for a worse match'' dynamic among employed women that it generated among employed men. Instead, Iranian women's employment has remained a highly selective filter, and that selectivity is quantitatively large enough to more than explain the realized hours gap among the employed, even though it explains only a small fraction of the much larger gap in whether women work at all.
+
+We interpret this as consistent with a demand-constrained, rather than supply-constrained, explanation for Iran's persistent gender employment gap: women are not failing to acquire human capital or compete for it (if anything, per Section~3.2, they increasingly out-compete men for university seats), but the labor market absorbs relatively few of them into employment, and the ones it does absorb are unusually well-qualified relative to the broader female population.
+
+\textbf{Limitations.} First, the Konkoor-participant series is national and cannot support province-level causal identification; we have used it only descriptively, flagging the two years excluded for source inconsistency rather than reconciling or smoothing over the discrepancy. Second, our selection framework relies on a single exclusion restriction (number of children); alternative instruments (e.g., co-resident extended family) would strengthen the Heckman results. Third, the LFS does not collect wage data, so our intensive-margin decomposition is on hours rather than earnings. Fourth, our probit selection-equation standard errors are currently IID rather than clustered. Fifth, the fixed-effect residual in the Oaxaca decomposition (Table~\ref{tab:oaxaca}) is not directly estimated and should be read as suggestive; a fuller treatment would re-estimate with a common fixed-effect structure across genders (interacted with a female indicator) to make the decomposition fully additive.
+
+Despite these caveats, we view the core findings --- a persistent gender asymmetry in mismatch responsiveness to university exposure, a five-fold gender difference in the importance of employment selection for realized hours, and a selection channel that more than fully accounts for the intensive-margin gender gap while explaining little of the extensive-margin gap --- as a coherent, multiply corroborated picture of how Iran's decades-long university expansion has interacted with a highly gender-segmented labor market: broadening access without broadening opportunity, for women in particular.
+
+% ============================================================
+\bibliographystyle{apalike}
+\begin{thebibliography}{99}
+
+\bibitem[Haddad and Habibi(2017)]{haddad2017}
+Haddad, G., and Habibi, N.\ (2017). Vertical Skill Mismatch and Wage Consequences in Low-Skilled Jobs: Evidence from Iran. \emph{International Labour Review}, 156(1), 45--72.
+
+\bibitem[Kiker et al.(1997)]{kiker1997}
+Kiker, B.\ F., Santos, M.\ C., and Mendes de Oliveira, M.\ (1997). Overeducation and Undereducation: Evidence for Portugal. \emph{Economics of Education Review}, 16(2), 111--125.
+
+\bibitem[Knight et al.(2017)]{knight2017}
+Knight, J., Deng, Q., and Li, S.\ (2017). China's Expansion of Higher Education: The Labour Market Consequences of a Supply Shock. \emph{China Economic Review}, 43, 127--141.
+
+\bibitem[Li et al.(2008)]{li2008}
+Li, F., Morgan, W.\ J., and Ding, X.\ (2008). The Expansion of Higher Education, Employment and Over-education in China. \emph{International Journal of Educational Development}, 28(6), 687--697.
+
+\bibitem[Li et al.(2014)]{li2014}
+Li, S., Whalley, J., and Xing, C.\ (2014). China's Higher Education Expansion and Unemployment of College Graduates. \emph{China Economic Review}, 30, 567--582.
+
+\bibitem[Mulligan and Rubinstein(2008)]{mulligan2008}
+Mulligan, C.\ B., and Rubinstein, Y.\ (2008). Selection, Investment, and Women's Relative Wages Over Time. \emph{Quarterly Journal of Economics}, 123(3), 1061--1110.
+
+\bibitem[Nordin et al.(2010)]{nordin2010}
+Nordin, M., Persson, I., and Rooth, D.-O.\ (2010). Education--Occupation Mismatch: Is There an Income Penalty? \emph{Economics of Education Review}, 29(6), 1047--1059.
+
+\bibitem[Robst(2007)]{robst2007}
+Robst, J.\ (2007). Education and Job Match: The Relatedness of College Major and Work. \emph{Economics of Education Review}, 26(4), 397--407.
+
+\bibitem[Salehi-Isfahani(n.d.)]{salehi}
+Salehi-Isfahani, D.\ Why the Youth Are So Eager for Academic Education? Evidence from Iran's Labor Market. Brandeis Economics Working Paper 105. [Working paper; final publication venue not independently confirmed.]
+
+\bibitem[Somers et al.(2019)]{somers2019}
+Somers, M.\ A., Cabus, S.\ J., Groot, W., and van den Brink, H.\ M.\ (2019). Horizontal Mismatch between Employment and Field of Education: Evidence from a Systematic Literature Review. \emph{Journal of Economic Surveys}.
+
+\bibitem[Tanaka and Moeeni(2023)]{tanaka2023}
+Tanaka, S., and Moeeni, S.\ (2023). The Effects of Labor Market Opportunities on Education: The Case of a Female Hiring Ceiling in Iran. \emph{Journal of Public Economics}, 224.
+
+\bibitem[Verdugo and Verdugo(1989)]{verdugo1989}
+Verdugo, R.\ R., and Verdugo, N.\ T.\ (1989). The Impact of Surplus Schooling on Earnings: Some Additional Findings. \emph{Journal of Human Resources}, 24(4), 629--643.
+
+\bibitem[Rezazadeh and Jalili(draft)]{companion}
+Rezazadeh, M., and Jalili, H.\ (draft). University Expansion, Educational Mismatch, and Occupational Allocation in Iran. Companion paper (``paper\_july17'').
+
+\end{thebibliography}
+
+\vspace{12pt}
+\noindent\rule{\textwidth}{0.4pt}
+\vspace{4pt}
+
+\noindent\textbf{Notes for next revision pass (not part of the manuscript).} (1) New in this draft: Section~3.2 (national Konkoor participant series and institutional context) and Section~5.3 (extensive- and intensive-margin gender-gap decompositions); underlying data/code in \texttt{update\_Mahyar/konkoor\_participants\_national.csv}, \texttt{figure\_konkoor\_participants.png}, \texttt{gender\_gap\_decomposition.R}, and \texttt{gender\_selection\_results/gender\_gap\_decomposition\_*}. (2) The Konkoor series should be corroborated with a direct Sanjesh/Statistical-Yearbook source before submission. (3) The fixed-effect residual in Table~\ref{tab:oaxaca} is a limitation flagged in Section~6. (4) MENA gender-paradox citations are currently narrative (Section~2.4) without pinned references; add specific citations before submission. (5) Word count exceeds the JDE Short Paper limit; either target a standard-length venue (\emph{Journal of Population Economics}, \emph{Economics of Education Review}) or cut Sections~2 and~6 for a short-paper submission.
+
+\end{document}

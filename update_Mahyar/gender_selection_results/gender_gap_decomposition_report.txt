@@ -1,0 +1,23 @@
+=== PART A: participation-margin counterfactual (women given men's slopes) ===
+Actual employment rate, women: 0.1466
+Actual employment rate, men:   0.6976
+Raw gender gap in employment rate (men - women): 0.5510
+Counterfactual employment rate, women (men's slopes): 0.1878
+Gap closed by counterfactual: 0.0412 pp (7.5% of raw gap)
+
+=== PART B: Oaxaca-Blinder decomposition of employed hours gap ===
+   variable  Xbar_men Xbar_women   beta_men  beta_women endowment_component
+     <char>     <num>      <num>      <num>       <num>               <num>
+1: exposure 6.2052602  6.1718650 -0.4625039   0.9588754         -0.01544541
+2: tertiary 0.2337658  0.4822413 -2.3183409 -12.1723789          0.57605090
+3:    urban 0.7347009  0.7220858  3.7295354  10.2399037          0.04704834
+4:    mills 0.3946068  1.4575450 -5.0764969 -24.3252538          5.39600255
+   coefficient_component total_component
+                   <num>           <num>
+1:             -8.772561       -8.788007
+2:              4.752024        5.328075
+3:             -4.701045       -4.653996
+4:             28.055929       33.451932
+
+Total modeled gap: 25.338 (186.6% of raw hours gap of 13.58)
+Mills/selection channel: 33.452 (246.4% of raw hours gap)

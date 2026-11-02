@@ -1,0 +1,18 @@
+OLS estimation, Dep. Var.: employed
+Observations: 4,086,861
+Weights: weight
+Fixed-effects: historical_province: 28,  cohort: 29,  year: 18
+Standard-errors: Clustered (historical_province & cohort) 
+                          Estimate Std. Error   t value   Pr(>|t|)    
+exposure                 -0.036710   0.013486  -2.72216 1.1219e-02 *  
+female                   -1.232812   0.056771 -21.71567  < 2.2e-16 ***
+tertiary                  0.707284   0.103907   6.80688 2.6026e-07 ***
+urban                    -0.056870   0.006957  -8.17477 8.8521e-09 ***
+exposure:female           0.092955   0.008894  10.45185 5.4552e-11 ***
+exposure:tertiary        -0.134037   0.015749  -8.51066 4.0037e-09 ***
+female:tertiary           0.136083   0.083694   1.62597 1.1557e-01    
+exposure:female:tertiary  0.025362   0.014418   1.75901 8.9906e-02 .  
+---
+Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+RMSE: 0.380315     Adj. R2: 0.40667 
+                 Within R2: 0.372919

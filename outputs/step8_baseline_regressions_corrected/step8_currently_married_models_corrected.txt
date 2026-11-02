@@ -1,0 +1,18 @@
+                          models$pooled       models$female         models$male
+                                 Pooled               Women                 Men
+Dependent Var.:       currently_married   currently_married   currently_married
+                                                                               
+exposure_per_100      -0.0018. (0.0009)    -0.0016 (0.0013)    -0.0015 (0.0015)
+female               0.1438*** (0.0226)                                        
+urban               -0.0461*** (0.0054) -0.0389*** (0.0075) -0.0547*** (0.0071)
+Fixed-Effects:      ------------------- ------------------- -------------------
+historical_province                 Yes                 Yes                 Yes
+cohort                              Yes                 Yes                 Yes
+year                                Yes                 Yes                 Yes
+___________________ ___________________ ___________________ ___________________
+S.E.: Clustered       by: hist. & coho.   by: hist. & coho.   by: hist. & coho.
+Observations                  4,086,800           2,079,139           2,007,661
+R2                              0.30631             0.19382             0.40882
+Within R2                       0.03166             0.00145             0.00349
+---
+Signif. codes: 0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1

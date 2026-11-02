@@ -1,0 +1,4 @@
+main_job_workplace_isic_code
+second_job_workplace_isic_code
+last_job_workplace_isic_code
+preferred_work_sector

@@ -1,0 +1,35 @@
+                                model_lfp_fe1             model_lfp_fe2
+                                  Province FE      Province + Cohort FE
+Dependent Var.:     labor_force_participation labor_force_participation
+                                                                       
+exposure_per_100          -0.0120*** (0.0014)          9.98e-5 (0.0006)
+female                                                                 
+urban                                                                  
+Fixed-Effects:      ------------------------- -------------------------
+historical_province                       Yes                       Yes
+birth_year                                 No                       Yes
+year                                       No                        No
+___________________ _________________________ _________________________
+S.E.: Clustered             by: hist. & birt.         by: hist. & birt.
+Observations                        4,028,635                 4,028,635
+R2                                    0.01759                   0.02789
+Within R2                             0.01464                   9.71e-8
+
+                                  model_lfp_fe3       model_lfp_preferred
+                    Province + Cohort + Year FE          Preferred pooled
+Dependent Var.:       labor_force_participation labor_force_participation
+                                                                         
+exposure_per_100                0.0002 (0.0007)          -0.0006 (0.0006)
+female                                                -0.6055*** (0.0186)
+urban                                                   -0.0206* (0.0082)
+Fixed-Effects:        ------------------------- -------------------------
+historical_province                         Yes                       Yes
+birth_year                                  Yes                       Yes
+year                                        Yes                       Yes
+___________________   _________________________ _________________________
+S.E.: Clustered               by: hist. & birt.         by: hist. & birt.
+Observations                          4,028,635                 4,028,635
+R2                                      0.03805                   0.40476
+Within R2                               4.66e-7                   0.38122
+---
+Signif. codes: 0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
