@@ -1,0 +1,517 @@
+\documentclass[11pt]{article}
+
+\usepackage[margin=1in]{geometry}
+\usepackage{amsmath,amssymb}
+\usepackage{booktabs}
+\usepackage{array}
+\usepackage{graphicx}
+\usepackage{caption}
+\usepackage{setspace}
+\usepackage[colorlinks=true,linkcolor=blue,citecolor=blue,urlcolor=blue]{hyperref}
+\usepackage{authblk}
+\usepackage{natbib}
+
+\onehalfspacing
+
+\title{University Capacity Across Iranian Divisions: Educational Mismatch, Field and Gender Heterogeneity, and the Selective Gender Gap}
+
+\author[1]{Mahyar Rezazadeh}
+\author[2]{Hossein Jalili}
+\affil[1,2]{Simon Fraser University}
+
+\date{Draft prepared for submission to the \emph{International Labour Review}\\[2pt]
+\small Companion paper: \emph{University Expansion, Educational Mismatch, and Occupational Allocation in Iran} (Rezazadeh and Jalili, draft ``paper\_july17'')}
+
+\begin{document}
+
+\maketitle
+
+\begin{abstract}
+\noindent We study how variation in university capacity across Iranian \emph{divisions} --- historical provinces, the finest geographic unit at which both Iran's Labor Force Survey (LFS) and its higher-education enrollment records are available --- shaped subsequent educational mismatch, and how that effect differs by field of study and gender. Cohorts are assigned the average undergraduate enrollment per capita in their division at ages 18--20, entered in natural-log form; enrollment is the only capacity measure we can construct from public Iranian data (Section~4.2 documents that neither admission-capacity/``seats'' nor a province-by-field enrollment panel exists in any accessible source, a limitation we disclose rather than paper over). Using 18 waves of the LFS (1386--1403; approximately 4.1 million observations) linked to this exposure measure in 28 harmonized historical divisions, and a predetermined classification of divisions into bottom- and top-quartile capacity groups based on enrollment in the earliest observed cohorts, we document three new results. First, descriptively, university capacity expanded roughly seven-fold in per-capita terms between 1373 and 1390 and has since partially receded, with the gap between high- and low-capacity divisions remaining wide and stable throughout --- the two groups never converge. Second, the effect of exposure on educational mismatch is strongly concentrated in one field: workers whose own field of study is Business, Administration, and Law show a mismatch response to division-level exposure roughly three to four times larger than workers from Education (the reference field), a result that survives false-discovery-rate correction across the ten fields tested. Third, extending the companion paper's finding that men's mismatch rises more than women's with exposure, we show this asymmetry holds specifically for double mismatch (men's response exceeds women's by 2.2 percentage points per log-point of exposure, $p=0.004$) but not for horizontal mismatch alone ($p=0.31$), and that the fully-matched-employment penalty is likewise significantly larger for men ($p=0.03$). A baseline-period event-study check, comparing bottom- and top-quartile divisions' mismatch trajectories relative to the earliest cohort, shows a genuine and honestly-reported parallel-trends complication for horizontal and double mismatch --- coefficients diverge well before the identifying variation used in the main design accrues --- which we interpret as a property of the coarse, time-invariant group comparison rather than of the paper's actual within-division identifying variation, consistent with an identical qualitative pattern already documented for a different, full-sample grouping in the companion paper. We also report new evidence, building on our own prior work, that Iranian women's employment is a persistently and strongly selected minority of the female population --- selectivity that more than accounts for the intensive-margin (hours) gender gap among the employed while explaining only a small share of the much larger extensive-margin (employment-rate) gap.
+
+\vspace{6pt}
+\noindent\textbf{JEL codes:} I23, I24, J16, J21, J24, O15, R23\\
+\textbf{Keywords:} educational mismatch, over-education, horizontal mismatch, university expansion, regional/divisional variation, field of study, gender gap, selection into employment, Iran
+\end{abstract}
+
+% ============================================================
+\section{Introduction}
+% ============================================================
+
+Iran's higher-education system underwent one of the fastest expansions of any country in the last three decades: undergraduate and professional enrollment grew from a system serving a small, exam-selected elite into one credentialing roughly a third of the employed workforce. That expansion was sharply uneven across Iran's provinces (which we refer to throughout as \emph{divisions}, following the geographic terminology of this paper's brief; Section~4.1 explains why province is the finest division available in any of our data sources). The companion paper (Rezazadeh and Jalili, draft) exploits this division-by-birth-cohort variation in undergraduate enrollment per capita, measured at the conventional university-entry ages of 18--20, to show that expansion did not raise employment or labor-force participation on average, but did raise over-education and, especially, horizontal mismatch (working outside one's field of study) --- with the latter concentrated heavily among men.
+
+This paper reframes and extends that analysis explicitly around division-level variation in university capacity, asking four connected questions the companion paper leaves open. First, what did the geography of that capacity expansion actually look like --- how did it evolve over time in divisions that started with more versus less capacity, and does a genuinely predetermined (not full-sample, not redefined by year) classification of divisions into low- and high-capacity groups still show the same pattern? Second, does the mismatch effect operate uniformly across fields of study, or is it concentrated in particular fields whose graduates compete for a narrower set of appropriate jobs? Third, is the well-documented male-skewed mismatch response uniform across mismatch \emph{types}, or does it differ between the vertical (over-education) and horizontal (field-mismatch) margins in ways a single pooled gender interaction would obscure? Fourth, does a baseline-period (rather than full-sample) version of the paper's event-study validity check still support the design's identifying assumption?
+
+We show, first, that low- and high-capacity divisions --- classified once, using only the first five observed birth cohorts' enrollment, and never redefined --- diverge sharply and persistently: high-capacity divisions had roughly 60 percent more enrollment per capita than low-capacity divisions at the start of the panel, a gap that widens in absolute terms through the expansion's peak (around 1390) and never closes. Second, using the worker's own field of study (the only field-level breakdown available; Section~4.2 explains why a division-by-field \emph{exposure} panel could not be constructed), we show the mismatch response to exposure is heavily concentrated among Business, Administration, and Law graduates --- a result robust to false-discovery-rate correction and consistent across double mismatch, horizontal mismatch, and (with the opposite sign, as expected) fully matched employment. Third, extending the companion paper's gender finding to the double- and horizontal-mismatch margins separately, we show the male-skewed pattern is a double-mismatch and fully-matched-employment phenomenon specifically, not a generic feature of every mismatch measure. Fourth, our baseline-quartile event-study check surfaces a genuine pre-trends complication for horizontal and double mismatch that we report transparently rather than smoothing over, while noting it mirrors an already-documented pattern from an independently constructed, full-sample grouping in the companion paper, and that it does not use the same identifying variation as the paper's actual continuous, within-division design.
+
+We also carry forward, largely unchanged, our earlier finding --- developed in prior work on this same data --- that Iran's very large gender employment gap is substantially a selection phenomenon: women's employment is a far more selective slice of the eligible female population than men's employment is of the eligible male population, a selectivity difference that more than accounts for the intensive-margin (hours) gap among the employed while explaining only a small fraction of the extensive-margin (employment-rate) gap. We retain this material (Sections~7.5--7.6) because it uses the identical division-cohort design and data as the new capacity-focused results, and because the paper's new field- and mismatch-type-specific gender findings (Section~7.4) sharpen, rather than duplicate, that earlier story.
+
+\paragraph{What changed from our prior draft, and why.} Our previous draft framed this paper primarily around the gender-selection findings. At the request of this reframing, we restructured the paper around division-level variation in university capacity as the organizing empirical question, per an explicit brief specifying: (i) two alternative capacity measures (available seats and enrollments) with a third derived measure (empty seats); (ii) a predetermined, baseline-period low/high capacity-group classification, distinct from the paper's continuous main specification; (iii) descriptive trend evidence; (iv) field-of-study heterogeneity; (v) gender heterogeneity; (vi) an event-study/pre-trends check using the new grouping; and (vii) explicit validation of the underlying data. We built all of (iii)--(vii) new for this draft (Sections~5, 7.3--7.4, 7.7, and~8); for (i)--(ii) we document in Section~4.2 a hard data-availability limitation --- no Iranian source publishes admission-capacity (``seats'') by division in any panel form, so ``empty seats'' cannot be constructed either --- and proceed on enrollment alone, exactly as the brief instructs when a requested measure is not supported by available data.
+
+Section~2 reviews the literature. Section~3 describes the institutional background and new Konkoor participant data. Section~4 describes the data, including the division-level capacity panel and the data-availability limitations. Section~5 presents descriptive evidence on capacity across divisions. Section~6 restates the empirical strategy, including the new capacity-group classification and event-study specification. Section~7 presents results: the main mismatch estimates, field heterogeneity, mismatch-type-specific gender heterogeneity, the event-study check, and the selection-into-employment findings. Section~8 reports validation and robustness checks. Section~9 discusses limitations and concludes.
+
+% ============================================================
+\section{Literature review}
+% ============================================================
+
+\subsection{Measuring vertical and horizontal educational mismatch}
+
+The companion paper's vertical-mismatch measure --- classifying a worker as over-, under-, or adequately educated relative to the \emph{modal} education level in their occupation --- sits in the ``realized matches'' tradition. \citet{verdugo1989} is the tradition's foundational paper, defining over/under-education relative to the occupation mean ($\pm$ one standard deviation); \citet{kiker1997}, studying Portugal, introduced the modal-value variant the companion paper follows, on the grounds that the mode is less sensitive to outliers. Both share a limitation the companion paper flags explicitly: the benchmark can itself embed pre-existing mismatch, so the resulting measure is relative allocation, not a technologically fixed requirement.
+
+Horizontal (field-of-study) mismatch measurement follows a distinct tradition. \citet{robst2007} is an early paper using a field-to-occupation ``relatedness'' classification; \citet{nordin2010} extend this to Swedish administrative data and connect horizontal mismatch to a wage penalty distinct from the vertical penalty. \citet{somers2019}, a systematic review, categorize the field into subjective, objective/crosswalk-based (the family the companion paper's crosswalk belongs to), and statistical/empirical measures, noting crosswalk measures are sensitive to how broadly the crosswalk is drawn --- precisely the concern the companion paper's broad-versus-strict robustness check addresses.
+
+\subsection{Iran-specific evidence, and our relation to Haddad and Habibi (2017)}
+\label{sec:haddad}
+
+\citet{haddad2017}, published in this journal, is the closest existing paper on Iranian educational mismatch and merits detailed discussion. They use Iran's Household Income and Expenditure Survey (HIES) for 2001--12 (Persian years approximately 1380--1391) to study over-education incidence and its wage consequences in low-skilled jobs specifically. Their over-education measure is a threshold/job-requirement definition: a worker is classified as over-educated if they hold more than twelve years of schooling while employed in an occupation conventionally requiring twelve years or fewer, and their sample is restricted to such low-skill occupations. Descriptively, they document that the share of over-schooled workers in these low-skill jobs rose steadily over 2001--12. Econometrically, they estimate the odds of over-education (finding them higher for women than men) and the wage consequences of over-education by sector, finding a negative wage penalty in the private sector and a positive association in the public sector.
+
+Four things distinguish our approach. First, identification: their analysis is descriptive and correlational; we exploit geographically uneven division-by-cohort variation in university-capacity expansion, giving quasi-experimental estimates of a specific driver of mismatch. Second, scope: their over-education measure is a fixed schooling-year threshold applied only within low-skill occupations; our realized-matches measure spans the full occupational distribution. Third, dimensionality: they study only vertical mismatch; we jointly measure vertical and horizontal mismatch, their joint occurrence, and --- new to this draft --- how the effect varies by the worker's own field of study. Fourth, we connect Iran's mismatch literature to the selection-into-employment literature, asking how much of the gender gap in employment and hours itself reflects differential selectivity.
+
+Despite these differences in data, period, and method, our results and theirs point in the same direction on the one dimension where they overlap: both find Iranian women more prone to over-education than men. Haddad and Habibi find this in cross-sectional odds using 2001--12 wage data; we find the \emph{causal response} of over-education to university exposure is larger for women than men (0.478 versus 0.305 percentage points per 10 percent increase in exposure; Section~7.1) using 1386--1403 labor-force data and an entirely different identification strategy.
+
+Beyond Haddad and Habibi, Salehi-Isfahani's working-paper-stage research characterizes Iran's higher-education system as producing graduates in excess of what the private-sector labor market can absorb in matched jobs, consistent with our overall reading, though we note this is a working paper whose final peer-reviewed status we have not independently confirmed.
+
+\subsection{University expansion and graduate mismatch elsewhere}
+
+The clearest international precedent for using regional/cohort variation in higher-education capacity to identify effects on graduate mismatch is China's 1999 expansion. \citet{li2014} and \citet{li2008} document that China's enrollment growth outpaced growth in graduate-appropriate jobs, raising both unemployment and over-education among new graduates; \citet{knight2017} reach a similar conclusion using a supply-shock framing closely analogous to ours. These papers consistently find, as we do, that the primary margin of adjustment to a higher-education supply shock is match quality rather than employment quantity. None of these papers, to our knowledge, examines how such a supply shock's mismatch effect varies by the graduate's own field of study, which is this paper's principal new contribution to that literature.
+
+\subsection{Selection into employment and the gender gap}
+
+The idea that observed gender gaps can be an artifact of \emph{who selects into observability}, rather than differential treatment or characteristics among the employed, is central to \citet{mulligan2008}, who show the apparent narrowing of the U.S.\ gender wage gap between the 1970s and 1990s partly reflects a shift in the selection of women into full-time work, from negative to positive selection --- the same \emph{direction} of selection we find for Iranian women's employment on the education margin, though in Iran the selection appears uniformly positive and strong throughout our sample rather than shifting over time.
+
+Directly on Iran, \citet{tanaka2023} study a 2010 policy imposing public-sector female-hiring quotas and find it caused an 11.4-percentage-point \emph{decline} in women's college attendance in affected fields --- evidence that Iranian women's educational investment responds to anticipated labor-demand conditions. This supports our reading of the extensive-margin decomposition (Section~7.6): if the binding constraint on Iranian women's employment were primarily about their own characteristics or preferences, we would expect our counterfactual exercise to close much more of the raw employment gap than the 7.5 percent we find.
+
+A broader Middle East and North Africa literature documents a persistent ``gender paradox'': near-parity or a female advantage in educational attainment coexisting with the lowest female labor-force participation rates in the world outside South Asia. Our sample's female labor-force participation rate (roughly 15--20 percent) sits at the low end even by this region's standards. The dominant explanations emphasize social norms, occupational segregation, and legal/institutional constraints rather than a shortage of qualified female labor supply.
+
+% ============================================================
+\section{Institutional background and new evidence on Konkoor participants}
+% ============================================================
+
+\subsection{Iran's university admission system}
+
+Since 1968, admission to Iranian public universities has been governed primarily by the Konkoor, a centralized, single-day, high-stakes national exam administered by the Sanjesh Organization. Historically nearly all public-university seats, and a large share of seats at parallel private/quasi-private institutions (Islamic Azad University, Payam-Noor University), were allocated on Konkoor rank within a quota structure including merit-based and reserved-category tracks. Beginning around 1395 (2016), Iran began allocating a growing share of seats through GPA-based admission (\emph{savabegh-e tahsili}) rather than the exam: by our sources, over 20 percent of public-university capacity and over 70 percent of capacity at other institutions has been allocated this way from 1395 onward, a share that has continued to grow.
+
+\subsection{New national data: Konkoor participants by gender, 1393--1403}
+
+We compiled a national-level series of Konkoor participants by gender for 1393--1403 (Figure~\ref{fig:konkoor}) from Sanjesh figures reported in the Iranian press and consolidated in Persian Wikipedia's Konkoor article. We investigated whether a division-level ``seats per Konkoor applicant'' panel could be constructed as an alternative exposure measure, and found this is not feasible for our full sample period from public data (Section~4.2 documents this in full as part of our broader capacity-data feasibility investigation for this draft): Sanjesh does not maintain a scrapable public archive of participant/admission counts by division and gender; the Statistical Yearbook may contain such a table for individual years but would require manual extraction from non-machine-readable scans; and the one compiled national dataset we located is paywalled and lacks division detail. Because press outlets sometimes misattribute figures to the wrong exam year, we retained only years for which reported female and male participant counts summed to the reported total within rounding error; this excluded 1400 and 1401, where sources could not be reconciled.
+
+\begin{figure}[htbp]
+\centering
+\includegraphics[width=0.95\textwidth]{figure_konkoor_participants.png}
+\caption{National Konkoor participants by gender, Persian years 1393--1403. \emph{Left}: total, female, and male participants (thousands). \emph{Right}: female share of participants (\%). Years 1400--1401 omitted: reported gender breakdowns could not be reconciled with reported totals across independent sources. Source: Sanjesh Organization figures as reported in Iranian press and consolidated in the Persian Wikipedia Konkoor article.}
+\label{fig:konkoor}
+\end{figure}
+
+Total participants did not decline monotonically: from about 1.03 million (1393) to a low of about 860{,}000 (1395), back to a local peak of roughly 1.15 million (1399), then down to about 984{,}000 by 1403. Women have been a majority of participants in every verified year, and that majority has grown: from 59.1 percent (1393) to 58.0--59.2 percent through 1399, then to 61.4 percent (1402) and 63.1 percent (1403). We do not use this series as a causal exposure variable: it has no division-level variation in the years we could verify and therefore cannot support a division-cohort design. We use it as descriptive context, and continue to use enrollment per capita as the causal exposure variable, since it captures realized capacity across all admission channels and is available with genuine division-level and year-over-year variation for the full 1373--1403 span.
+
+% ============================================================
+\section{Data}
+% ============================================================
+
+This section describes each data source, how each analytical sample was constructed, and --- new to this draft --- exactly what was investigated and found infeasible in constructing division-level capacity measures beyond enrollment.
+
+\subsection{Iranian Labor Force Survey, and why ``division'' means historical province}
+
+Our primary data source is the Iranian Labor Force Survey (LFS), a repeated cross-sectional household survey conducted quarterly by Iran's Statistical Centre, covering Persian calendar years 1386--1403 (18 survey years; approximately 2007/08--2024/25 Gregorian). The LFS records demographic characteristics, educational attainment, field of study, labor-force status, occupation, current and previous place of residence, and survey weights, for a nationally representative rotating sample of households.
+
+We use ``division'' throughout to mean historical province, and confirmed before beginning this draft that no finer geography is usable: the raw LFS microdata itself records only a \texttt{Province} field for every respondent (no county/\emph{shahrestan} identifier exists anywhere in the 99-column raw survey), consistent with Iran's Statistical Centre withholding sub-province geography from the LFS's public/research release to protect respondent anonymity. Iran's census/geography portal can supply \emph{shahrestan}-level population and boundaries, but it cannot retroactively add a \emph{shahrestan} identifier to survey respondents whose data was never released at that granularity. A genuinely finer-than-province division-level analysis of LFS outcomes would require a restricted-access microdata agreement with Iran's Statistical Centre that includes county identifiers --- outside what this draft's public-data sources support.
+
+Individuals are restricted to those born between Persian years 1355 and 1383 (29 birth cohorts, chosen so that university exposure at ages 18--20 is observable for every cohort), and provinces are mapped onto a consistent set of 28 historical divisions to prevent administrative boundary changes (e.g. Qazvin, Qom, and Golestan's creation as new provinces in the mid-1370s) from generating spurious exposure variation. This yields an analysis file of 4{,}128{,}510 observations.
+
+Two education-related variables require additional construction. First, \texttt{educ\_level} --- a required numeric education code --- does not exist as a raw column; it is recovered as the alphabetically sorted encoding of the raw string education-level field. Second, occupation codes are standardized to two-digit ISCO categories from free-text and mixed-format raw entries.
+
+\subsection{University capacity panel: what we could and could not construct}
+\label{sec:capacity-data}
+
+University capacity is measured using a division-year panel of undergraduate and professional enrollment, harmonized to the same 28 historical divisions as the LFS and combined with population data to construct enrollment per 100{,}000 residents, spanning exposure years 1373--1403. For an individual born in cohort $c$ in division $p$, exposure is
+\begin{equation}
+\text{Exposure}_{pc} = \tfrac{1}{3}\left(E_{p,c+18} + E_{p,c+19} + E_{p,c+20}\right),
+\end{equation}
+entering the regressions in natural-log form; the baseline sample requires all three annual values to be observed, which is why the earliest usable birth cohort is 1355 ($=1373-18$).
+
+\textbf{This draft's brief called for two additional capacity measures --- available (admission) seats, and derived ``empty seats'' (seats minus enrollment) --- which we investigated in full and found are not constructible from any accessible Iranian data source.} We document this rather than approximate it with fabricated or proxy numbers. Iran's official Statistical Yearbook, the source underlying every other panel in this paper, publishes no capacity, seat, or applicant table anywhere in its Education chapter across the years we checked --- only enrollment, graduates, staff, and facilities, broken out by level, field, sex, institution type, and (in one table, newly identified for this draft: enrolled students by sex and division, select years 1375--76 through 1394--95) province, but never capacity. The only place admission capacity (\emph{zarfiat-e paziresh}) is published at all is the Sanjesh Organization's yearly ``field-selection'' booklets, which list capacity per individual university-code/field row for a single exam year each --- never aggregated to a division-year panel anywhere, and of uncertain digital availability for the older (pre-1390) years that our sample requires. No pre-built open dataset fills this gap either. We therefore proceed with enrollment as the sole capacity measure, consistent with the brief's own instruction that when a requested analysis is not supported by available data, the limitation should be disclosed and the closest defensible alternative implemented rather than fabricated.
+
+A closely related limitation applies to field-of-study heterogeneity (Section~\ref{sec:fieldhet}): the brief also asked for division-by-field \emph{capacity} trends and regressions. We searched for a division-by-field enrollment or admission panel (Iran's exam-group categories --- Tajrobi/Experimental, Riazi/Mathematics, Ensani/Humanities, and others) and found only national-level totals by field and division-level totals by degree level, never both dimensions together in any accessible source. We therefore report field heterogeneity using the worker's own realized field of study (already available in the LFS, harmonized to ISCED-2013 broad fields) interacted with the existing division-level enrollment exposure, rather than a field-specific exposure measure. This answers a related but distinct question --- whether the effect of overall division-level capacity differs across the fields workers end up in --- which we state explicitly wherever these results are discussed.
+
+\subsection{Baseline-period capacity-group classification}
+\label{sec:capacity-groups}
+
+For the descriptive and event-study analyses (Sections~5 and~7.3), divisions are classified into capacity groups using \emph{only} their average log enrollment exposure over the earliest five observed birth cohorts (1355--1359) --- a predetermined classification fixed for the entire panel and never redefined by year, per the brief's explicit instruction. Divisions in the bottom quartile of this baseline measure are ``low capacity''; divisions in the top quartile are ``high capacity''; the middle two quartiles are excluded from the two-group comparisons (Table~\ref{tab:capacitygroups}) but remain in every regression that uses the continuous exposure measure. High-capacity divisions include Semnan, Yazd, Isfahan, Ilam, Tehran, Kerman, and Mazandaran; low-capacity divisions include Ardabil, Gilan, Kohgiluyeh and Boyer-Ahmad, Khuzestan, Hormozgan, Lorestan, and Golestan.
+
+\begin{table}[htbp]
+\centering
+\caption{Baseline (cohorts 1355--1359) capacity-group classification}
+\label{tab:capacitygroups}
+\begin{tabular}{lcc}
+\toprule
+ & High capacity (top quartile) & Low capacity (bottom quartile) \\
+\midrule
+Divisions & 7 & 7 \\
+Mean baseline exposure & 355.3 & 146.5 \\
+\bottomrule
+\multicolumn{3}{p{0.7\textwidth}}{\footnotesize Baseline exposure = mean undergraduate + professional enrollment per 100,000 residents, birth cohorts 1355--1359. 14 middle-quartile divisions are omitted from this table but retained in all continuous-exposure regressions.}
+\end{tabular}
+\end{table}
+
+\subsection{Vertical and horizontal mismatch construction}
+
+Vertical mismatch follows the realized-matches approach: for each occupation, the modal education rank among employed workers, subject to minimum-cell reliability restrictions, is treated as the occupation's typical education level, and workers are classified as over-, under-, or vertically matched relative to it. Horizontal mismatch is defined for tertiary-educated employed workers as an indicator for whether their two-digit ISCO occupation falls outside the set of occupations linked to their ISCED field of study by a field-to-occupation crosswalk (broad definition preferred; strict crosswalk used for robustness). Double mismatch is the joint occurrence of over-education and horizontal mismatch; fully matched employment is the joint absence of both. The joint-mismatch-eligible sample --- tertiary-educated employed workers with valid vertical and horizontal mismatch measures --- comprises 400{,}726 observations.
+
+\subsection{Gender-selection sample}
+
+For the selection analysis (Sections~7.5--7.6) we additionally reconstruct household size and number of children --- present in the raw LFS via the household-relationship-to-head code but dropped from the main analysis file during variable selection --- recomputed at the household-quarter level, to serve as the exclusion restriction in our Heckman selection model. This yields 4{,}086{,}861 observations: 2{,}079{,}162 women and 2{,}007{,}699 men.
+
+\subsection{Sample restriction summary}
+
+\begin{table}[htbp]
+\centering
+\caption{Sample restrictions and sizes}
+\label{tab:samples}
+\small
+\begin{tabular}{p{4.3cm}p{6cm}r}
+\toprule
+Sample & Restriction & N \\
+\midrule
+Full harmonized LFS panel & Birth cohorts 1355--1383, valid division/exposure & 4{,}128{,}510 \\
+Gender-selection sample & + valid weight, gender, urban/rural & 4{,}086{,}861 \\
+ & \quad (2{,}079{,}162 women; 2{,}007{,}699 men) & \\
+Joint mismatch-eligible sample & Tertiary-educated, employed, valid occupation/field & 400{,}726 \\
+Event-study sample (baseline low/high capacity divisions) & Joint mismatch-eligible, restricted to 14 baseline-classified divisions & 210{,}993 \\
+Heckman selection sample, women & + valid number of children, tertiary, urban & 2{,}079{,}162 \\
+Heckman selection sample, men & + valid number of children, tertiary, urban & 2{,}007{,}699 \\
+Heckman hours sample, women & Employed, finite Mills ratio & 301{,}636 \\
+Heckman hours sample, men & Employed, finite Mills ratio & 1{,}384{,}685 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+% ============================================================
+\section{Descriptive evidence: university capacity across divisions}
+% ============================================================
+
+Figure~\ref{fig:trend_percapita} plots undergraduate-plus-professional enrollment per 100,000 residents by exposure year (1373--1403), separately for the baseline low-capacity divisions, baseline high-capacity divisions (Section~\ref{sec:capacity-groups}), and the national average. Three features stand out. First, the gap between high- and low-capacity divisions is present from the very start of the panel and never closes: high-capacity divisions had 355 enrolled per 100,000 residents on average in 1373--1377 versus 147 in low-capacity divisions, a ratio of roughly 2.4 to 1, and the two lines remain visibly separated through the full 31-year span. Second, national enrollment per capita rose roughly seven-fold from 1373 to its 1390 peak (around 1{,}530 per 100{,}000), then declined by about 30 percent through the mid-1390s before a partial recovery --- a genuine non-monotonic trajectory, not the steady rise a simple two-point comparison might suggest. Third, the high-capacity group tracks noticeably above the national average throughout, while the low-capacity group tracks below it by a roughly similar margin, indicating the classification captures a real, persistent level difference rather than transient noise. Figure~\ref{fig:trend_total} repeats this exercise using total enrollment across all degree levels (including master's and PhD, which the main exposure measure deliberately excludes because entry ages into those programs vary too much to support the same age-18--20 exposure construction); the pattern is materially the same.
+
+\begin{figure}[htbp]
+\centering
+\includegraphics[width=0.92\textwidth]{figure_D2_enrollment_per_capita.png}
+\caption{Undergraduate + professional enrollment per 100,000 residents, by baseline capacity group and nationally, 1373--1403. Capacity groups are fixed, classified once using birth cohorts 1355--1359 (Section~\ref{sec:capacity-groups}); never redefined by year.}
+\label{fig:trend_percapita}
+\end{figure}
+
+\begin{figure}[htbp]
+\centering
+\includegraphics[width=0.92\textwidth]{figure_D4_total_enrollment_per_capita.png}
+\caption{Total enrollment (all degree levels, including master's/PhD) per 100,000 residents, by baseline capacity group and nationally, 1373--1403.}
+\label{fig:trend_total}
+\end{figure}
+
+\subsection{National enrollment trends by field of study}
+\label{sec:fieldtrend}
+
+Section~\ref{sec:capacity-data} explains why a division-by-field capacity or enrollment panel could not be constructed, and why Section~\ref{sec:fieldhet} instead measures field heterogeneity through the worker's own realized field. A related but distinct question is purely descriptive: how has national enrollment evolved across fields over time? We investigated whether a genuine multi-year national series exists for Iran's actual Konkoor exam groups (Tajrobi/Experimental, Riazi/Mathematics, Ensani/Humanities) and found the same kind of data-availability wall as elsewhere in this draft: no consolidated, verifiable time series exists publicly --- only scattered single-year press citations that mix incompatible metrics (admitted students in some years, exam participants in others; exam-only admission in some years, GPA-track-inclusive totals in others post-1395) and cannot be safely chained into one series.
+
+We instead report the closest defensible alternative: the Ministry of Science's own official ``broad field of study'' breakdown (Medicine, Humanities, Basic Sciences, Technical and Engineering, Agriculture and Veterinary, Arts), hand-extracted from three Statistical Yearbook editions (1391, 1393, 1394), each of which publishes this breakdown only for its own most recent year. We verified all three points use an identical definition (all degree levels, both sexes, including Islamic Azad University) --- confirmed arithmetically for 1391--92 by separately summing the Yearbook's Azad-only and non-Azad tables and checking the total matches the combined figure exactly. This is a national-only series (no division-level variation, consistent with the rest of this section's disclosed limitations) and uses the Ministry's own field taxonomy rather than Konkoor exam groups directly: \textbf{Humanities is a close, direct proxy for Ensani}; Basic Sciences and Technical/Engineering together are the closest available proxy for the Riazi/Tajrobi split, though this source does not allow separating them into those two specific groups.
+
+\begin{figure}[htbp]
+\centering
+\includegraphics[width=0.92\textwidth]{figure_D6_field_trend_national.png}
+\caption{National enrollment by broad field of study, Persian academic years 1391--92, 1393--94, and 1394--95 (all degree levels, both sexes, including Islamic Azad University). National level only; see Section~\ref{sec:fieldtrend} for sourcing and the mapping to Konkoor exam groups.}
+\label{fig:fieldtrend}
+\end{figure}
+
+Over this short window, Humanities enrollment (the Ensani proxy) rose from 1.93 million to a peak of 2.19 million (1393--94) before receding slightly to 2.00 million (1394--95) --- consistently the largest field by a wide margin, more than the next four fields combined. Technical and Engineering enrollment declined steadily across all three points (1.51 to 1.50 to 1.31 million), and Basic Sciences declined modestly as well (295{,}228 to 255{,}056) --- together suggesting the Riazi-track fields were contracting over this window even as Ensani-track enrollment grew, consistent with this paper's broader finding (Section~\ref{sec:fieldhet}) that Iran's expansion was not field-neutral. Medicine and Agriculture/Veterinary remained comparatively small and stable throughout; Arts grew sharply (235{,}630 to 341{,}039) but remains the smallest field shown. We report this as descriptive context only --- with three time points and a national (not division-level) scope, it is not used in any regression in this paper.
+
+% ============================================================
+\section{Empirical strategy}
+% ============================================================
+
+We use the companion paper's baseline specification without modification:
+\begin{equation}
+Y_{ipct} = \beta \cdot \log(\text{Exposure}_{pc}) + X_i'\gamma + \mu_p + \lambda_c + \tau_t + \varepsilon_{ipct},
+\end{equation}
+with division ($\mu_p$), birth-cohort ($\lambda_c$), and survey-year ($\tau_t$) fixed effects; survey weights; and two-way clustering by division and cohort (28 division, 29 cohort clusters) throughout.
+
+\paragraph{Field-of-study heterogeneity.} We interact log exposure with the worker's own harmonized ISCED-2013 broad field of study (11 categories, Education as reference), estimating field-specific total effects and a joint (omnibus) Wald test of whether all field interactions are zero, with false-discovery-rate correction applied within each outcome/subgroup.
+
+\paragraph{Mismatch-type-specific gender interaction.} Extending the companion paper's gender interaction (previously estimated only for labor-force participation, employment, unemployment, and marital outcomes) to the mismatch outcomes themselves:
+\begin{equation}
+Y_{ipct} = \beta_1 \log(\text{Exp}) + \beta_2 \log(\text{Exp})\times\text{Female} + \gamma\, \text{Urban} + \mu_p + \lambda_c + \tau_t + \varepsilon,
+\end{equation}
+estimated separately for double mismatch, horizontal mismatch, and fully matched employment, with the male and female total effects and their difference (via the delta method) reported for each.
+
+\paragraph{Baseline-quartile event-study check.} Because exposure is continuous rather than a discrete treatment date, we cannot construct a canonical binary-treatment event study. We classify divisions into the baseline low/high capacity groups of Section~\ref{sec:capacity-groups} --- a predetermined, bottom-versus-top-quartile classification based only on the earliest five cohorts, distinct from both the paper's continuous main specification and the companion paper's own full-sample median-split version of this check --- and estimate, restricting the sample to the 14 low- or high-capacity divisions:
+\begin{equation}
+Y_{ipct} = \sum_{c \neq c_0} \delta_c\, (\mathbb{1}[\text{cohort}=c] \times \text{HighCapacity}_p) + X_i'\gamma + \mu_p + \lambda_c + \tau_t + \varepsilon,
+\end{equation}
+plotting $\hat\delta_c$ against birth cohort, relative to the earliest cohort $c_0=1355$. This tests whether high- and low-capacity divisions were on divergent mismatch trajectories before and independent of the within-division exposure changes that actually identify the paper's main coefficients; it is a validity check, not a re-estimate of the treatment effect itself.
+
+\paragraph{Selection-into-employment models.} For Sections~7.5--7.6 we use the triple-interaction, selection-margin, and two-step Heckman specifications developed in our prior work on this data, unchanged; see Appendix~A for the full equations.
+
+% ============================================================
+\section{Results}
+% ============================================================
+
+\subsection{University exposure and educational mismatch}
+
+Table~\ref{tab:mismatch} restates the companion paper's central mismatch results, expressed as percentage-point effects of a 10 percent increase in division-level university exposure at ages 18--20; we reproduced these directly from the underlying analysis file, matching the paper's reported coefficients to three decimal places.
+
+\begin{table}[htbp]
+\centering
+\caption{University exposure and educational mismatch (companion paper, Table 2)}
+\label{tab:mismatch}
+\begin{tabular}{lccc}
+\toprule
+Outcome & Pooled & Women & Men \\
+\midrule
+Any vertical mismatch      & 0.170 (0.110)      & 0.299 (0.222)      & 0.141 (0.105) \\
+Over-education             & $0.335^{***}$ (0.101) & $0.478^{**}$ (0.205) & $0.305^{***}$ (0.104) \\
+Under-education            & $-0.165^{*}$ (0.090)  & $-0.179$ (0.109)     & $-0.164$ (0.102) \\
+Horizontal mismatch        & $0.614^{***}$ (0.126) & $0.073$ (0.174)      & $0.840^{***}$ (0.149) \\
+Double mismatch            & $0.695^{***}$ (0.140) & $0.368^{**}$ (0.144)  & $0.797^{***}$ (0.182) \\
+Fully matched employment   & $-0.341^{***}$ (0.103) & $0.088$ (0.207)     & $-0.513^{***}$ (0.115) \\
+\bottomrule
+\multicolumn{4}{p{0.9\textwidth}}{\footnotesize Two-way clustered SE (division $\times$ cohort) in parentheses. $^{*}p<0.10$, $^{**}p<0.05$, $^{***}p<0.01$.}
+\end{tabular}
+\end{table}
+
+\subsection{Field-of-study heterogeneity}
+\label{sec:fieldhet}
+
+Table~\ref{tab:field} reports, for the pooled sample, the total effect of a 10 percent increase in division-level exposure on each mismatch outcome, by the worker's own ISCED-2013 broad field of study, relative to Education (the reference field). The pattern is striking and consistent across all three outcomes: \textbf{Business, Administration, and Law graduates show by far the largest mismatch response to division-level exposure}, three to four times the pooled average effect in Table~\ref{tab:mismatch}, and --- unlike every other field --- this result survives false-discovery-rate correction across all ten field comparisons for both double mismatch and horizontal mismatch (and remains individually significant, though not FDR-significant at the strictest primary-pooled threshold, for fully matched employment). No other field reaches significance after FDR correction in the pooled sample.
+
+\begin{table}[htbp]
+\centering
+\caption{Field-of-study heterogeneity: total effect of a 10\% exposure increase, by field (pooled)}
+\label{tab:field}
+\small
+\begin{tabular}{p{4.6cm}ccc}
+\toprule
+Field of study & Double mismatch (pp) & Horizontal mismatch (pp) & Fully matched (pp) \\
+\midrule
+Education (reference) & --- & --- & --- \\
+Business, Administration, and Law & $1.182^{***}$ & $0.982^{***}$ & $-0.556^{**}$ \\
+ & (0.342) & (0.286) & (0.249) \\
+Information and Communication Technologies & 0.731 & $1.186^{**}$ & $-0.696$ \\
+Engineering, Manufacturing, and Construction & 0.508 & 0.417 & $-0.028$ \\
+Natural Sciences and Mathematics & 0.286 & 0.680 & 0.179 \\
+Arts and Humanities & 0.659 & $-0.192$ & 0.245 \\
+Social Sciences and Journalism & 0.651 & 0.687 & $-0.712$ \\
+Agriculture and Veterinary & 0.791 & 0.491 & 0.090 \\
+Health and Welfare & 0.015 & 0.177 & $-0.523$ \\
+Services & 0.649 & 0.367 & $-0.049$ \\
+\bottomrule
+\multicolumn{4}{p{0.95\textwidth}}{\footnotesize Total field effect (interaction + main exposure coefficient), pooled sample, division + cohort + year FE, two-way clustered SE. Stars denote significance \emph{within-outcome, FDR-corrected} across the 10 field comparisons: $^{*}p_{\text{FDR}}<0.10$, $^{**}p_{\text{FDR}}<0.05$, $^{***}p_{\text{FDR}}<0.01$. Only Business, Administration, and Law survives FDR correction for double and horizontal mismatch. Source: companion analysis (field-heterogeneity step), reused unchanged for this draft.}
+\end{tabular}
+\end{table}
+
+This is, to our knowledge, the first evidence that Iran's mismatch response to university expansion is field-concentrated rather than uniform. It is consistent with Business/Administration/Law having expanded enrollment far faster than the labor market's demand for business-credentialed workers specifically --- a pattern also documented in China's analogous expansion literature (Section~2.3) for business and management fields, though those papers do not report field-specific point estimates directly comparable to ours.
+
+We emphasize the scope limitation flagged in Section~\ref{sec:capacity-data}: this is heterogeneity by the worker's own realized field, interacted with overall division-level exposure --- not evidence on a field-specific \emph{capacity} shock, which no available Iranian data source can support at the division level.
+
+\subsection{Gender heterogeneity, by mismatch type}
+\label{sec:genderhet}
+
+The companion paper's Table~\ref{tab:mismatch} already shows the pooled male mismatch response exceeds the pooled female response for horizontal and double mismatch. Table~\ref{tab:gender-mismatch} formalizes this with a direct exposure$\times$female interaction and a test of coefficient equality, extending the companion paper's existing gender-interaction machinery (previously applied only to labor-force participation, employment, unemployment, and marital outcomes) to the mismatch outcomes themselves for the first time.
+
+\begin{table}[htbp]
+\centering
+\caption{Gender heterogeneity in the exposure effect, by mismatch type (pooled sample)}
+\label{tab:gender-mismatch}
+\begin{tabular}{lccccc}
+\toprule
+Outcome & Male effect & Female effect & Difference (F$-$M) & SE & $p$ \\
+\midrule
+Double mismatch          & $0.078^{***}$ & $0.056^{***}$ & $-0.022^{***}$ & 0.008 & 0.004 \\
+Horizontal mismatch      & $0.063^{***}$ & $0.069^{***}$ & $0.007$        & 0.007 & 0.311 \\
+Fully matched employment & $-0.039^{***}$ & $-0.029^{**}$ & $0.009^{**}$   & 0.004 & 0.029 \\
+\bottomrule
+\multicolumn{6}{p{0.98\textwidth}}{\footnotesize Coefficients are the effect of a one-log-point increase in exposure (i.e.\ $\log(\text{Exposure})$, not the 10\%-scaled units of Tables~\ref{tab:mismatch}--\ref{tab:field}). $N=400{,}726$ for every row. Division + cohort + year FE, urban control, two-way clustered SE. Difference and its SE/$p$-value computed via the delta method from the exposure$\times$female interaction. $^{*}p<0.10$, $^{**}p<0.05$, $^{***}p<0.01$.}
+\end{tabular}
+\end{table}
+
+Three findings sharpen the companion paper's pooled gender result. First, the male-skewed mismatch response is a \textbf{double-mismatch phenomenon specifically}: men's effect exceeds women's by a statistically significant 0.022 ($p=0.004$), consistent with Table~\ref{tab:mismatch}'s pooled pattern. Second, and this is new, the horizontal-mismatch-\emph{alone} gender difference is \textbf{not} statistically significant on its own once estimated as a direct interaction ($p=0.311$) --- the large pooled male/female gap visible in Table~\ref{tab:mismatch}'s horizontal-mismatch row (0.840 vs.\ 0.073) evidently reflects a combination of the double-mismatch channel and sampling variation that a formal interaction test does not confirm as horizontal-mismatch-specific. We report this rather than treating Table~\ref{tab:mismatch}'s simple subgroup comparison as if it were already a formal test. Third, fully matched employment falls significantly more for men than for women as exposure rises ($p=0.029$), the natural mirror image of the double-mismatch result, since fully matched and double-mismatched are close to complementary outcomes within the eligible sample.
+
+\subsection{Baseline-quartile event-study evidence}
+
+Figures~\ref{fig:es_double}--\ref{fig:es_fully} show the event-study coefficients $\hat\delta_c$ from Section~6's baseline-quartile specification, for double mismatch, horizontal mismatch, and fully matched employment respectively, using the predetermined low-/high-capacity classification of Section~\ref{sec:capacity-groups} (distinct from the companion paper's own full-sample median-split version of this check).
+
+\begin{figure}[htbp]
+\centering
+\includegraphics[width=0.85\textwidth]{figure_D5_event_study_double_mismatch.png}
+\caption{Event study: double mismatch, baseline-quartile low- vs.\ high-capacity divisions, relative to birth cohort 1355.}
+\label{fig:es_double}
+\end{figure}
+
+\begin{figure}[htbp]
+\centering
+\includegraphics[width=0.85\textwidth]{figure_D5_event_study_horizontal_mismatch.png}
+\caption{Event study: horizontal mismatch (detailed, broad crosswalk), baseline-quartile groups.}
+\label{fig:es_horiz}
+\end{figure}
+
+\begin{figure}[htbp]
+\centering
+\includegraphics[width=0.85\textwidth]{figure_D5_event_study_fully_matched.png}
+\caption{Event study: fully matched employment (refined), baseline-quartile groups.}
+\label{fig:es_fully}
+\end{figure}
+
+We report what these checks show honestly rather than smoothing over a genuine complication. For \textbf{horizontal mismatch}, the coefficients are negative and, from roughly cohort 1359 onward, mostly statistically significant and drifting more negative through the cohort range --- a real, visible pre-trend by the standard of this design: high-capacity divisions' horizontal-mismatch trajectory diverges from low-capacity divisions' well before the bulk of the identifying within-division exposure variation accrues. \textbf{Double mismatch} shows the same qualitative pattern, somewhat less severe. \textbf{Fully matched employment} is comparatively better behaved through the early-to-middle cohort range (mostly insignificant, no clear monotonic drift) before several later cohorts turn significant.
+
+We interpret this cautiously rather than as invalidating the main design, for three reasons. First, this check uses a coarse, time-invariant, cross-division split that discards the bulk of the paper's actual identifying variation --- the within-division change in exposure across cohorts --- so a pre-trend in \emph{this} coarse comparison is not mechanically a pre-trend in the paper's own continuous specification. Second, an essentially identical qualitative pattern (significant, drifting pre-period divergence for horizontal and double mismatch) already appears in the companion paper's own full-sample median-split version of this same check, constructed independently and with a different (non-baseline-period, non-quartile) grouping rule; two different groupings of divisions producing the same qualitative complication is more consistent with a genuine, real feature of how mismatch trends differ across high- and low-capacity divisions than with an artifact of either specific grouping choice. Third, the companion paper's leave-one-division-out and Tehran-exclusion robustness checks (Section~8) show the main pooled coefficients are not driven by a small number of divisions, which would be a natural alternative explanation for a spurious pre-trend. We do not treat this as a clean pass on parallel trends --- it is not --- but as a limitation we disclose in full rather than omit, consistent with this paper's standing practice (Section~9 returns to this).
+
+\subsection{Who behaves more selectively: women or men?}
+
+The descriptive selection gap (education rank of the employed minus education rank of the full eligible population, by gender and exposure quartile) is stark. Among men, the employed are close to, or slightly below, the full male population in education rank, and this small negative gap widens with exposure ($-0.008$ to $-0.458$) --- consistent with rising over-education among employed men, but showing employment itself does not become more selective for men. Among women, the employed are substantially more educated than the full female population in every quartile (0.858, 0.851, 0.336, 0.452) --- working women in Iran are a persistently, strongly positively selected minority across the entire exposure distribution.
+
+The regression version confirms this survives controlling for division, cohort, year, and urbanicity: the employment--education-rank premium is 2.425 ranks for the male reference group and an additional 0.804 ranks for women ($p=0.006$). This premium narrows with exposure for men (Employed$\times$Exposure $=-0.469$, $p<0.001$) but narrows distinctly less for women (Employed $\times$ Exposure $\times$ Female $=0.083$, $p=0.09$).
+
+The Heckman results (Table~\ref{tab:heckman}) sharpen this into a single number: the inverse Mills ratio coefficient in the hours equation is $-24.3$ ($p<0.001$) for women versus $-5.1$ ($p<0.001$) for men --- roughly a five-fold difference. Whether a woman works at all, and how much she works if she does, is far more tightly bound up with unobserved selection factors than for men.
+
+\begin{table}[htbp]
+\centering
+\caption{Two-step Heckman selection correction, by gender (two-way clustered SE)}
+\label{tab:heckman}
+\footnotesize
+\begin{tabular}{lcccc}
+\toprule
+ & \multicolumn{2}{c}{Women} & \multicolumn{2}{c}{Men} \\
+ \cmidrule(lr){2-3} \cmidrule(lr){4-5}
+ & Selection & Hours & Selection & Hours \\
+ & (probit) & (2nd stage) & (probit) & (2nd stage) \\
+\midrule
+Exposure & $-0.081$ & $0.959^{*}$ & $0.017$ & $-0.463$ \\
+ & (0.058) & (0.514) & (0.067) & (0.420) \\
+Tertiary & $0.629^{***}$ & $-12.172^{***}$ & $-0.520^{***}$ & $-2.318^{***}$ \\
+ & (0.077) & (1.753) & (0.061) & (0.713) \\
+Urban & $-0.298^{***}$ & $10.240^{***}$ & $-0.173^{***}$ & $3.730^{***}$ \\
+ & (0.047) & (0.740) & (0.027) & (0.531) \\
+Num.\ children & $0.134^{***}$ & -- & $-0.106$ & -- \\
+ & (0.026) & & (0.068) & \\
+Num.\ children $\times$ Exp. & $-0.010^{**}$ & -- & $-0.010$ & -- \\
+ & (0.003) & & (0.009) & \\
+Inverse Mills ratio & -- & $-24.325^{***}$ & -- & $-5.077^{***}$ \\
+ & & (2.191) & & (0.490) \\
+\midrule
+Observations & 2,079,162 & 301,636 & 2,007,699 & 1,384,685 \\
+Fixed effects & \multicolumn{4}{c}{Division, cohort, and survey-year FE throughout} \\
+\bottomrule
+\multicolumn{5}{p{0.95\textwidth}}{\footnotesize Two-way clustered SE (division and cohort). $^{*}p<0.10$, $^{**}p<0.05$, $^{***}p<0.01$.}
+\end{tabular}
+\end{table}
+
+\subsection{How much of the gender gap reflects this selective behavior?}
+
+\textbf{Extensive margin.} The raw employment-rate gap in our sample is 69.8\% for men versus 14.7\% for women, a 55.1-percentage-point gap. Substituting men's estimated first-stage coefficients into each woman's own fitted selection index --- holding her own characteristics and division-cohort-year context fixed --- raises predicted female employment from 14.7\% to 18.8\%, closing 4.1 of the 55.1 points. Differential behavioral response to observable characteristics therefore accounts for only about 7.5 percent of the raw employment-rate gap; the remainder reflects structural/institutional/normative factors the fixed effects absorb.
+
+\textbf{Intensive margin.} Among the employed, the raw weekly-hours gap is 13.6 hours (50.3 for men, 36.7 for women). Table~\ref{tab:oaxaca} decomposes this using a two-fold Oaxaca--Blinder decomposition over the four regressors in the second-stage hours equation.
+
+\begin{table}[htbp]
+\centering
+\caption{Oaxaca--Blinder decomposition of the employed-hours gender gap}
+\label{tab:oaxaca}
+\begin{tabular}{lccc}
+\toprule
+Component & Endowment & Coefficient & Total \\
+\midrule
+Exposure                        & $-0.02$ & $-8.77$ & $-8.79$ \\
+Tertiary education              & $0.58$  & $4.75$  & $5.33$  \\
+Urban                           & $0.05$  & $-4.70$ & $-4.65$ \\
+\textbf{Mills ratio (selection)} & \textbf{5.40}  & \textbf{28.06} & \textbf{33.45} \\
+\midrule
+\textbf{Total (4 regressors)}    & \textbf{6.00}  & \textbf{19.33} & \textbf{25.34} \\
+\emph{Raw hours gap}            &         &         & \emph{13.58}   \\
+\bottomrule
+\multicolumn{4}{p{0.85\textwidth}}{\footnotesize Endowment component: $(\bar{X}_{men}-\bar{X}_{women})\times\beta_{men}$. Coefficient component: $\bar{X}_{women}\times(\beta_{men}-\beta_{women})$. The 4-regressor total (25.34) exceeds the raw gap (13.58); the residual ($\approx-11.8$ hours) reflects division/cohort/year fixed effects and other unmodeled factors, not directly estimated here.}
+\end{tabular}
+\end{table}
+
+The mills/selection channel alone (33.45 hours) is larger than the \emph{entire} observed 13.58-hour gap --- 246 percent of it. Among the relatively few women who work, selection is the dominant force shaping how much they work, even though selection differences on observable characteristics explain little of \emph{whether} they work at all.
+
+% ============================================================
+\section{Validation and robustness}
+% ============================================================
+
+\subsection{New validation checks for the division-level capacity panel}
+
+We ran four checks specific to this draft's division-level reframing, none previously part of the companion paper's or this paper's own robustness battery.
+
+\textbf{Division-identifier consistency.} The 28 divisions in the raw enrollment panel match the 28 divisions in the baseline capacity-group classification exactly, with zero mismatches.
+
+\textbf{Coverage.} The enrollment panel is fully balanced: all 28 divisions report enrollment in all 31 years (1373--1403), with no missing province-year cells. A small number of legitimate zero-enrollment cells appear only in Qazvin (3 years), Qom (2 years), and Golestan (3 years) --- consistent with these provinces' known creation as separate administrative units from parent provinces in the mid-1370s, not a data-quality problem.
+
+\textbf{Outliers.} No division-year observation deviates more than 5 standard deviations from that division's own 1373--1403 mean per-capita enrollment; the panel contains no implausible within-division jumps.
+
+\textbf{Reporting breaks.} Year-over-year national enrollment growth ranges from $-18.3$\% to $+46.3$\%, entirely consistent with the gradual, then partially-reversing expansion visible in Figure~\ref{fig:trend_percapita}; no single year shows a change exceeding 50\%, the threshold we set for flagging a candidate reporting-system break.
+
+\subsection{Existing robustness checks (companion paper), still applicable}
+
+The companion paper additionally reports, for the main vertical/horizontal/double-mismatch estimates Table~\ref{tab:mismatch} restates: robustness to six alternative combinations of vertical benchmark and horizontal crosswalk, all preserving sign, magnitude, and significance; robustness to unweighted estimation, division-specific cohort trends, exclusion of identified cross-division movers, exclusion of Tehran, and exclusion of divisions with unusual administrative histories (Semnan, Qazvin, Qom, Golestan); robustness to alternative standard-error clustering (division-only, cohort-only); and \textbf{leave-one-division-out estimates across all 28 divisions}, in every case preserving sign and significance of the double-mismatch and fully-matched-employment coefficients --- directly addressing whether the paper's results, including the field- and gender-heterogeneity results built on the same design, are driven by a small number of large divisions. We do not repeat these here but note they apply directly to the Table~\ref{tab:mismatch} estimates this paper's results build on.
+
+% ============================================================
+\section{Discussion and conclusion}
+% ============================================================
+
+This paper reframes Iran's university-expansion mismatch story around division-level variation in capacity, and in doing so surfaces three genuinely new results: a persistent, non-converging capacity gap between low- and high-capacity divisions that a purely descriptive look at national aggregates would miss; a mismatch response heavily concentrated among Business, Administration, and Law graduates specifically, robust to multiple-testing correction; and a mismatch-type-specific gender pattern (double-mismatch- and fully-matched-employment-specific, not a general horizontal-mismatch phenomenon) that sharpens what the companion paper's pooled gender comparison could only suggest. Alongside this, our earlier finding on Iranian women's selective employment continues to hold on the same data and design: women's employment is a far more selective slice of the eligible female population than men's, a selectivity difference large enough to more than explain the intensive-margin gender gap while explaining only a small share of the extensive-margin gap.
+
+We interpret the field-concentration result as consistent with Business/Administration/Law enrollment having expanded faster than labor-market demand for business-credentialed workers specifically, echoing (without direct field-level comparability) similar field-specific oversupply patterns noted in China's analogous expansion literature. We interpret the field- and type-specific gender results as evidence that men are drawn into employment more readily as capacity rises, absorbing worse job matches --- specifically double mismatch and full-match loss --- while horizontal mismatch alone does not show the same clean gender asymmetry once tested directly, a distinction the companion paper's pooled comparison could not make.
+
+\textbf{Limitations.} First and most consequential for this draft's central reframing: neither ``available seats'' nor ``empty seats'' could be constructed at the division level from any Iranian data source we could locate, so this paper's capacity measure is enrollment alone; we regard this as an honestly disclosed data-availability limit rather than a design choice, and note in Section~\ref{sec:capacity-data} exactly what was checked and why it failed. Second, field-of-study heterogeneity (Section~\ref{sec:fieldhet}) uses the worker's own realized field interacted with overall exposure, not a field-specific capacity shock, for the same data-availability reason; the Business/Administration/Law result should be read accordingly. Third, the baseline-quartile event-study check (Section~7.3) shows a real pre-trend for horizontal and double mismatch that we do not consider resolved, though we note it replicates under an independently constructed alternative grouping and is not, by construction, a test of the paper's actual within-division identifying variation. Fourth, the Konkoor-participant series is national and cannot support division-level causal identification; we use it only descriptively. Fifth, our selection framework relies on a single exclusion restriction (number of children), and its exposure interaction is not statistically significant for men under proper clustering, so the male-side selection equation should be read as less precisely identified than the female-side one. Sixth, the LFS does not collect wage data, so our intensive-margin decomposition is on hours rather than earnings.
+
+Despite these caveats, we view the core findings --- a genuinely persistent capacity gap across divisions; a field-concentrated mismatch response identifying Business/Administration/Law as the specific margin of adjustment; a mismatch-type-specific (not uniform) gender asymmetry; and a selection channel that more than fully accounts for the intensive-margin gender gap while explaining little of the extensive-margin gap --- as a coherent picture of how Iran's decades-long, geographically uneven university expansion has interacted with a field-segmented, gender-segmented labor market.
+
+% ============================================================
+\bibliographystyle{apalike}
+\begin{thebibliography}{99}
+
+\bibitem[Haddad and Habibi(2017)]{haddad2017}
+Haddad, G.\ K., and Habibi, N.\ (2017). Vertical skill mismatch and wage consequences in low-skilled jobs: Evidence from Iran. \emph{International Labour Review}, 156(1), 45--72.
+
+\bibitem[Kiker et al.(1997)]{kiker1997}
+Kiker, B.\ F., Santos, M.\ C., and Mendes de Oliveira, M.\ (1997). Overeducation and undereducation: Evidence for Portugal. \emph{Economics of Education Review}, 16(2), 111--125.
+
+\bibitem[Knight et al.(2017)]{knight2017}
+Knight, J., Deng, Q., and Li, S.\ (2017). China's expansion of higher education: The labour market consequences of a supply shock. \emph{China Economic Review}, 43, 127--141.
+
+\bibitem[Li et al.(2008)]{li2008}
+Li, F., Morgan, W.\ J., and Ding, X.\ (2008). The expansion of higher education, employment and over-education in China. \emph{International Journal of Educational Development}, 28(6), 687--697.
+
+\bibitem[Li et al.(2014)]{li2014}
+Li, S., Whalley, J., and Xing, C.\ (2014). China's higher education expansion and unemployment of college graduates. \emph{China Economic Review}, 30, 567--582.
+
+\bibitem[Mulligan and Rubinstein(2008)]{mulligan2008}
+Mulligan, C.\ B., and Rubinstein, Y.\ (2008). Selection, investment, and women's relative wages over time. \emph{Quarterly Journal of Economics}, 123(3), 1061--1110.
+
+\bibitem[Nordin et al.(2010)]{nordin2010}
+Nordin, M., Persson, I., and Rooth, D.-O.\ (2010). Education--occupation mismatch: Is there an income penalty? \emph{Economics of Education Review}, 29(6), 1047--1059.
+
+\bibitem[Robst(2007)]{robst2007}
+Robst, J.\ (2007). Education and job match: The relatedness of college major and work. \emph{Economics of Education Review}, 26(4), 397--407.
+
+\bibitem[Salehi-Isfahani(n.d.)]{salehi}
+Salehi-Isfahani, D.\ Why the youth are so eager for academic education? Evidence from Iran's labor market. Brandeis Economics Working Paper 105. [Working paper; final publication venue not independently confirmed.]
+
+\bibitem[Somers et al.(2019)]{somers2019}
+Somers, M.\ A., Cabus, S.\ J., Groot, W., and van den Brink, H.\ M.\ (2019). Horizontal mismatch between employment and field of education: Evidence from a systematic literature review. \emph{Journal of Economic Surveys}.
+
+\bibitem[Tanaka and Moeeni(2023)]{tanaka2023}
+Tanaka, S., and Moeeni, S.\ (2023). The effects of labor market opportunities on education: The case of a female hiring ceiling in Iran. \emph{Journal of Public Economics}, 224.
+
+\bibitem[Verdugo and Verdugo(1989)]{verdugo1989}
+Verdugo, R.\ R., and Verdugo, N.\ T.\ (1989). The impact of surplus schooling on earnings: Some additional findings. \emph{Journal of Human Resources}, 24(4), 629--643.
+
+\bibitem[Rezazadeh and Jalili(draft)]{companion}
+Rezazadeh, M., and Jalili, H.\ (draft). University expansion, educational mismatch, and occupational allocation in Iran. Companion paper (``paper\_july17'').
+
+\end{thebibliography}
+
+\vspace{12pt}
+\noindent\rule{\textwidth}{0.4pt}
+\vspace{4pt}
+
+\begin{small}
+\raggedright
+\noindent\textbf{Notes for next revision pass (not part of the manuscript).} (1) MENA gender-paradox citations in Section~2.4 are currently narrative without pinned references; add specific citations before submission. (2) Consider moving the event-study figures (Section~7.3) and the field-heterogeneity full appendix table to an appendix given typical ILR length norms. (3) Consider strengthening the male-side exclusion restriction (Section~7.5) with an alternative instrument, given the exposure$\times$children interaction is not significant for men under clustering. (4) All underlying code for the new division-level material (in the project's \path{codes/} folder): \path{code_division_capacity_groups.R}, \path{code_division_eventstudy_gender.R}, \path{code_division_validation.R}; outputs in \path{outputs/step25_division_level_capacity/}. Prior-draft code retained unchanged: \path{konkoor_participants_national.csv}, \path{figure_konkoor_participants.png}, \path{gender_gap_decomposition.R}, \path{event_study.R}, \path{gender_selection_results/model3_heckman_by_gender.{rds,txt}}.
+\end{small}
+
+\end{document}

@@ -1,0 +1,9 @@
+birth_year
+birth_year_two_digit
+reported_birth_year_full
+birth_year_from_age
+birth_year_difference
+birth_year_consistent
+analysis_birth_year
+province_historical
+previous_province_historical

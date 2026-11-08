@@ -1,0 +1,23 @@
+Software environment (from library() calls and pkg:: references in the R scripts)
+
+R
+  version: "R >= 4.4 (developed on 4.6.1)" per update_Mahyar/revision_finalized/scripts/run_all.R;
+           not recorded for the scripts in codes/
+
+R packages (CRAN; versions not recorded)
+  data.table
+  fst
+  fixest
+  haven
+  ggplot2
+  stringr
+  scales
+  readxl
+  dqrng
+  fwildclusterboot   (codes/code_step16.R; run_all.R notes it was not available for R 4.6.1)
+  lfe                (codes/code_step16.R)
+  tidyselect
+  png                (update_Mahyar/revision_finalized/scripts/cropfigs.R)
+
+LaTeX
+  pdflatex and bibtex, to compile the manuscript drafts

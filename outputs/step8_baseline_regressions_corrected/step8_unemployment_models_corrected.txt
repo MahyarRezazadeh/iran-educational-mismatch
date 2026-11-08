@@ -1,0 +1,18 @@
+                         models$pooled      models$female        models$male
+                                Pooled              Women                Men
+Dependent Var.:             unemployed         unemployed         unemployed
+                                                                            
+exposure_per_100      -0.0003 (0.0012)    0.0015 (0.0024)   -0.0008 (0.0010)
+female              0.1207*** (0.0142)                                      
+urban               0.0718*** (0.0082) 0.1745*** (0.0183) 0.0458*** (0.0063)
+Fixed-Effects:      ------------------ ------------------ ------------------
+historical_province                Yes                Yes                Yes
+cohort                             Yes                Yes                Yes
+year                               Yes                Yes                Yes
+___________________ __________________ __________________ __________________
+S.E.: Clustered      by: hist. & coho.  by: hist. & coho.  by: hist. & coho.
+Observations                 1,996,995            401,171          1,595,824
+R2                             0.07976            0.12546            0.05078
+Within R2                      0.02681            0.02905            0.00349
+---
+Signif. codes: 0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1

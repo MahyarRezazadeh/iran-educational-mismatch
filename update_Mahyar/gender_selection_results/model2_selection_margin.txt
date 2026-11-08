@@ -1,0 +1,18 @@
+OLS estimation, Dep. Var.: education_rank
+Observations: 3,891,434
+Weights: weight
+Fixed-effects: historical_province: 28,  cohort: 29,  year: 18
+Standard-errors: Clustered (historical_province & cohort) 
+                          Estimate Std. Error   t value   Pr(>|t|)    
+employed                  2.424707   0.422204  5.742972 4.1756e-06 ***
+exposure                  0.309242   0.086463  3.576566 1.3408e-03 ** 
+female                    0.057251   0.232374  0.246375 8.0726e-01    
+urban                     1.231971   0.053171 23.169873  < 2.2e-16 ***
+employed:exposure        -0.469378   0.061501 -7.632023 3.2918e-08 ***
+employed:female           0.804123   0.266813  3.013811 5.5543e-03 ** 
+exposure:female          -0.067596   0.034098 -1.982405 5.7695e-02 .  
+employed:exposure:female  0.082698   0.047026  1.758538 8.9987e-02 .  
+---
+Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+RMSE: 1.71169     Adj. R2: 0.173959
+                Within R2: 0.110798

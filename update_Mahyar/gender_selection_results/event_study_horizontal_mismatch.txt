@@ -1,0 +1,40 @@
+OLS estimation, Dep. Var.: horizontal_mismatch_broad
+Observations: 400,726
+Weights: weight
+Fixed-effects: province_historical: 28,  cohort: 29,  year: 18
+Standard-errors: Clustered (province_historical & cohort) 
+                            Estimate Std. Error    t value   Pr(>|t|)    
+cohort::1356:high_exposure -0.008915   0.012989  -0.686332 4.9836e-01    
+cohort::1357:high_exposure -0.015994   0.017993  -0.888888 3.8191e-01    
+cohort::1358:high_exposure -0.057172   0.014065  -4.064790 3.7278e-04 ***
+cohort::1359:high_exposure -0.062011   0.004057 -15.286356 8.1356e-15 ***
+cohort::1360:high_exposure -0.040303   0.009900  -4.070916 3.6677e-04 ***
+cohort::1361:high_exposure -0.045004   0.015397  -2.922836 6.9361e-03 ** 
+cohort::1362:high_exposure -0.055912   0.015422  -3.625385 1.1816e-03 ** 
+cohort::1363:high_exposure -0.027353   0.015599  -1.753523 9.0860e-02 .  
+cohort::1364:high_exposure -0.049292   0.012463  -3.955084 4.9835e-04 ***
+cohort::1365:high_exposure -0.052127   0.011032  -4.724901 6.3797e-05 ***
+cohort::1366:high_exposure -0.041284   0.015678  -2.633271 1.3822e-02 *  
+cohort::1367:high_exposure -0.032072   0.008902  -3.602669 1.2533e-03 ** 
+cohort::1368:high_exposure -0.062053   0.008077  -7.682735 2.9069e-08 ***
+cohort::1369:high_exposure -0.029356   0.014104  -2.081366 4.7012e-02 *  
+cohort::1370:high_exposure -0.038827   0.022886  -1.696528 1.0129e-01    
+cohort::1371:high_exposure -0.017466   0.025600  -0.682273 5.0088e-01    
+cohort::1372:high_exposure -0.026522   0.028233  -0.939403 3.5585e-01    
+cohort::1373:high_exposure  0.007593   0.029285   0.259294 7.9738e-01    
+cohort::1374:high_exposure -0.016588   0.020428  -0.812008 4.2389e-01    
+cohort::1375:high_exposure -0.046028   0.022920  -2.008194 5.4723e-02 .  
+cohort::1376:high_exposure  0.016661   0.024109   0.691070 4.9542e-01    
+cohort::1377:high_exposure -0.039520   0.018589  -2.125948 4.2801e-02 *  
+cohort::1378:high_exposure -0.034659   0.030498  -1.136419 2.6577e-01    
+cohort::1379:high_exposure -0.088820   0.013195  -6.731304 3.1579e-07 ***
+cohort::1380:high_exposure  0.115541   0.046343   2.493151 1.9090e-02 *  
+cohort::1381:high_exposure -0.044517   0.050753  -0.877138 3.8815e-01    
+cohort::1382:high_exposure  0.029619   0.028041   1.056290 3.0020e-01    
+cohort::1383:high_exposure -0.277573   0.056421  -4.919704 3.7791e-05 ***
+female                     -0.017912   0.012891  -1.389478 1.7604e-01    
+urban                      -0.073928   0.012277  -6.021670 1.9983e-06 ***
+---
+Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+RMSE: 0.490849     Adj. R2: 0.009178
+                 Within R2: 0.002662

@@ -1,0 +1,66 @@
+WOMEN selection equation (two-way clustered SE: province x cohort):
+GLM estimation, family = binomial(link = "probit"), Dep. Var.: employed
+Observations: 2,079,162
+Weights: weight
+Fixed-effects: historical_province: 28,  cohort: 29,  year: 18
+Standard-errors: Clustered (historical_province & cohort) 
+                   Estimate Std. Error  z value   Pr(>|z|)    
+exposure          -0.080764   0.058260 -1.38625 1.6567e-01    
+tertiary           0.628984   0.076627  8.20839 2.2417e-16 ***
+urban             -0.297520   0.047000 -6.33027 2.4474e-10 ***
+num_kids           0.134211   0.025457  5.27200 1.3494e-07 ***
+exposure:num_kids -0.009578   0.003028 -3.16346 1.5590e-03 ** 
+---
+Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+Log-Likelihood: -96,389,810.5   Adj. Pseudo R2: 0.069916
+           BIC: 192,780,755.6     Squared Cor.: 0.05549 
+
+WOMEN hours equation:
+OLS estimation, Dep. Var.: weekly_hours
+Observations: 301,636
+Weights: weight
+Fixed-effects: historical_province: 28,  cohort: 29,  year: 18
+Standard-errors: Clustered (historical_province & cohort) 
+           Estimate Std. Error   t value   Pr(>|t|)    
+exposure   0.958875   0.513518   1.86727 7.2757e-02 .  
+tertiary -12.172379   1.752617  -6.94526 1.8295e-07 ***
+urban     10.239904   0.739750  13.84239 8.8429e-14 ***
+mills    -24.325254   2.191122 -11.10174 1.4405e-11 ***
+---
+Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+RMSE: 16.3     Adj. R2: 0.085135
+             Within R2: 0.024634
+
+
+MEN selection equation (two-way clustered SE: province x cohort):
+GLM estimation, family = binomial(link = "probit"), Dep. Var.: employed
+Observations: 2,007,699
+Weights: weight
+Fixed-effects: historical_province: 28,  cohort: 29,  year: 18
+Standard-errors: Clustered (historical_province & cohort) 
+                   Estimate Std. Error   z value   Pr(>|z|)    
+exposure           0.016879   0.066952  0.252110 8.0096e-01    
+tertiary          -0.519630   0.060594 -8.575576  < 2.2e-16 ***
+urban             -0.173034   0.027215 -6.358144 2.0421e-10 ***
+num_kids          -0.105450   0.068019 -1.550309 1.2107e-01    
+exposure:num_kids -0.009824   0.009105 -1.078939 2.8062e-01    
+---
+Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+Log-Likelihood: -121,015,049.0   Adj. Pseudo R2: 0.200709
+           BIC:  242,031,229.9     Squared Cor.: 0.240629
+
+MEN hours equation:
+OLS estimation, Dep. Var.: weekly_hours
+Observations: 1,384,685
+Weights: weight
+Fixed-effects: historical_province: 28,  cohort: 29,  year: 18
+Standard-errors: Clustered (historical_province & cohort) 
+          Estimate Std. Error   t value   Pr(>|t|)    
+exposure -0.462504   0.419824  -1.10166 2.8033e-01    
+tertiary -2.318341   0.712755  -3.25265 3.0661e-03 ** 
+urban     3.729535   0.531001   7.02359 1.5001e-07 ***
+mills    -5.076497   0.490190 -10.35618 6.6657e-11 ***
+---
+Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+RMSE: 15.5     Adj. R2: 0.0469  
+             Within R2: 0.014948

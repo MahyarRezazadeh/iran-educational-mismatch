@@ -1,0 +1,549 @@
+﻿% !TeX root = main.tex
+% Body of the paper (everything after the abstract).
+% Wording follows "Paper-Second draft-Aug25.docx" verbatim; only formatting and
+% citation style have been changed (Journal of Development Economics / Elsevier).
+
+\section{Introduction}
+
+The rapid expansion of higher education has been one of the most consequential policy developments in many middle-income countries. Governments have increased university capacity in the expectation that broader access to post-secondary education will raise human capital, improve employment prospects, and support productivity and economic growth. The success of such policies, however, depends on more than the number of students admitted or degrees awarded. An expansion in the supply of educated workers produces meaningful economic gains only when the labor market creates jobs that use their qualifications and when access to those jobs is broadly shared across population groups.
+
+These conditions need not hold automatically. When university enrollment expands faster than the demand for skilled labor, graduates may enter occupations that require less education than they possess or accept work unrelated to their field of study. Higher education can therefore increase without a corresponding improvement in the allocation of workers across jobs. The consequences may also differ sharply by gender. In settings where women acquire university qualifications but face limited employment opportunities, observed mismatch among employed women may appear relatively low simply because only a positively selected group enters employment. A comparison restricted to workers can then obscure a broader policy failure: some graduates are absorbed into poorly matched jobs, while others remain outside employment altogether.
+
+Iran provides a particularly informative setting for studying these issues. From the mid-1990s through the mid-2010s, the country experienced a substantial expansion of university capacity. The expansion occurred through changes in the size and geographic distribution of higher-education institutions and generated considerable variation in access across provinces and birth cohorts. Individuals reaching university-entry age in different provinces and years consequently faced different educational opportunities. At the same time, the expansion took place in a labor market characterized by limited growth in suitable graduate employment and a persistent gender gap in labor-force participation and employment.
+
+The Iranian experience also presents an important gender dimension. Women became a substantial share of university applicants and students, yet their labor-force participation and employment remained far below those of men. This creates an important interpretive issue for mismatch analysis because educational mismatch can be observed only among employed workers. Gender differences in mismatch may therefore partly reflect differences in who enters employment rather than differences in labor-market allocation alone.
+
+This paper examines how Iran's university expansion affected the labor-market allocation of educated workers. It addresses three related questions. First, did greater exposure to university expansion increase vertical mismatch, including overeducation and undereducation relative to the typical education level of the occupation? Second, did it increase horizontal mismatch, whereby workers are employed outside their field of study? Third, did these effects differ between women and men in a setting where female employment is highly selective?
+
+The analysis combines 18 waves of the Iranian Labor Force Survey covering 2007--2024 with a newly constructed measure of exposure to university expansion. Exposure is assigned at the province--birth-cohort level and reflects the university opportunities available when individuals were between ages 18 and 20, the period during which most decisions concerning university entry are made. The empirical design exploits differences across provinces and cohorts in the intensity of university expansion while accounting for persistent provincial characteristics, common cohort influences, and survey-year conditions.
+
+The analysis distinguishes between vertical and horizontal dimensions of educational mismatch among employed workers. Vertical mismatch captures whether a worker's education is above or below the level typically associated with the occupation, while horizontal mismatch captures whether the worker's field of study is related to the occupation. A worker may therefore be overeducated, undereducated, employed outside the field in which the worker was trained, or experience more than one form of mismatch simultaneously. The paper also considers double mismatch, defined as simultaneous overeducation and field mismatch, and fully matched employment, which requires alignment along both dimensions.
+
+The results show that greater exposure to university expansion changed the allocation of workers across jobs much more clearly than it changed employment quantities. A 10 percent increase in exposure raises overeducation by 0.335 percentage points, horizontal mismatch by 0.614 percentage points, and double mismatch by 0.695 percentage points. Fully matched employment declines by 0.341 percentage points. By contrast, the estimated effects on labor-force participation, employment, and unemployment are small and statistically insignificant.
+
+The mismatch effects differ substantially by gender. The increase in horizontal mismatch is concentrated among men, for whom a 10 percent increase in exposure raises horizontal mismatch by 0.840 percentage points, compared with a small and statistically insignificant estimate for women. Double mismatch also increases more strongly among men. These differences should be interpreted cautiously because mismatch is observed only among employed workers and female employment is highly selective. Descriptively, employed women are substantially more likely than employed men to be fully matched, but this does not necessarily imply more favorable labor-market opportunities for women overall.
+
+The occupational decomposition shows that the increase in double mismatch was concentrated in particular parts of the occupational distribution. Among men, sales workers account for the largest share of the estimated increase, followed by skilled agricultural work and several manual occupations. Among women, sales is also the largest contributor, with additional positive contributions from selected production, craft, teaching, and technical occupations. Field-of-study estimates further show that the most robust deterioration in matching occurs among graduates in business, administration, and law.
+
+These findings suggest that the consequences of higher-education expansion may operate through occupational allocation even when aggregate employment changes little. In the Iranian setting, the expansion of university opportunities was accompanied by a growing supply of educated workers relative to suitable employment. The resulting adjustment appears less as a broad change in whether individuals work and more as a change in the kinds of jobs educated workers obtain.
+
+The paper contributes to three related literatures. First, it contributes to research on the labor-market effects of higher-education expansion. Existing evaluations often emphasize enrollment, educational attainment, employment, or earnings. This paper instead examines whether the additional education generated by expansion was absorbed into jobs consistent with workers' qualifications.
+
+Second, the paper contributes to the literature on educational mismatch by jointly examining vertical and horizontal mismatch. These forms of mismatch capture distinct dimensions of human-capital underutilization, and the province--cohort design links them directly to differential exposure to a large university expansion rather than treating mismatch solely as an individual labor-market outcome.
+
+Third, the paper contributes to research on gender differences in labor-market adjustment by documenting substantial heterogeneity in mismatch effects between women and men. Because mismatch is observed only among employed workers, the results also highlight the importance of employment selection when interpreting apparently favorable matching outcomes among women in settings with low female employment.
+
+The policy implications extend beyond increasing university capacity. Expanding access to higher education can enlarge the supply of skilled workers, but it cannot by itself ensure that those workers obtain suitable employment. Where the demand for graduate labor does not keep pace with educational expansion, the result may be greater occupational and field mismatch rather than substantially higher employment. Policies intended to realize the returns to educational investment may therefore need to address the demand for skilled labor and the connection between fields of study and occupational opportunities, while also recognizing the barriers that limit women's access to employment.
+
+The remainder of the paper proceeds as follows. Section~\ref{sec:literature} reviews the related literature. Section~\ref{sec:background} describes the institutional setting and the expansion of higher education in Iran. Section~\ref{sec:data} presents the labor-force data, university-exposure measure, mismatch definitions, and descriptive evidence. Section~\ref{sec:results} presents the empirical strategy, main results, occupational and field-of-study heterogeneity, and robustness checks. Section~\ref{sec:conclusion} concludes.
+
+\section{Related Literature}
+\label{sec:literature}
+
+This paper relates to three strands of literature: the labor-market effects of higher-education expansion, educational mismatch, and gender differences in labor-market participation and the interpretation of mismatch among employed workers.
+
+A first strand examines how labor markets respond to rapid increases in the supply of university-educated workers. The effects of higher-education expansion depend critically on whether labor demand adjusts alongside educational supply. \citet{carneiro2023} study the opening of regional colleges in Norway and find that the resulting increase in skilled labor induced firms to expand research and development, adopt skill-complementary technologies, and increase the productivity and earnings of educated workers. Similarly, \citet{blundell2022} show that the large expansion of university education in the United Kingdom was accompanied by a relatively stable college wage premium. They interpret this pattern as evidence that firms adjusted their organizational structures and adopted technologies that made greater use of educated labor. These studies illustrate how higher-education expansion can be absorbed through a demand-side response that increases the productive use of skilled workers.
+
+Other settings provide less evidence that the creation of suitable jobs kept pace with the growth of university education. \citet{green2016} show that graduate underemployment is more common where the supply of graduates is large relative to the availability of graduate jobs and that underemployed graduates generally experience lower earnings and job satisfaction. \citet{li_nd} examine China's rapid college expansion and document a declining college premium among younger graduates alongside rising returns for more experienced graduates, highlighting that different types of skilled labor may not be perfect substitutes. \citet{li2008} and, more recently, \citet{su2025} document rising over-education and underemployment among Chinese graduates as college enrollment expanded, with \citet{su2025} finding that the adverse effect is larger for men---illustrating that a rapid increase in the supply of graduates can itself raise the incidence of mismatch. \citet{campante2012} place this issue in a broader Middle Eastern context, arguing that the region experienced a substantial expansion in education without a comparable increase in economic opportunities for educated workers. They identify Iran as one of the countries with particularly large increases in schooling over the preceding decades. Together, this literature suggests that higher-education expansion may stimulate skilled-labor demand in some economies but generate underemployment or poor occupational allocation where firms and occupational structures adjust more slowly.
+
+A second strand studies educational mismatch. The literature on vertical mismatch focuses on whether workers possess more or less education than is typical or required for their occupations. \citet{hartog2000} distinguishes among job-analysis, worker-assessment, and realized-match measures of required education and emphasizes that these approaches capture different concepts and may produce different estimates of mismatch. \citet{groot2000} reach a similar conclusion in their meta-analysis, while documenting a consistent earnings pattern: education above the level associated with the job generally earns a positive but lower return than education that is fully utilized. \citet{leuven2011} further caution that estimates of mismatch and its wage consequences may be affected by measurement error, unobserved ability, and the endogenous allocation of workers across occupations.
+
+The persistence of overeducation suggests that mismatch cannot always be interpreted as a temporary feature of labor-market entry. \citet{dolton2000} find that a substantial share of British graduates were overeducated in their first job and that many remained overeducated several years after graduation. They also document lower earnings among overeducated graduates relative to comparable graduates employed in jobs requiring a degree. \citet{mcguinness2006} reviews the theoretical and empirical literature and argues that persistent overeducation is more consistent with assignment models, in which productivity depends jointly on worker and job characteristics, than with a strict human-capital model in which firms fully utilize workers' education. For Iran specifically, \citet{haddad2017} use household survey data to document a rising share of post-secondary-educated workers in low-skill jobs between 2001 and 2012, with higher odds of over-education among women and a wage penalty concentrated in the private sector. Much of this literature, however, studies the incidence or consequences of mismatch rather than how exposure to a specific higher-education expansion affects the allocation of workers across jobs.
+
+A related literature extends the concept of mismatch from the level of education to the field of study. \citet{robst2007major} shows that a worker may hold an appropriate level of education but still work in an occupation unrelated to the worker's college major. He finds that field mismatch is more common among graduates whose degrees provide relatively general skills and that working outside one's field is associated with lower earnings. \citet{domadenik2013} emphasize that horizontal matching also depends on the signals conveyed by the field, institution, and duration of study. \citet{rudakov2019} document substantial field mismatch among recent Russian graduates and find that the earnings penalty generally increases with the severity of mismatch. More recently, \citet{cassidy2023} show that the wage penalty associated with occupation--education mismatch in the United States increased considerably between 1993 and 2019 even though the incidence of mismatch changed relatively little. These studies show that vertical and horizontal mismatch capture distinct dimensions of education--job alignment and should therefore be measured separately before considering their joint occurrence.
+
+A third strand concerns gender differences in labor-market participation and the interpretation of mismatch among employed workers. \citet{robst2007gender} shows that men and women may experience field mismatch for different reasons. Women are more likely to cite family circumstances, working conditions, and location, whereas men are more likely to cite career-related considerations. In settings where female employment is particularly low, comparisons of mismatch among workers require additional caution because employed women may represent a more selected subset of the underlying female population.
+
+This issue is especially relevant in Iran. \citet{chen2023} examine a reform that reduced required working hours for certain female workers while preserving full-time pay. They find that the reform reduced employment and labor-force participation among eligible women and generated negative spillovers for other women of childbearing age, suggesting that employers responded by reducing female labor demand. \citet{redaelli2024} similarly shows that Iranian women accounted for a large share of employment losses during the first year of the COVID-19 crisis and that adjustment occurred largely through withdrawal from the labor force rather than through increased unemployment. \citet{dang2024} document further declines in female participation during the pandemic and emphasize the importance of education and marital status in shaping women's labor-market outcomes. \citet{moeeni2023} show that when a 2010 policy restricted public-sector hiring of women, female college attendance fell sharply and shifted away from fields in which employment prospects deteriorated, illustrating that female labor demand shapes women's education and field-of-study decisions in Iran. Together, these studies document the unusually weak labor-market attachment of Iranian women and underscore the importance of interpreting outcomes observed only among employed women with caution.
+
+This paper contributes to these literatures in three ways. First, it estimates how exposure to a large university expansion is associated with both vertical and horizontal mismatch rather than inferring labor-market imbalance solely from wage trends or cross-sectional mismatch rates. Second, it distinguishes among overeducation, field mismatch, and their joint occurrence, allowing the analysis to identify different forms of education--job misallocation. Third, it documents substantial gender heterogeneity in these effects and emphasizes that mismatch comparisons among employed workers must be interpreted in light of Iran's exceptionally low female employment rates.
+
+\section{Institutional Background}
+\label{sec:background}
+
+\subsection{University expansion and admissions}
+
+Iran experienced a substantial expansion of higher education from the mid-1990s through the mid-2010s. The expansion occurred through growth in public universities as well as the development of geographically dispersed institutions such as Islamic Azad University and Payame Noor University. New campuses and programs extended access to higher education beyond the largest metropolitan areas and increased the number of students enrolled in undergraduate and professional programs. \citet{karimi2020} use the resulting variation in local university openings to study marriage outcomes, exploiting exposure at ages 18--22 in an individual's county of residence.
+
+The expansion was not implemented through a single nationwide reform. Its timing and intensity differed across provinces as institutions opened new branches and enrollment expanded at different rates. As a result, individuals reaching university-entry age in different provinces and birth cohorts faced different levels of local access to higher education. Figure~\ref{fig:capacity} documents the evolution of undergraduate and professional capacity per 100,000 residents and the substantial differences in exposure across provinces.
+
+\begin{figure}[htbp]
+  \centering
+  \includegraphics[width=0.9\textwidth]{fig1.png}
+  \caption{Expansion of undergraduate capacity per 100{,}000 population. The figure plots annual survey-weighted means from the province--year university panel. The national mean is weighted by province population; the low- and high-capacity series average the provinces in the bottom and top quartiles of mean undergraduate capacity. The horizontal axis is the calendar (Persian) exposure year.}
+  \label{fig:capacity}
+\end{figure}
+
+Admission to much of Iranian higher education is organized through the national university entrance examination, commonly known as the Konkoor. Applicants are ranked according to examination performance and allocated across institutions and fields of study based on their preferences, admission rules, and the available set of places. Changes in the scale and geographic distribution of higher education can therefore affect both the probability of university attendance and the set of institutions and fields available to prospective students.
+
+The empirical analysis captures these differences using the university opportunities available in an individual's historical province at ages 18--20. These ages correspond to the period when most students complete secondary education and make university-entry decisions. The resulting measure should be interpreted as exposure to local higher-education opportunity rather than as individual university attendance. Its estimated effects therefore capture the reduced-form consequences of expanded access to higher education. As Section~\ref{sec:firststage} documents, this exposure does not predict individual tertiary attainment once province and cohort fixed effects are included; its effects operate through the composition of the graduate workforce, competition among graduates, and the subsequent allocation of workers across occupations rather than through the level of individual educational attainment.
+
+\subsection{Graduate labor-market absorption and gender differences}
+
+The expansion of higher education occurred in a labor market where the growth of suitable graduate employment appears to have been more limited. As the number of university-educated workers increased, the occupational structure did not necessarily expand at the same pace. This created the possibility that additional graduates would be absorbed into occupations requiring lower levels of education or into jobs unrelated to their field of study.
+
+These pressures were accompanied by substantial gender differences in labor-market participation. Women participated extensively in the expansion of higher education, yet their labor-force participation and employment rates remained far below those of men. Figure~\ref{fig:gendergap} documents the persistence of this gender gap over the LFS period.
+
+\begin{figure}[htbp]
+  \centering
+  \includegraphics[width=0.9\textwidth]{fig2.png}
+  \caption{Labor-force participation and employment by gender over time. The figure plots survey-weighted rates from the Iranian Labor Force Survey, 1386--1403 (2007--2024). Solid lines denote labor-force participation and dashed lines denote employment; women and men correspond to female and male respondents, respectively.}
+  \label{fig:gendergap}
+\end{figure}
+
+The low employment rate among women also creates an important interpretive issue for the subsequent mismatch analysis. Because educational mismatch is observed only among employed workers, the women observed in the mismatch sample may be more positively selected than the broader female population. Gender differences in mismatch should therefore be interpreted as differences among employed workers rather than as direct evidence that women faced more favorable labor-market opportunities overall.
+
+Together, these institutional features motivate the empirical analysis. The higher-education expansion generated substantial variation in university exposure across provinces and cohorts, while the labor market faced the challenge of absorbing a growing supply of educated workers. The following section describes how this exposure is measured and how education--job mismatch is constructed in the Labor Force Survey.
+
+\section{Data and Measurement}
+\label{sec:data}
+
+This section describes the individual-level labor-market data, the construction of the province-year university enrollment panel, and the assignment of university exposure across provinces and birth cohorts. It then explains the analytical samples and the measures of vertical mismatch, horizontal mismatch, joint mismatch, and graduate labor-market pressure.
+
+\subsection{Iranian Labor Force Survey}
+
+The individual-level data come from the Iranian Labor Force Survey (LFS) for Persian calendar years 1386--1403. The LFS is a repeated cross-sectional survey containing information on demographic characteristics, educational attainment, field of study, labor-force status, occupation, current place of residence, previous place of residence, and survey weights. These variables make it possible to link individuals' educational backgrounds to their subsequent labor-market outcomes and occupational assignments.
+
+The analysis focuses on individuals born between 1355 and 1383. These 29 birth cohorts are selected because university exposure can be measured around the conventional undergraduate-entry ages of 18--20. After the construction and harmonization of the relevant variables, the individual-level analysis file contains approximately 4.1 million observations covering 18 survey years and 28 harmonized historical provinces. The samples used in individual regressions are smaller because each outcome requires valid information on the relevant labor-market, education, field-of-study, or occupation variables.
+
+Iran's provincial boundaries changed during the period covered by the enrollment and labor-force data. Contemporary province identifiers are therefore mapped to a consistent set of 28 historical provinces before university exposure is assigned. This harmonization prevents the creation or division of provinces from generating artificial changes in measured enrollment exposure. The empirical design consequently compares birth cohorts that reached university-entry age under different levels of university capacity within the same harmonized historical province.
+
+The primary specifications use the LFS survey weights. The general analysis sample excludes observations with missing or non-positive weights, invalid birth-year information, missing historical-province identifiers, or insufficient information to construct university exposure. Additional outcome-specific restrictions are described in Section~\ref{sec:samples}.
+
+\subsection{University enrollment, population, and exposure construction}
+
+University expansion is measured using a province-year panel of undergraduate and professional enrollment. Enrollment counts are combined with provincial population data and expressed as the number of undergraduate and professional students per 100,000 residents. Normalizing enrollment by population captures changes in university capacity relative to the size of the population potentially served by the provincial higher-education system.
+
+The enrollment and population series are harmonized to the same set of 28 historical provinces used in the LFS. This step is necessary because several contemporary provinces were created through administrative divisions during the period covered by the data. Assigning both enrollment and individuals to consistent historical units prevents changes in provincial boundaries from being interpreted as changes in university capacity.
+
+For an individual born in cohort $c$ and associated with historical province $p$, university exposure is measured using the enrollment rates prevailing when that cohort was ages 18, 19, and 20. Let $E_{p,c+a}$ denote undergraduate and professional enrollment per 100,000 residents in province $p$ when cohort $c$ is age $a$. The preferred exposure measure is
+\begin{equation}
+Exposure_{pc}^{18\text{--}20} = \frac{1}{3}\left( E_{p,c+18} + E_{p,c+19} + E_{p,c+20} \right).
+\end{equation}
+The ages 18--20 window is intended to capture university capacity during the principal period of undergraduate entry while allowing for delayed admission, repeated entrance examinations, or entry after an initial unsuccessful attempt. The baseline sample requires all three annual exposure values to be observed.
+
+The empirical models use the natural logarithm of average exposure:
+\begin{equation}
+\ln\left( Exposure_{pc}^{18\text{--}20} \right).
+\end{equation}
+This transformation allows the estimated coefficients to be interpreted in proportional terms and reduces the influence of unusually large province-year enrollment values. Because treatment enters logarithmically, the estimated effect of a 10 percent increase in exposure is calculated as
+\begin{equation}
+100 \times \ln(1.10) \times \widehat{\beta},
+\end{equation}
+where $\widehat{\beta}$ is the coefficient on log exposure. For binary outcomes estimated using linear probability models, this expression gives the percentage-point change in the probability of the outcome associated with a 10 percent increase in university exposure.
+
+\subsection{Analytical samples}
+\label{sec:samples}
+
+The analysis uses several outcome-specific samples because the information required to construct each outcome differs. All samples begin with individuals who have valid university exposure, historical province, birth cohort, survey year, demographic controls, and survey weights. Additional restrictions are then imposed according to the variables needed for each analysis.
+
+The broad labor-market sample is used to estimate effects on labor-force participation and employment. The unemployment outcome is defined only for labor-force participants. These samples do not require occupation or field-of-study information and are therefore substantially larger than the mismatch samples.
+
+Vertical mismatch is measured among employed workers with valid educational attainment and occupation codes. These observations are used to classify workers as overeducated, undereducated, or vertically matched relative to the education benchmark for their occupation.
+
+Horizontal mismatch is defined only for tertiary-educated employed workers with a valid field of study and harmonized occupation code. The same general sample is used for the field-of-study heterogeneity analysis, although each field-specific regression is restricted to graduates in the relevant field.
+
+The joint mismatch sample requires valid measures of both vertical and horizontal mismatch. It is used to construct double mismatch and fully matched employment. Double mismatch identifies workers who are both overeducated and employed outside their field of study, while fully matched employment requires alignment along both dimensions.
+
+Occupation-based outcomes are constructed using the occupation reported for the respondent's main job; information on second jobs is not used to classify educational mismatch.
+
+\subsection{Educational attainment and vertical mismatch}
+
+The LFS reports educational attainment in categorical form. These categories are harmonized into eight ordered education levels and assigned ranks from one to eight, with higher values indicating higher completed education. The ranking is constructed for the analysis, while the underlying attainment information comes directly from the survey.
+
+Vertical mismatch is measured using a realized-matches approach. For each occupation, the modal education rank among employed workers is interpreted as the occupation's typical education requirement. Let $EduRank_{i}$ denote worker $i$'s education rank and $ReqRank_{o}$ the modal education rank in occupation $o$. Workers are classified as overeducated, undereducated, or vertically matched according to
+\begin{align*}
+Overeducated_{i} &= \mathbf{1}\left( EduRank_{i} > ReqRank_{o} \right), \\
+Undereducated_{i} &= \mathbf{1}\left( EduRank_{i} < ReqRank_{o} \right),
+\end{align*}
+and
+\[
+VerticallyMatched_{i} = \mathbf{1}\left( EduRank_{i} = ReqRank_{o} \right).
+\]
+
+Any vertical mismatch is defined as the union of overeducation and undereducation:
+\[
+VerticalMismatch_{i} = Overeducated_{i} + Undereducated_{i}.
+\]
+Because the three categories are mutually exclusive, this indicator equals one whenever a worker's education rank differs from the occupational benchmark.
+
+The preferred measure uses the final reliable full-period occupational benchmark. This benchmark is calculated over the full available sample after imposing minimum-cell and reliability restrictions so that occupation-specific education requirements are not determined by very small or unstable cells. The same benchmark is then applied consistently across survey years.
+
+The robustness analysis considers two alternatives. The unrestricted full-period benchmark uses the full-period modal rank without the preferred reliability restrictions. The period-specific benchmark recalculates the modal education rank separately across periods, allowing occupational education requirements to change over time. Comparing results across these definitions assesses whether the main findings depend on a particular method of estimating occupational requirements.
+
+The realized-matches approach captures how workers are actually allocated across occupations rather than relying on an externally assigned education requirement. Its limitation is that the occupational benchmark may partly reflect existing mismatch in the labor market. The paper therefore interprets the measure as a relative indicator of whether a worker's education is above or below the education level most commonly observed within the occupation, rather than as a direct measure of technologically required schooling.
+
+\subsection{Horizontal mismatch and joint mismatch outcomes}
+
+Horizontal mismatch captures whether a tertiary-educated worker is employed in an occupation related to the worker's field of study. Fields of study are harmonized into broad ISCED groups, while occupations are harmonized into two-digit ISCO categories. A field-to-occupation crosswalk is then used to identify the occupations considered related to each field. The mapping is many-to-many: a field may correspond to several plausible occupations, and an occupation may be considered related to more than one field of study.
+
+Under the preferred broad definition, worker $i$ is classified as horizontally mismatched when the worker's occupation does not belong to the set of occupations associated with the worker's field of study:
+\begin{equation}
+HorizontalMismatch_{i} = \mathbf{1}\left( Occupation_{i} \notin RelatedOccupations\left( Field_{i} \right) \right).
+\end{equation}
+The broad crosswalk allows for a relatively inclusive set of plausible field--occupation links. A stricter crosswalk is used in the robustness analysis to assess whether the findings depend on the breadth of the occupational mapping.
+
+The paper also combines vertical and horizontal mismatch to construct two joint outcomes. The first is double mismatch, defined as the simultaneous occurrence of overeducation and horizontal mismatch:
+\begin{equation}
+DoubleMismatch_{i} = Overeducated_{i} \times HorizontalMismatch_{i}.
+\end{equation}
+The use of overeducation rather than any vertical mismatch is deliberate. Undereducated workers are employed in occupations whose typical education level exceeds their own attainment. Although they are vertically mismatched, they do not represent the type of graduate-job downgrading central to the paper. Double mismatch therefore identifies workers whose education exceeds the occupation's typical level and whose occupation is also unrelated to their field of study.
+
+The second joint outcome is fully matched employment:
+\begin{equation}
+FullyMatched_{i} = VerticallyMatched_{i} \times \left( 1 - HorizontalMismatch_{i} \right).
+\end{equation}
+This indicator equals one only when the worker is matched both in education level and field of study. It therefore provides a stricter measure of education--job alignment than either vertical or horizontal matching considered separately.
+
+The joint outcomes are constructed only for tertiary-educated employed workers with valid information on education, field of study, and occupation. Because the measures require both vertical and horizontal classifications, the joint mismatch sample is smaller than the broader vertical-mismatch sample.
+
+The preferred joint outcomes use the reliable full-period vertical benchmark and the broad horizontal crosswalk. Robustness exercises combine the preferred, unrestricted full-period, and period-specific vertical benchmarks with both broad and strict horizontal crosswalks. These alternative constructions test whether the results depend on a particular occupational education benchmark or field-to-occupation mapping.
+
+\subsection{Descriptive trends in graduate labor-market pressure}
+
+Before presenting the regression results, the paper documents how the educational composition of employment evolved relative to the occupational structure. Three survey-weighted national measures are constructed among employed workers: the tertiary-educated employment share, the high-skill employment share, and the graduate-pressure ratio. High-skill occupations are defined as managers, professionals, and technicians and associate professionals, corresponding to ISCO major groups 1--3.
+
+The graduate-pressure ratio is defined as the survey-weighted number of tertiary-educated employed workers divided by the number of workers employed in high-skill occupations. A ratio above one indicates that the number of tertiary-educated employed workers exceeds the number of workers employed in occupations conventionally classified as high skill. Because tertiary-educated workers in high-skill occupations appear in both the numerator and denominator, the ratio measures relative aggregate quantities rather than the share of graduates who are mismatched.
+
+Figure~\ref{fig:pressure} summarizes these patterns. Panel A shows that the tertiary-educated share of employment rises from approximately 14 percent near the beginning of the sample to about 33 percent by the end, while the high-skill employment share increases more slowly, from roughly 15 percent to 23 percent. Panel B shows the resulting graduate-pressure ratio, which rises from around one at the beginning of the sample to approximately 1.45--1.50 in the final years. By the end of the period, there are therefore roughly one and a half tertiary-educated employed workers for every worker employed in a high-skill occupation.
+
+These national trends show that the tertiary-educated workforce expanded more rapidly than high-skill employment. They provide descriptive motivation for the mismatch analysis but should not be interpreted as causal effects of university expansion. Causal interpretation rests on the province--cohort regressions presented in Section~\ref{sec:results}.
+
+\begin{figure}[htbp]
+  \centering
+  \includegraphics[width=0.68\textwidth]{fig3.png}
+  \caption{Graduate labor-market pressure. Panel A reports survey-weighted national shares among employed workers; high-skill occupations correspond to ISCO major groups 1--3. Panel B reports the survey-weighted number of tertiary-educated employed workers divided by the number employed in high-skill occupations, and the dashed line at one indicates equality. All series are descriptive.}
+  \label{fig:pressure}
+\end{figure}
+
+\subsection{Descriptive trends in educational mismatch}
+
+Figure~\ref{fig:trends} reports survey-weighted annual rates of overeducation, undereducation, horizontal mismatch, and fully matched employment for the pooled sample and separately for women and men. The outcomes use the preferred mismatch definitions described above.
+
+\begin{figure}[htbp]
+  \centering
+  \includegraphics[width=0.9\textwidth]{fig4.png}
+  \caption{Trends in education--job matching outcomes. Lines report survey-weighted annual means for the pooled sample and separately for women and men. Overeducation and undereducation (Panels A and B) use the final reliable full-period occupational education benchmark; horizontal mismatch and fully matched employment (Panels C and D) use the preferred broad field-to-occupation crosswalk (Section~\ref{sec:data}). All series are descriptive.}
+  \label{fig:trends}
+\end{figure}
+
+Several patterns stand out. Overeducation rises substantially over the sample period for both genders, while undereducation declines. The increase in overeducation is especially pronounced among women, so the gender gap narrows considerably by the later years. Horizontal mismatch is consistently much higher among men, whereas among employed workers, women are substantially more likely to be fully matched along both the education-level and field-of-study dimensions.
+
+These patterns are descriptive rather than causal, but they provide useful context for the empirical analysis. In particular, they suggest that educational mismatch is an important margin of labor-market adjustment and that the patterns differ meaningfully by gender. Section~\ref{sec:results} examines whether these outcomes are systematically related to exposure to university expansion after accounting for province, birth-cohort, and survey-year fixed effects.
+
+\section{Empirical Analysis and Results}
+\label{sec:results}
+
+This section integrates the empirical method and the corresponding evidence. Common elements of the design are presented first. Each subsequent subsection then introduces the outcome-specific specification, reports the relevant table or figure, and interprets the results.
+
+\subsection{Baseline empirical strategy}
+
+The empirical design exploits variation in university enrollment exposure across historical provinces and birth cohorts. Individuals from different cohorts in the same province reached university-entry age under different levels of undergraduate capacity. The baseline model is
+\begin{equation}
+Y_{ipct} = \beta \, \log(Exposure_{pc}) + X_{i}'\gamma + \mu_{p} + \lambda_{c} + \tau_{t} + \varepsilon_{ipct},
+\end{equation}
+where $Y_{ipct}$ is an outcome for individual $i$ associated with historical province $p$, birth cohort $c$, and survey year $t$. Province fixed effects $\mu_{p}$ absorb permanent differences across provinces. Birth-cohort fixed effects $\lambda_{c}$ absorb national differences across cohorts. Survey-year fixed effects $\tau_{t}$ absorb common shocks in the year outcomes are observed. In pooled specifications, $X_{i}$ includes indicators for female and urban residence; gender-specific models include urban residence.
+
+Models are estimated as survey-weighted linear probability regressions. Standard errors are two-way clustered by historical province and birth cohort, allowing residual correlation among individuals exposed to common provincial conditions and among members of the same birth cohort. The baseline design includes 28 province clusters and 29 cohort clusters.
+
+The identifying assumption is that, conditional on province, birth-cohort, and survey-year fixed effects and observed controls, within-province differences in exposure across cohorts are not correlated with unobserved determinants of later mismatch. The province, cohort, and survey-year fixed effects together absorb about 96 percent of the variance in log exposure; identification comes from the remaining within-province, cross-cohort variation, whose residualized standard deviation is about 0.14 log points. The robustness analysis examines potential threats related to migration and the distinctive role of Tehran. It also assesses whether the results are sensitive to alternative constructions of the mismatch outcomes. Appendix~\ref{app:robust} reports additional identification checks: province-by-survey-year fixed effects, province-specific linear cohort trends, restrictions to older (post-treatment) workers, a frozen occupational education benchmark, few-cluster inference, province-by-cohort-by-year cell-level estimation, and formal tests of gender differences. These exercises test whether the main findings are sensitive to outcome construction, migration-related exposure misclassification, contemporaneous province labor-market conditions, differential province trends, few-cluster inference, or the influence of the country's largest and most distinctive labor market.
+
+\subsection{University exposure and educational attainment}
+\label{sec:firststage}
+
+Because the exposure measure is intended to capture expanded access to higher education, a natural first question is whether cohorts facing greater local university enrollment became more educated. Estimating the baseline specification with an indicator for tertiary education as the outcome, on the broad analysis sample, yields a coefficient that is close to zero and statistically insignificant: a 10 percent increase in exposure is associated with a change in the probability of tertiary education of $-0.15$ percentage points ($p=0.36$). The estimate remains small and insignificant when the sample is restricted to individuals old enough to have completed university (ages 25 and above), when estimated separately for women and men, and when educational attainment is measured by an eight-point attainment rank rather than a tertiary indicator (Appendix Table~\ref{tab:appfirststage}). A regression of exposure on tertiary attainment that includes only province fixed effects produces a large positive coefficient, but this reflects the fact that historically high-capacity provinces have more educated populations; the association disappears once cohort variation is isolated.
+
+Two features of the setting help explain this pattern. Admission is organized through the national Konkoor examination, so students from lower-capacity provinces can and do enroll elsewhere, and the province-level enrollment rate need not translate into the attainment of the local birth cohort. In addition, the exposure measure varies at the province--cohort level while attainment has strong province and cohort components that the fixed effects absorb. The estimates that follow should therefore be read as reduced-form effects of the local higher-education environment a cohort faced---including the density of graduates competing for suitable jobs---rather than as effects of individual schooling. This interpretation is consistent with the small employment effects reported next and with the population-level mismatch estimates in Appendix Table~\ref{tab:appuncond}, which are considerably smaller than the estimates among employed graduates.
+
+\subsection{Employment quantity}
+
+Before examining educational mismatch, we first assess whether university expansion affected broad labor-market outcomes. Table~\ref{tab:employment} provides little evidence that university expansion affected broad employment quantities. A 10 percent increase in university exposure is associated with a 0.035 percentage-point decline in labor-force participation and a 0.103 percentage-point decline in employment in the pooled sample. The corresponding gender-specific estimates are also small relative to their standard errors and statistically insignificant. Unemployment estimates are positive but similarly imprecise in the pooled, female, and male samples.
+
+\begin{table}[htbp]
+  \centering
+  \caption{University exposure and employment outcomes}
+  \label{tab:employment}
+  \begin{threeparttable}
+  \begin{tabular}{lccc}
+    \toprule
+    Outcome & Pooled & Women & Men \\
+    \midrule
+    Labor-force participation & $-0.035$  & $-0.161$  & $0.078$  \\
+                              & $(0.057)$ & $(0.110)$ & $(0.164)$ \\
+    Employment                & $-0.103$  & $-0.167$  & $-0.052$ \\
+                              & $(0.085)$ & $(0.124)$ & $(0.186)$ \\
+    Unemployment              & $0.228$   & $0.229$   & $0.213$  \\
+                              & $(0.147)$ & $(0.272)$ & $(0.126)$ \\
+    \bottomrule
+  \end{tabular}
+  \begin{tablenotes}[flushleft]
+    \footnotesize
+    \item Each entry reports the percentage-point effect associated with a 10 percent increase in average undergraduate and professional enrollment per 100,000 residents in the individual's historical province at ages 18--20. All models include historical-province, birth-cohort, and survey-year fixed effects. Pooled models control for gender and urban residence; gender-specific models control for urban residence. Regressions use survey weights. Standard errors, shown in parentheses, are two-way clustered by historical province and birth cohort. The unemployment models are estimated among labor-force participants. \textsuperscript{***}$p<0.01$, \textsuperscript{**}$p<0.05$, \textsuperscript{*}$p<0.10$.
+  \end{tablenotes}
+  \end{threeparttable}
+\end{table}
+
+Overall, the results suggest that the principal labor-market response to greater university exposure occurred through the allocation of workers across jobs rather than through large changes in labor-force participation, employment, or unemployment.
+
+\subsection{Main mismatch effects}
+
+The principal analysis examines both vertical and horizontal dimensions of educational mismatch. Table~\ref{tab:mismatch} reports pooled and gender-specific estimates for any vertical mismatch, its two components---overeducation and undereducation---horizontal mismatch, double mismatch, and fully matched employment. All coefficients are expressed as percentage-point effects associated with a 10 percent increase in university exposure at ages 18--20.
+
+\begin{table}[htbp]
+  \centering
+  \caption{University exposure and educational mismatch}
+  \label{tab:mismatch}
+  \begin{threeparttable}
+  \begin{tabular}{lccc}
+    \toprule
+    Outcome & Pooled & Women & Men \\
+    \midrule
+    Any vertical mismatch     & $0.170$          & $0.299$          & $0.141$ \\
+                              & $(0.110)$        & $(0.222)$        & $(0.105)$ \\
+    Overeducation             & $0.335^{***}$    & $0.478^{**}$     & $0.305^{***}$ \\
+                              & $(0.101)$        & $(0.205)$        & $(0.104)$ \\
+    Undereducation            & $-0.165^{*}$     & $-0.179$         & $-0.164$ \\
+                              & $(0.090)$        & $(0.109)$        & $(0.102)$ \\
+    Horizontal mismatch       & $0.614^{***}$    & $0.073$          & $0.840^{***}$ \\
+                              & $(0.126)$        & $(0.174)$        & $(0.149)$ \\
+    Double mismatch           & $0.695^{***}$    & $0.368^{**}$     & $0.797^{***}$ \\
+                              & $(0.140)$        & $(0.144)$        & $(0.182)$ \\
+    Fully matched employment  & $-0.341^{***}$   & $0.088$          & $-0.513^{***}$ \\
+                              & $(0.103)$        & $(0.207)$        & $(0.115)$ \\
+    \bottomrule
+  \end{tabular}
+  \begin{tablenotes}[flushleft]
+    \footnotesize
+    \item Each entry reports the percentage-point effect associated with a 10 percent increase in undergraduate and professional enrollment per 100,000 residents in an individual's historical province at ages 18--20. Standard errors are shown in parentheses. All specifications include historical-province, birth-cohort, and survey-year fixed effects. Pooled models control for gender and urban residence, while gender-specific models control for urban residence. Regressions use survey weights, and standard errors are two-way clustered by historical province and birth cohort. The vertical-mismatch outcomes are estimated among employed workers for whom vertical mismatch can be measured. Horizontal mismatch is based on the preferred broad field-to-occupation crosswalk. Double mismatch and fully matched employment are estimated among workers eligible for both vertical- and horizontal-mismatch measurement. \textsuperscript{***}$p<0.01$, \textsuperscript{**}$p<0.05$, \textsuperscript{*}$p<0.10$.
+  \end{tablenotes}
+  \end{threeparttable}
+\end{table}
+
+A 10 percent increase in university exposure raises the probability of any vertical mismatch by an estimated 0.170 percentage points in the pooled sample. The corresponding estimates are 0.299 percentage points for women and 0.141 percentage points for men. None of these estimates is statistically significant at conventional levels. The modest aggregate effect, however, conceals offsetting movements in the two components of vertical mismatch.
+
+Overeducation increases by 0.335 percentage points in the pooled sample. The effect is positive and statistically significant for both women and men, with estimated increases of 0.478 and 0.305 percentage points, respectively. These results indicate that greater exposure to university capacity increased the probability that employed workers possessed more education than was typically required for their occupation.
+
+Undereducation moves in the opposite direction. A 10 percent increase in exposure reduces undereducation by 0.165 percentage points in the pooled sample, an effect that is statistically significant at the 10 percent level. The estimated reductions are 0.179 percentage points for women and 0.164 percentage points for men, although neither gender-specific estimate is statistically significant. Thus, university expansion appears to have shifted the composition of vertical mismatch away from undereducation and toward overeducation, rather than causing a large change in the overall incidence of vertical mismatch.
+
+The effects on horizontal mismatch are larger and concentrated among men. In the pooled sample, a 10 percent increase in exposure raises the probability of working outside one's field of study by 0.614 percentage points. The male estimate is 0.840 percentage points and highly statistically significant, while the female estimate is 0.073 percentage points and statistically insignificant. A pooled interaction model that allows the fixed effects and the urban coefficient to differ by gender---so that the specification matches the separate-sex regressions---rejects equality of the male and female exposure coefficients for horizontal mismatch (difference $-0.767$ percentage points, $p=0.001$; Appendix Table~\ref{tab:appgender}).
+
+The strongest result concerns double mismatch, defined as being simultaneously overeducated and employed outside one's field of study. Exposure raises double mismatch by 0.695 percentage points in the pooled sample. The estimated increase is 0.368 percentage points among women and 0.797 percentage points among men, and both effects are statistically significant. In the properly specified interaction model the male--female difference for double mismatch is significant only at the 10 percent level ($p=0.09$), whereas the difference for fully matched employment is significant at the 5 percent level ($p=0.02$). For overeducation, undereducation, and the employment outcomes the male and female exposure coefficients are not statistically distinguishable.
+
+Consistent with these findings, university exposure reduces the probability of fully matched employment, defined as being matched along both the education-level and field-of-study dimensions. The pooled estimate indicates a decline of 0.341 percentage points. Among men, fully matched employment falls by 0.513 percentage points, whereas the female estimate is small, positive, and statistically insignificant.
+
+Taken together, these results show that university expansion changed both the composition and severity of educational mismatch. It increased overeducation while reducing undereducation, generated a substantial rise in horizontal mismatch, increased the probability of experiencing both forms of mismatch simultaneously, and reduced the probability of complete education--job alignment. The relatively small effect on total vertical mismatch therefore does not imply an absence of labor-market reallocation. Instead, it reflects offsetting changes within vertical mismatch, with overeducation becoming more common as undereducation declined.
+
+To gauge economic magnitude, the relevant scale is the identifying variation in exposure, not its raw dispersion. After residualizing log exposure on the province, cohort, and survey-year fixed effects, its weighted standard deviation is about 0.14 log points and its interquartile range about 0.19 (Appendix Table~\ref{tab:appexposure}). A one-residualized-standard-deviation increase in exposure is therefore associated with increases of roughly 0.9 percentage points in horizontal mismatch and 1.0 percentage points in double mismatch, and a decline of about 0.5 percentage points in fully matched employment, relative to sample means of 51, 37, and 23 percent; the corresponding figure for overeducation is about 0.5 percentage points. Outcome means and sample sizes for every regression are reported in Appendix Table~\ref{tab:appsamples}.
+
+\subsection{Occupational concentration of double mismatch}
+
+The main results show that university exposure increased double mismatch, defined as being both overeducated and employed outside one's field of study. To identify the occupations in which this increase is concentrated, we decompose the aggregate double-mismatch effect across two-digit ISCO occupations.
+
+For each occupation, we construct an indicator equal to one when a worker is doubly mismatched and employed in that occupation, and zero otherwise. These occupation-specific regressions are estimated separately for women and men using the same treatment measure, sample restrictions, controls, fixed effects, survey weights, and clustering structure as the main double-mismatch specification. Because every doubly mismatched worker belongs to one occupation, the occupation-specific effects form an additive decomposition of the aggregate double-mismatch effect. The decomposition reproduces the aggregate estimates of 0.797 percentage points for men and 0.368 percentage points for women.
+
+Table~\ref{tab:occdecomp} reports the five occupations with the largest positive contributions for each gender. The occupation-specific effect measures the percentage-point change associated with a 10 percent increase in university exposure. The contribution to the estimated increase is calculated by dividing each occupation-specific effect by the corresponding aggregate double-mismatch effect. The final column reports the occupation's survey-weighted share of all doubly mismatched workers. The contribution and descriptive-share columns therefore capture different concepts: the former identifies where the exposure-related increase is concentrated, while the latter describes where doubly mismatched workers are generally employed. Positive contribution shares need not sum to 100 percent because some occupations have negative estimated effects.
+
+\begin{table}[htbp]
+  \centering
+  \caption{Occupations contributing most to the increase in double mismatch}
+  \label{tab:occdecomp}
+  \begin{threeparttable}
+  \begin{tabular}{L{6.2cm}ccc}
+    \toprule
+    Occupation & Effect & \makecell{Contribution to\\estimated increase} & \makecell{Descriptive share\\of double mismatch} \\
+    \midrule
+    \multicolumn{4}{l}{\textit{Panel A. Men}} \\
+    \addlinespace
+    Sales workers                                                    & $0.410^{***}$ $(0.095)$ & 51.5\% & 26.4\% \\
+    Market-oriented skilled agricultural workers                     & $0.153^{*}$ $(0.083)$   & 19.1\% & 6.9\% \\
+    Laborers in mining, construction, manufacturing, and transport   & $0.149^{***}$ $(0.026)$ & 18.7\% & 3.7\% \\
+    Agricultural, forestry, and fishery laborers                     & $0.097^{**}$ $(0.040)$  & 12.2\% & 1.7\% \\
+    Drivers and mobile-plant operators                               & $0.052$ $(0.048)$       & 6.6\%  & 7.5\% \\
+    \addlinespace
+    \multicolumn{4}{l}{\textit{Panel B. Women}} \\
+    \addlinespace
+    Sales workers                                                    & $0.213^{**}$ $(0.079)$  & 58.0\% & 18.7\% \\
+    Food-processing, woodworking, garment, and related workers       & $0.111$ $(0.072)$       & 30.3\% & 8.9\% \\
+    Teaching professionals                                           & $0.109^{*}$ $(0.062)$   & 29.7\% & 9.7\% \\
+    Handicraft and printing workers                                  & $0.068^{**}$ $(0.030)$  & 18.5\% & 2.8\% \\
+    Electrical and electronic-trades workers                         & $0.053^{*}$ $(0.028)$   & 14.5\% & 3.6\% \\
+    \bottomrule
+  \end{tabular}
+  \begin{tablenotes}[flushleft]
+    \footnotesize
+    \item The sample consists of tertiary-educated employed workers for whom both vertical and horizontal mismatch can be measured. Each outcome equals one when a worker is doubly mismatched and employed in the indicated occupation. Effects are percentage-point changes associated with a 10 percent increase in university exposure at ages 18--20. All models include historical-province, birth-cohort, and survey-year fixed effects, control for urban residence, use survey weights, and two-way cluster standard errors by historical province and birth cohort. ``Contribution to estimated increase'' equals the occupation-specific effect divided by the total gender-specific double-mismatch effect. ``Descriptive share of double mismatch'' is the occupation's survey-weighted share of all doubly mismatched workers within the relevant gender. Positive contribution shares need not sum to 100 percent because some occupations have negative estimated effects. Standard errors are shown in parentheses. \textsuperscript{***}$p<0.01$, \textsuperscript{**}$p<0.05$, \textsuperscript{*}$p<0.10$.
+  \end{tablenotes}
+  \end{threeparttable}
+\end{table}
+
+For men, the increase in double mismatch is concentrated mainly in sales, agriculture, and manual occupations. Sales workers account for 51.5 percent of the total estimated male effect. Market-oriented skilled agricultural workers and laborers in mining, construction, manufacturing, and transport contribute a further 19.1 and 18.7 percent, respectively. Agricultural, forestry, and fishery laborers account for 12.2 percent, while the estimate for drivers and mobile-plant operators is smaller and statistically imprecise.
+
+The two agricultural categories represent different types of work. Market-oriented skilled agricultural workers perform more specialized production activities, such as crop growing or livestock production, whereas agricultural, forestry, and fishery laborers perform more routine manual tasks, such as harvesting or assisting with farm work. Thus, for example, a skilled crop grower and a seasonal agricultural laborer are classified separately.
+
+For women, sales is also the largest contributor, accounting for approximately 58 percent of the estimated increase in double mismatch. Positive contributions also appear in food-processing and garment-related occupations, teaching, handicraft and printing, and electrical and electronic trades. The sales and handicraft-and-printing estimates are statistically significant at the 5 percent level, while the teaching and electrical-trades estimates are significant at the 10 percent level. The food-processing estimate is positive but statistically insignificant.
+
+The teaching result should not be interpreted as implying that teaching is inherently a lower-skill occupation. Rather, it indicates that some tertiary-educated women employed in teaching are classified as both overeducated relative to the occupation-specific education benchmark and mismatched with respect to their field of study.
+
+Overall, the decomposition shows that the increase in double mismatch was not distributed evenly across occupations. Among men, it was concentrated primarily in sales, agriculture, and manual occupations, while among women it was concentrated mainly in sales and selected production and craft-related occupations, with some evidence of an increase in teaching.
+
+\subsection{Field-of-study heterogeneity in mismatch effects}
+
+The effect of university expansion may differ across fields because programs vary in how closely they are linked to particular occupations and in the labor market's capacity to absorb additional graduates. To examine this heterogeneity, fields of study are harmonized into ten broad groups: education; arts and humanities; social sciences and journalism; business, administration, and law; natural sciences and mathematics; information and communication technologies (ICT); engineering, manufacturing, and construction; agriculture and veterinary studies; health and welfare; and services.
+
+The baseline specification is estimated separately within each field among tertiary-educated employed workers eligible for the relevant mismatch outcome. The principal outcomes are horizontal mismatch, double mismatch, and fully matched employment. Because the analysis estimates multiple field--outcome combinations, conventional significance levels are supplemented with Benjamini--Hochberg false-discovery-rate adjustments. ICT is observed over only seven survey years and is therefore interpreted more cautiously than fields available throughout the sample.
+
+\begin{table}[htbp]
+  \centering
+  \caption{Field-of-study heterogeneity in mismatch effects}
+  \label{tab:field}
+  \begin{threeparttable}
+  \begin{tabular}{L{5.4cm}ccc}
+    \toprule
+    Field of study & \makecell{Horizontal\\mismatch} & \makecell{Double\\mismatch} & \makecell{Fully matched\\employment} \\
+    \midrule
+    Education                                     & $-0.329$ $(0.499)$      & $-0.291$ $(0.432)$      & $-0.291$ $(0.507)$ \\
+    Arts and humanities                           & $-0.192$ $(0.316)$      & $0.659^{*}$ $(0.344)$   & $0.245$ $(0.369)$ \\
+    Social sciences and journalism                & $0.687$ $(0.478)$       & $0.651$ $(0.444)$       & $-0.712^{*}$ $(0.401)$ \\
+    Business, administration, and law             & $0.982^{***}$ $(0.286)$ & $1.182^{***}$ $(0.342)$ & $-0.556^{**}$ $(0.249)$ \\
+    Natural sciences and mathematics              & $0.680$ $(0.529)$       & $0.286$ $(0.282)$       & $0.179$ $(0.338)$ \\
+    Information and communication technologies     & $1.186^{**}$ $(0.509)$  & $0.731$ $(0.499)$       & $-0.696$ $(0.428)$ \\
+    Engineering, manufacturing, and construction  & $0.417$ $(0.336)$       & $0.508$ $(0.316)$       & $-0.028$ $(0.113)$ \\
+    Agriculture and veterinary studies            & $0.491$ $(0.433)$       & $0.791$ $(0.489)$       & $0.090$ $(0.257)$ \\
+    Health and welfare                            & $0.177$ $(0.423)$       & $0.015$ $(0.275)$       & $-0.523$ $(0.439)$ \\
+    Services                                      & $0.367$ $(0.307)$       & $0.649$ $(0.596)$       & $-0.049$ $(0.235)$ \\
+    \bottomrule
+  \end{tabular}
+  \begin{tablenotes}[flushleft]
+    \footnotesize
+    \item Entries report percentage-point effects associated with a 10 percent increase in university exposure at ages 18--20. Standard errors are shown in parentheses. Each model is estimated within the indicated field among workers eligible for the relevant outcome. Specifications include historical-province, birth-cohort, and survey-year fixed effects, control for gender and urban residence, use survey weights, and two-way cluster standard errors by historical province and birth cohort. Significance stars refer to conventional, unadjusted $p$-values. The horizontal- and double-mismatch estimates for business, administration, and law remain significant after the principal false-discovery-rate adjustment. The ICT horizontal-mismatch estimate survives the within-outcome adjustment at approximately the 10 percent level but not the broader adjustment across all pooled primary field tests. ICT is observed over seven survey years. \textsuperscript{***}$p<0.01$, \textsuperscript{**}$p<0.05$, \textsuperscript{*}$p<0.10$.
+  \end{tablenotes}
+  \end{threeparttable}
+\end{table}
+
+The clearest evidence of worsening match quality appears among graduates in business, administration, and law. A 10 percent increase in university exposure raises horizontal mismatch in this field by 0.982 percentage points and double mismatch by 1.182 percentage points, while fully matched employment declines by 0.556 percentage points. The horizontal- and double-mismatch estimates remain significant after the principal multiple-testing adjustment, making this the strongest field-specific result.
+
+Education provides a useful comparison because education degrees are generally linked to a relatively specific set of occupations. The estimated effects for education are negative but imprecise. Relative to education graduates, the effect for business, administration, and law is 1.311 percentage points larger for horizontal mismatch and 1.473 percentage points larger for double mismatch. Both differences are statistically significant, reinforcing the conclusion that the business-and-law result is not simply part of a uniform deterioration across fields.
+
+ICT also shows a relatively large increase in horizontal mismatch of 1.186 percentage points. The estimate is conventionally significant and remains significant at approximately the 10 percent level under the within-outcome false-discovery-rate adjustment, but it does not survive the broader adjustment across all primary field tests. Combined with the shorter survey coverage for ICT, this result should therefore be viewed as suggestive rather than definitive.
+
+The remaining fields show weaker or less precise patterns. Arts and humanities has a positive double-mismatch estimate, while social sciences and journalism shows a decline in fully matched employment, but neither survives the multiple-testing adjustment. Estimates for engineering, agriculture, natural sciences, health and welfare, and services are generally imprecise under the preferred specification.
+
+Overall, the effects of university expansion on education--job matching are not uniform across fields. The most robust deterioration occurs in business, administration, and law, with more tentative evidence of increased horizontal mismatch in ICT. For most other fields, the estimates are too imprecise to support strong field-specific conclusions. Detailed sample sizes, adjusted p-values, and formal cross-field comparisons are reported in the appendix.
+
+\subsection{Robustness and identification checks}
+
+The robustness analysis focuses on two concerns that are particularly relevant for the main results. First, because the mismatch outcomes are constructed from occupational education benchmarks and field-to-occupation mappings, we examine whether the estimates depend on alternative definitions of mismatch. Second, because exposure is assigned using historical province, we examine whether migration or the distinctive role of Tehran affects the results.
+
+\subsubsection{Alternative mismatch definitions}
+
+The preferred specification measures vertical mismatch using the final reliable full-period occupational benchmark and horizontal mismatch using the broad field-to-occupation crosswalk. To assess whether the results depend on these measurement choices, we consider two alternative vertical benchmarks and a stricter horizontal definition. The unrestricted full-period benchmark removes the preferred reliability restrictions, while the period-specific benchmark allows the modal education level within occupations to vary across periods. Each vertical definition is combined with both the broad and strict horizontal crosswalks.
+
+\begin{table}[htbp]
+  \centering
+  \caption{Robustness to alternative mismatch definitions}
+  \label{tab:robdef}
+  \begin{threeparttable}
+  \begin{tabular}{L{7.2cm}cc}
+    \toprule
+    Definition & Double mismatch & \makecell{Fully matched\\employment} \\
+    \midrule
+    Preferred vertical + broad horizontal                 & $0.695^{***}$ $(0.140)$ & $-0.341^{***}$ $(0.103)$ \\
+    Preferred vertical + strict horizontal                & $0.690^{***}$ $(0.140)$ & $-0.302^{***}$ $(0.092)$ \\
+    Unrestricted full-period vertical + broad horizontal  & $0.688^{***}$ $(0.140)$ & $-0.346^{***}$ $(0.102)$ \\
+    Unrestricted full-period vertical + strict horizontal & $0.679^{***}$ $(0.135)$ & $-0.305^{***}$ $(0.090)$ \\
+    Period-specific vertical + broad horizontal           & $0.699^{***}$ $(0.134)$ & $-0.365^{***}$ $(0.107)$ \\
+    Period-specific vertical + strict horizontal          & $0.703^{***}$ $(0.134)$ & $-0.317^{***}$ $(0.088)$ \\
+    \bottomrule
+  \end{tabular}
+  \begin{tablenotes}[flushleft]
+    \footnotesize
+    \item Entries report percentage-point effects associated with a 10 percent increase in university exposure at ages 18--20. The preferred vertical measure uses the final reliable full-period occupational education benchmark. The unrestricted full-period measure does not impose the preferred reliability restrictions, while the period-specific measure calculates occupational education requirements separately across periods. The broad and strict horizontal measures use alternative field-to-occupation crosswalks. All specifications include historical-province, birth-cohort, and survey-year fixed effects, control for gender and urban residence, use survey weights, and two-way cluster standard errors by historical province and birth cohort. Standard errors are shown in parentheses. \textsuperscript{***}$p<0.01$, \textsuperscript{**}$p<0.05$, \textsuperscript{*}$p<0.10$.
+  \end{tablenotes}
+  \end{threeparttable}
+\end{table}
+
+Across the six alternative constructions, the main results are highly stable. The estimated effect of a 10 percent increase in university exposure on double mismatch ranges from approximately 0.68 to 0.70 percentage points and remains positive and statistically significant in every specification. The effect on fully matched employment remains negative and statistically significant throughout. The separate overeducation and horizontal-mismatch estimates are similarly stable across alternative occupational benchmarks and field-to-occupation crosswalks.
+
+These results indicate that the central findings are not driven by a particular method of defining occupational education requirements or by the breadth of the horizontal-mismatch mapping.
+
+\subsubsection{Stronger fixed effects and province-specific trends}
+\label{sec:feladder}
+
+The baseline specification identifies $\beta$ from within-province differences in exposure across cohorts, conditional on additive province, cohort, and survey-year fixed effects. Two more demanding specifications relax this structure. The first replaces the separate province and survey-year fixed effects with province-by-survey-year fixed effects, which absorb any contemporaneous province-level labor-market condition common to all cohorts observed in a given province and year. The second adds a province-specific linear birth-cohort trend, allowing each province to follow its own smooth cohort path in the outcome. Exposure remains identified in both cases because it varies at the province--cohort level.
+
+\begin{table}[htbp]
+  \centering
+  \caption{Stronger fixed effects and province-specific cohort trends}
+  \label{tab:appfeladder}
+  \begin{threeparttable}
+  \begin{tabular}{L{5.2cm}ccc}
+    \toprule
+    Outcome & Baseline & \makecell{$+$ Province $\times$\\survey-year FE} & \makecell{$+$ Province-specific\\cohort trend} \\
+    \midrule
+    Horizontal mismatch      & $0.614^{***}$ $(0.126)$ & $0.568^{***}$ $(0.119)$ & $0.748^{***}$ $(0.142)$ \\
+    Double mismatch          & $0.688^{***}$ $(0.140)$ & $0.661^{***}$ $(0.131)$ & $0.882^{***}$ $(0.171)$ \\
+    Fully matched employment & $-0.346^{***}$ $(0.102)$ & $-0.322^{***}$ $(0.103)$ & $-0.258^{***}$ $(0.089)$ \\
+    Overeducation            & $0.330^{***}$ $(0.101)$ & $0.338^{***}$ $(0.101)$ & $-0.062$ $(0.168)$ \\
+    Undereducation           & $-0.159^{*}$ $(0.093)$ & $-0.156^{*}$ $(0.087)$ & $0.052$ $(0.110)$ \\
+    Employment               & $-0.103$ $(0.085)$ & $-0.119$ $(0.088)$ & $0.006$ $(0.085)$ \\
+    \bottomrule
+  \end{tabular}
+  \begin{tablenotes}[flushleft]
+    \footnotesize
+    \item Entries report percentage-point effects associated with a 10 percent increase in university exposure at ages 18--20, with standard errors two-way clustered by historical province and birth cohort in parentheses. All specifications use survey weights and control for gender (pooled) and urban residence. Column 1 reproduces the unrestricted full-period benchmark of Table~\ref{tab:robdef}; the preferred-benchmark point estimates differ by less than 0.01 percentage points. The province-specific cohort trend is a linear term in birth cohort interacted with historical province. \textsuperscript{***}$p<0.01$, \textsuperscript{**}$p<0.05$, \textsuperscript{*}$p<0.10$.
+  \end{tablenotes}
+  \end{threeparttable}
+\end{table}
+
+The horizontal-mismatch, double-mismatch, and fully-matched-employment results are stable under province-by-survey-year fixed effects and, if anything, larger once province-specific cohort trends are included. The vertical-mismatch results are less robust: overeducation is unchanged under province-by-survey-year fixed effects but loses significance and changes sign when province-specific cohort trends are added, and the same is true of undereducation. With only 29 birth cohorts, a full set of province-specific linear trends is demanding and absorbs much of the identifying variation, so this specification is best read as a lower bound on the information the design can support. The pattern nonetheless indicates that the field-mismatch and joint-mismatch findings---the paper's central results---do not depend on the additive-trend assumption, whereas the compositional shift within vertical mismatch should be treated more cautiously. Estimates for labor-force participation, employment, and unemployment remain small and insignificant throughout.
+
+Because university exposure is measured at ages 18--20, outcomes should be observed after the treatment window. Restricting the sample to workers aged at least 21, 25, or 30 leaves the horizontal-mismatch, double-mismatch, and fully-matched-employment estimates essentially unchanged (Appendix Table~\ref{tab:appage}); the overeducation estimate attenuates from 0.335 to about 0.25 among workers aged 25 and above but remains statistically significant, while the labor-market and attainment estimates remain small and insignificant.
+
+\subsubsection{Migration and the role of Tehran}
+
+A second concern is that migration may lead to exposure misclassification. University exposure is assigned using an individual's historical province, while some individuals may subsequently move across provincial boundaries. The LFS records current and previous province of residence and the timing of the most recent move, which identifies recent cross-province movers but not migration that occurred before the survey window. In the joint-mismatch sample only about 0.3 percent of observations are flagged as recent cross-province movers, so this exercise should be interpreted as a sensitivity check based on observed movers rather than as a complete correction for migration. Tehran is particularly important in this respect because it is a major destination for internal migration and represents a substantially larger and more distinctive labor market than other provinces.
+
+To assess these concerns, the baseline models are re-estimated after excluding identified cross-province movers, excluding Tehran, and excluding both Tehran and identified movers.
+
+\begin{table}[htbp]
+  \centering
+  \caption{Robustness to migration and the inclusion of Tehran}
+  \label{tab:robmig}
+  \begin{threeparttable}
+  \begin{tabular}{L{6.0cm}ccc}
+    \toprule
+    Specification & \makecell{Horizontal\\mismatch} & \makecell{Double\\mismatch} & \makecell{Fully matched\\employment} \\
+    \midrule
+    Baseline                                   & $0.614^{***}$ $(0.126)$ & $0.695^{***}$ $(0.140)$ & $-0.341^{***}$ $(0.103)$ \\
+    Excluding identified cross-province movers  & $0.616^{***}$ $(0.127)$ & $0.689^{***}$ $(0.142)$ & $-0.344^{***}$ $(0.102)$ \\
+    Excluding Tehran                            & $0.662^{***}$ $(0.190)$ & $0.735^{***}$ $(0.186)$ & $-0.323^{*}$ $(0.160)$ \\
+    Excluding Tehran and identified movers      & $0.664^{***}$ $(0.192)$ & $0.738^{***}$ $(0.188)$ & $-0.324^{*}$ $(0.159)$ \\
+    \bottomrule
+  \end{tabular}
+  \begin{tablenotes}[flushleft]
+    \footnotesize
+    \item Entries report percentage-point effects associated with a 10 percent increase in university exposure at ages 18--20. All specifications include historical-province, birth-cohort, and survey-year fixed effects and control for gender and urban residence. Regressions use survey weights and two-way clustered standard errors by historical province and birth cohort. Standard errors are shown in parentheses. \textsuperscript{***}$p<0.01$, \textsuperscript{**}$p<0.05$, \textsuperscript{*}$p<0.10$.
+  \end{tablenotes}
+  \end{threeparttable}
+\end{table}
+
+The estimates are highly stable after excluding identified movers. Horizontal mismatch increases by 0.616 percentage points and double mismatch by 0.689 percentage points, while fully matched employment declines by 0.344 percentage points, almost identical to the baseline estimates.
+
+Excluding Tehran produces somewhat larger standard errors, as expected after removing the country's largest labor market and reducing the number of provincial clusters, but the substantive conclusions remain unchanged. Horizontal and double mismatch remain positive and statistically significant, while fully matched employment remains negative. Excluding both Tehran and identified movers produces nearly identical results.
+
+Overall, the robustness exercises show that the main findings are not sensitive either to alternative definitions of educational mismatch or to identifiable migration and the inclusion of Tehran.
+
+\section{Conclusion}
+\label{sec:conclusion}
+
+Iran's expansion of higher education substantially increased access to university education, but the labor-market consequences depended on whether the economy could absorb the resulting growth in educated workers into suitable jobs. This paper examines that adjustment using 18 waves of the Iranian Labor Force Survey and variation in university exposure across historical provinces and birth cohorts.
+
+The results show little evidence that greater university exposure changed broad employment quantities. Estimated effects on labor-force participation, employment, and unemployment are small and statistically insignificant, and greater exposure does not predict individual tertiary attainment once province and cohort variation is isolated. The more consequential adjustment occurred in the allocation of workers across occupations. Greater exposure increased overeducation and horizontal mismatch, raised the probability of experiencing both simultaneously, and reduced the probability of being fully matched along both education-level and field-of-study dimensions. The limited change in overall vertical mismatch masks a compositional shift, as overeducation increased while undereducation declined. This within-vertical shift is less robust than the field-mismatch results: it does not survive the inclusion of province-specific cohort trends, whereas the increases in horizontal and double mismatch and the decline in fully matched employment do (Table~\ref{tab:appfeladder}).
+
+The results also reveal gender differences. A properly specified interaction test shows that the increase in horizontal mismatch and the decline in fully matched employment are significantly stronger for men than for women; the difference for double mismatch is significant only at the 10 percent level, and for overeducation the male and female relationships are statistically indistinguishable. Employed women are much more likely to appear fully matched in the descriptive data. These patterns should be interpreted in light of Iran's exceptionally low female employment rates. Because mismatch can be observed only among workers, relatively favorable matching among employed women does not necessarily imply that the broader female population faced better labor-market opportunities. Instead, it may partly reflect stronger selection into employment.
+
+The occupational and field-specific results provide additional evidence on how the labor market absorbed the expansion. Among men, much of the estimated increase in double mismatch is concentrated in sales, agriculture, and manual occupations. Among women, sales accounts for the largest contribution, followed by selected production, craft, and teaching occupations. Across fields of study, the clearest deterioration occurs among graduates in business, administration, and law, where both horizontal and double mismatch increase substantially and remain significant after adjustment for multiple testing.
+
+These findings point to a broader distinction between expanding educational opportunity and expanding the productive use of education. Increasing university capacity can raise educational attainment without generating corresponding improvements in labor-market allocation when occupational demand does not adjust at the same pace. In such settings, the consequences of higher-education expansion may appear less through unemployment than through educated workers accepting jobs below their qualifications or outside their fields of study.
+
+The results therefore suggest that higher-education policy should not be evaluated solely by enrollment or graduation rates. The economic return to educational expansion also depends on the development of occupations and industries capable of using the additional human capital. Policies that expand university access may need to be accompanied by measures that strengthen demand for skilled labor, improve links between fields of study and occupational opportunities, and address barriers that restrict women's access to employment. More generally, evaluating higher-education expansion requires attention not only to whether individuals obtain jobs, but also to whether those jobs make effective use of the education the policy helped provide.

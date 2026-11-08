@@ -1,0 +1,80 @@
+\documentclass[11pt]{article}
+
+\usepackage[margin=1in]{geometry}
+\usepackage{amsmath,amssymb}
+\usepackage[T1]{fontenc}
+\usepackage{mathptmx}
+\usepackage{booktabs}
+\usepackage{array}
+\usepackage{makecell}
+\usepackage{threeparttable}
+\usepackage{graphicx}
+\usepackage{caption}
+\usepackage{setspace}
+\usepackage[authoryear,round]{natbib}
+\usepackage[colorlinks=true,linkcolor=blue,citecolor=blue,urlcolor=blue]{hyperref}
+\usepackage{authblk}
+
+\captionsetup{labelsep=period,font=small,labelfont=bf}
+\newcolumntype{L}[1]{>{\raggedright\arraybackslash}p{#1}}
+\renewcommand{\bibsection}{\clearpage\section*{References}}
+\setlength{\bibsep}{0.6ex}
+
+\onehalfspacing
+\title{University Expansion, Educational Mismatch, and Occupational Allocation in Iran}
+%\title{Overeducated, Under-Employed: How Iran’s Campus Boom Reshaped Labor Market}
+
+\author[1]{Hossein Jalili}
+\author[2]{Mahyar Rezazadeh}
+\affil[1,2]{Simon Fraser University}
+
+
+
+
+\begin{document}
+
+\maketitle
+\begin{abstract}
+
+This paper examines how exposure to Iran's higher-education expansion is related to education--job matching. We combine 18 waves of the Iranian Labor Force Survey (2007--2024) with a newly constructed province--birth-cohort measure of exposure to university enrollment, assigned using an individual's historical province at ages 18--20. Identification comes from within-province differences in exposure across cohorts, conditional on province, birth-cohort, and survey-year fixed effects, which together absorb about 96 percent of the variance in log exposure. Greater exposure is not associated with individual tertiary attainment, labor-force participation, employment, or unemployment. Among employed workers, however, it predicts poorer education--job matching: a 10 percent increase in exposure is associated with a 0.61 percentage-point increase in horizontal (field) mismatch, a 0.69 percentage-point increase in double mismatch (simultaneous overeducation and field mismatch), and a 0.34 percentage-point decline in fully matched employment. These field- and joint-mismatch relationships are robust to province-by-survey-year fixed effects, province-specific cohort trends, restricting the sample to older workers, and alternative mismatch definitions; the associated increase in overeducation is smaller and less robust. A properly specified interaction test shows that the horizontal-mismatch and fully-matched-employment relationships are significantly stronger for men, while employed women appear better matched partly because female employment in Iran is highly selective. The results suggest that where graduate labor demand does not keep pace with expanded university enrollment, the adjustment appears in the kinds of jobs educated workers hold rather than in whether they work.
+
+\medskip
+\noindent\textbf{Keywords:} educational mismatch; overeducation; horizontal mismatch; higher-education expansion; occupational allocation; gender; Iran
+
+\smallskip
+\noindent\textbf{JEL classification:} I23; I26; J24; O15
+
+
+
+%{This study exploits province–cohort differences exposure to Iran’s university boom (mid-1990s to mid-2010s) to look at three outcomes: vertical mismatch (working in jobs that need less education), horizontal mismatch (working outside one’s study field), and see how much of the job gender gap in labor market comes from selective occupation choice by women. Linking 18 waves of the Iranian Labour Force Survey during 2007–2024; to a measure of exposure to university boom at ages 18–20, we find that a 10-point rise in exposure boosts vertical mismatch by 2 percentage points and horizontal mismatch by 3, with both effects two-to-three times larger for men. Women appear less mismatched not because they are protected from mismatch, but because only an unusually well-qualified minority of them choose to be employed. Selection alone explains 13.6-hour weekly work-hours gender gap among employees and most of the employment-rate gap. Using a supplementary national data on Konkoor exam takers show women already make up over 61 percent of qualified university applicants, so the main barrier is not a shortage of the educated women. Policies that remove the barriers for women’s work, rather than simply expanding university seats, are needed to turn educational gains into equal employment outcomes.}
+\end{abstract}
+
+\newpage
+\input{body_finalized}
+
+\bigskip
+\noindent\textbf{Author Contributions:} Conceptualization, H.J.\ and M.R.; methodology, H.J.\ and M.R.; software, M.R.; formal analysis, M.R.; data curation, M.R.; writing---original draft preparation, H.J.\ and M.R.; writing---review and editing, H.J.\ and M.R. All authors have read and agreed to the published version of the manuscript.
+
+\smallskip
+\noindent\textbf{Funding:} This research received no external funding.
+
+\smallskip
+\noindent\textbf{Institutional Review Board Statement:} Not applicable. The study uses de-identified secondary survey microdata and involves no direct interaction with human subjects.
+
+\smallskip
+\noindent\textbf{Informed Consent Statement:} Not applicable.
+
+\smallskip
+\noindent\textbf{Data Availability Statement:} The analysis is based on the public-use microdata of the Iranian Labor Force Survey, collected and distributed by the Statistical Center of Iran, and on province-year university-enrollment and population series compiled from official statistical yearbooks. The Labor Force Survey microdata are restricted-access and cannot be redistributed by the authors; they may be obtained from the Statistical Center of Iran. The province-year enrollment/population exposure panel, the field-to-occupation crosswalks, and all analysis code are available from the corresponding author on request and will be deposited in a public repository upon acceptance. A reproducibility statement listing software, packages, and the pipeline is provided in Appendix~\ref{app:robust}.
+
+\smallskip
+\noindent\textbf{Conflicts of Interest:} The authors declare no conflicts of interest.
+
+\clearpage
+\input{appendix_finalized}
+
+\clearpage
+\bibliographystyle{elsarticle-harv}
+\bibliography{references_finalized}
+
+\end{document}
